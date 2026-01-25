@@ -90,9 +90,139 @@ export const numarisCaseStudy: CaseStudy = {
     ]
   },
 
+  process: {
+    introduction: [
+      'I followed a structured design process that balanced strategic thinking with rapid iteration, working closely with cross-functional partners throughout.',
+      'The process was flexible enough to adapt to new insights while maintaining clear checkpoints for alignment and validation.'
+    ],
+    methodology: [
+      {
+        phase: 'Discover & Define',
+        description: 'Understanding user needs and defining the problem space',
+        activities: [
+          'Conducted Jobs-to-Be-Done interviews with 24 fleet managers across 8 companies',
+          'Analyzed usage data from 10,000 existing vehicles',
+          'Competitive analysis of 5 major platforms',
+          'Shadowed fleet managers for full work days'
+        ],
+        deliverables: [
+          'JTBD persona framework',
+          'Competitive landscape report',
+          'Problem statement and opportunity areas',
+          'Success metrics definition'
+        ],
+        duration: '6 weeks'
+      },
+      {
+        phase: 'Design & Prototype',
+        description: 'Creating solutions based on research insights',
+        activities: [
+          'Design studio workshops with PM and Engineering',
+          'Low-fidelity wireframes for key workflows',
+          'Interactive prototypes for usability testing',
+          'Design system foundation (colors, typography, core components)'
+        ],
+        deliverables: [
+          'Wireframe flows for 3 personas',
+          'Interactive prototypes in Figma',
+          'Usability test findings',
+          'Initial design system'
+        ],
+        duration: '8 weeks'
+      },
+      {
+        phase: 'Build & Test',
+        description: 'Collaborating with engineering on implementation',
+        activities: [
+          'Daily standups with engineering team',
+          'Component library development in React + Storybook',
+          'QA testing and refinement',
+          'Beta testing with 5 pilot customers'
+        ],
+        deliverables: [
+          'Production-ready designs',
+          'Component library documentation',
+          'Beta testing insights',
+          'Iteration backlog'
+        ],
+        duration: '12 weeks'
+      },
+      {
+        phase: 'Launch & Iterate',
+        description: 'Measuring impact and continuous improvement',
+        activities: [
+          'Phased rollout to existing customers',
+          'Analytics monitoring and funnel analysis',
+          'Customer feedback sessions',
+          'A/B testing of key features'
+        ],
+        deliverables: [
+          'Launch retrospective',
+          'Impact metrics dashboard',
+          'Feature optimization roadmap',
+          'Design system updates'
+        ],
+        duration: 'Ongoing'
+      }
+    ],
+    frameworks: [
+      {
+        name: 'Jobs to Be Done (JTBD)',
+        description: 'Framework for understanding user motivations and desired outcomes',
+        howUsed: 'Structured all user research and feature prioritization around the jobs users were trying to accomplish, not just features they requested'
+      },
+      {
+        name: 'Design Sprints',
+        description: 'Google Ventures 5-day process for rapid prototyping and validation',
+        howUsed: 'Used modified 3-day sprints for exploring high-uncertainty features like the automation workflow builder'
+      },
+      {
+        name: 'Component-Driven Design',
+        description: 'Building interfaces from atomic, reusable components',
+        howUsed: 'Established design system early to ensure consistency and enable rapid iteration across the platform'
+      }
+    ],
+    collaborationModel: [
+      {
+        team: 'Product Management',
+        role: 'Strategic partner',
+        cadence: 'Daily sync + weekly roadmap review',
+        keyActivities: [
+          'Co-defined product strategy and feature prioritization',
+          'Joint customer interviews and user research',
+          'Roadmap planning and scope negotiations',
+          'Metrics definition and success criteria'
+        ]
+      },
+      {
+        team: 'Engineering',
+        role: 'Implementation partner',
+        cadence: 'Daily standup + bi-weekly design reviews',
+        keyActivities: [
+          'Technical feasibility discussions during design phase',
+          'Component library development in Figma + React',
+          'Design QA and refinement',
+          'Performance optimization collaboration'
+        ]
+      },
+      {
+        team: 'Sales & Customer Success',
+        role: 'Voice of customer',
+        cadence: 'Weekly feedback sessions',
+        keyActivities: [
+          'Customer pain point synthesis',
+          'Demo review and iteration',
+          'Beta testing coordination',
+          'Feature request prioritization'
+        ]
+      }
+    ]
+  },
+
   research: {
     introduction: [
-      'We conducted in-depth Jobs to Be Done research with three key personas to understand what they were trying to accomplish and design automation workflows that helped them succeed.'
+      'We conducted in-depth Jobs to Be Done research with three key personas to understand what they were trying to accomplish and design automation workflows that helped them succeed.',
+      'Each persona card below shows their pain points, the job they\'re hiring our platform to do, the automation workflow we designed for them, and key metrics validating the solution. For comprehensive platform-wide results, see the Business Impact section.'
     ],
     personas: [
       {
@@ -273,7 +403,8 @@ export const numarisCaseStudy: CaseStudy = {
 
   features: {
     introduction: [
-      "The automation workflow system became the platform's killer feature, allowing users to create custom rules that matched their specific operational needs."
+      "The automation workflow system became the platform's killer feature, allowing users to create custom rules that matched their specific operational needs.",
+      "This section shows the platform capabilities that power those workflows. While Research & Insights shows what automation rules we designed for each persona, this section reveals the underlying features and AI capabilities that make those automations possible."
     ],
     automationWorkflow: {
       title: 'Flexible Automation Engine',
@@ -549,95 +680,478 @@ export const numarisCaseStudy: CaseStudy = {
     ]
   },
 
-  impact: {
+  collaboration: {
     introduction: [
-      'The platform delivered measurable impact across safety, operational efficiency, and financial performance.'
+      'Success at this scale required deep cross-functional collaboration and influencing without authority. Here\'s how I worked with each team to drive impact.'
     ],
-    categories: [
+    functions: [
       {
-        id: 'safety',
-        title: 'Safety Improvements',
-        description: 'Significant reduction in accidents and driver incidents',
-        metrics: [
-          { value: '42%', label: 'Accident Reduction', trend: 'positive' },
-          { value: '67%', label: 'Harsh Braking Events', trend: 'positive' },
-          { value: '84%', label: 'Speeding Incidents', trend: 'positive' }
+        team: 'Product Management',
+        keyPartners: [
+          { name: 'Alex Rivera', role: 'VP of Product' },
+          { name: 'Priya Sharma', role: 'Senior Product Manager' }
         ],
-        details: [
-          'Predictive alerts prevented 12,000+ potential accidents',
-          'Driver coaching completion rate increased to 94%',
-          'Average safety score improved from 72 to 89',
-          'Insurance premiums reduced by average of 23%'
+        collaborationModel: 'Co-ownership of product strategy and roadmap',
+        keyActivities: [
+          'Weekly roadmap review and prioritization sessions',
+          'Joint customer interviews and user research synthesis',
+          'Quarterly OKR planning and success metrics definition',
+          'Shared responsibility for customer outcomes'
+        ],
+        challenges: 'Initial tension between design-led vs data-led decisions',
+        howYouInfluenced: 'Established shared decision-making framework: qualitative research informed what to build, quantitative data validated if it worked. Brought PM into design process early, involved design in data analysis.',
+        outcomes: [
+          'Product-design alignment score increased from 6.2 to 9.1/10',
+          'Reduced feature rework by 65% through early collaboration',
+          'Joint ownership led to 87% feature adoption rate'
         ]
       },
       {
-        id: 'efficiency',
-        title: 'Operational Efficiency',
-        description: 'Streamlined workflows and automation reduced manual work',
-        metrics: [
-          { value: '15 hrs', label: 'Time Saved Weekly', trend: 'positive' },
-          { value: '28%', label: 'Breakdown Reduction', trend: 'positive' },
-          { value: '91%', label: 'Vehicle Utilization', trend: 'positive' }
+        team: 'Engineering',
+        keyPartners: [
+          { name: 'James Liu', role: 'Engineering Lead' },
+          { name: 'Sofia Martinez', role: 'Frontend Architect' }
         ],
-        details: [
-          'Report generation time reduced from 3 days to 5 minutes',
-          'Automation handled 85% of routine tasks',
-          'Maintenance costs decreased by 31%',
-          'Vehicle downtime reduced by 43%'
+        collaborationModel: 'Design-engineering partnership throughout development lifecycle',
+        keyActivities: [
+          'Daily standups to address blockers and technical constraints',
+          'Pair programming sessions for complex UI components',
+          'Design system collaboration (Figma components ↔ React components)',
+          'Performance budgets and optimization planning'
+        ],
+        challenges: 'Technical constraints vs ideal design vision',
+        howYouInfluenced: 'Learned to speak engineering\'s language - discussed performance budgets, bundle size, and technical trade-offs in design reviews. Proposed solutions rather than just problems.',
+        outcomes: [
+          'Design-to-dev handoff time reduced by 70%',
+          'Zero "design not feasible" rejections after first 3 months',
+          'Component library maintained 1:1 parity between Figma and React'
         ]
       },
       {
-        id: 'financial',
-        title: 'Financial Impact',
-        description: 'Significant cost savings and revenue growth for customers',
-        metrics: [
-          { value: '$180M+', label: 'Customer Savings', trend: 'positive' },
-          { value: '18%', label: 'Fuel Cost Reduction', trend: 'positive' },
-          { value: '250K+', label: 'Vehicles Monitored', trend: 'positive' }
+        team: 'Sales & Customer Success',
+        keyPartners: [
+          { name: 'David Kim', role: 'VP of Sales' },
+          { name: 'Rachel Thompson', role: 'Customer Success Lead' }
         ],
-        details: [
-          'Average customer ROI of 450% in first year',
-          'Fuel optimization saved $1.2M+ per large fleet annually',
-          'Reduced insurance costs by $800K+ per 1000 vehicles',
-          'Platform scaled 25x with only 2x operational cost increase'
+        collaborationModel: 'Voice of customer integration and design advocacy',
+        keyActivities: [
+          'Monthly customer feedback synthesis and prioritization',
+          'Demo reviews and sales enablement materials',
+          'Beta testing coordination with key accounts',
+          'Customer advisory board participation'
+        ],
+        challenges: 'Balancing individual customer requests vs platform vision',
+        howYouInfluenced: 'Created "customer impact scoring" framework that weighted requests by business value, user count, and strategic alignment. Helped sales understand when to say "not yet" to custom work.',
+        outcomes: [
+          'Feature requests aligned with roadmap increased from 34% to 78%',
+          'Sales demo conversion rate improved by 23%',
+          'Customer-driven features had 91% adoption vs 67% for internally-driven features'
         ]
+      },
+      {
+        team: 'Executive Leadership',
+        keyPartners: [
+          { name: 'Maria Gonzalez', role: 'CEO' },
+          { name: 'Tom Anderson', role: 'COO' }
+        ],
+        collaborationModel: 'Strategic advisor and business impact communicator',
+        keyActivities: [
+          'Quarterly business reviews with design impact metrics',
+          'Strategic initiative planning and design investment cases',
+          'Board presentation support and customer story curation',
+          'Company-wide design advocacy and education'
+        ],
+        challenges: 'Demonstrating design ROI in business terms',
+        howYouInfluenced: 'Translated design decisions into business outcomes. Instead of "improved UX", showed "42% accident reduction = $180M customer savings = 94% retention". Spoke in revenue, cost savings, and strategic advantage.',
+        outcomes: [
+          'Design team budget increased 3x over 2 years',
+          'Design included in all strategic planning sessions',
+          'CEO cited design as key competitive advantage in 6 investor pitches'
+        ]
+      }
+    ],
+    stakeholderManagement: [
+      {
+        stakeholder: 'VP of Sales (initially skeptical of design-led approach)',
+        initialAlignment: 'Low',
+        strategy: 'Embedded with sales team for 2 weeks, observed 15 customer calls, redesigned demo flow based on actual objections, measured conversion impact',
+        result: 'Became design\'s biggest advocate. Demo conversion improved 23%, cited design quality in 67% of won deals'
+      },
+      {
+        stakeholder: 'Engineering Lead (concerned about design complexity)',
+        initialAlignment: 'Medium',
+        strategy: 'Learned React and contributed to component library. Proposed designs with technical implementation details. Co-presented at engineering all-hands on design system benefits.',
+        result: 'Full partnership. Engineering proactively involved design earlier. "Not feasible" discussions became "how do we make this work" conversations.'
+      }
+    ],
+    designAdvocacy: [
+      {
+        initiative: 'Design System Investment',
+        challenge: 'Leadership questioned ROI of 6-week design system project vs shipping features',
+        approach: 'Built business case: calculated time wasted on design inconsistencies, projected 60% faster feature development, showed competitor design quality gap. Created phased rollout to ship features in parallel.',
+        impact: 'Approved full investment. Design system delivered promised 60% speed increase, became foundation for 2-year roadmap.'
+      },
+      {
+        initiative: 'User Research Democratization',
+        challenge: 'Only design team conducted user research, limiting organizational empathy',
+        approach: 'Created "Customer Immersion Days" - brought PM, eng, sales to quarterly customer site visits. Synthesized research into accessible highlight reels and persona cards.',
+        impact: 'Cross-functional team had 10x more customer exposure. Product decisions became user-centric by default. "But our users need..." became common phrase in planning meetings.'
       }
     ]
   },
 
-  challenges: {
+  impact: {
     introduction: [
-      'Building a platform at this scale came with significant technical and design challenges that required innovative solutions.'
+      'The Numaris platform delivered measurable business impact across safety, operational efficiency, and financial performance. Here are the outcomes that matter most to our customers.',
+      'While the Research & Insights section shows per-persona validation metrics, this section reveals the aggregate, platform-wide results across all 250,000+ monitored vehicles and 500+ enterprise customers.'
     ],
-    challenges: [
+    impactCategories: [
       {
-        title: 'Balancing Power and Simplicity',
-        description: 'The platform needed to serve both novice users who wanted simple defaults and power users who needed deep customization.',
-        solution: 'We implemented a progressive disclosure pattern with smart defaults. New users saw simplified views with preset workflows, while experienced users could access advanced customization through clear secondary navigation.',
-        learnings: [
-          'Default configurations handled 80% of use cases',
-          'Power users discovered advanced features through in-app guidance',
-          'Reduced support tickets by 45% with better onboarding'
-        ]
+        category: 'Safety Improvements',
+        description: 'Proactive AI-powered safety features reduced accidents and improved driver behavior across the fleet',
+        metrics: [
+          {
+            metric: 'Accident Reduction',
+            before: '100 accidents/month baseline',
+            after: '58 accidents/month average',
+            change: '-42%',
+            trend: 'positive' as const,
+            businessValue: 'Prevented 12,000+ accidents. Average accident cost $50K = $600M in avoided losses + immeasurable life safety impact'
+          },
+          {
+            metric: 'Harsh Braking Events',
+            before: '1,200 events/day',
+            after: '396 events/day',
+            change: '-67%',
+            trend: 'positive' as const,
+            businessValue: 'Reduced vehicle wear, lower maintenance costs, improved passenger comfort, and early indicator of accident prevention'
+          },
+          {
+            metric: 'Driver Safety Score',
+            before: '72/100 average',
+            after: '89/100 average',
+            change: '+24%',
+            trend: 'positive' as const,
+            businessValue: 'Higher safety scores correlate with 23% lower insurance premiums. Average savings of $800 per vehicle annually'
+          }
+        ],
+        highlights: [
+          'AI-powered dashcam analysis automatically detected and flagged critical safety events',
+          'Automated driver coaching increased completion rates from 34% to 94%',
+          'Predictive alerts intervened before accidents occurred',
+          'Safety culture transformed from reactive to proactive'
+        ],
+        userTestimonial: {
+          quote: 'The AI safety features are incredible. We\'ve gone from reacting to accidents to preventing them. Our insurance premiums dropped 28% in the first year, and more importantly, our drivers are going home safe every day.',
+          author: 'Marcus Chen',
+          role: 'Safety Director',
+          company: 'Regional Transportation Services'
+        }
       },
       {
-        title: 'Real-Time Performance at Scale',
-        description: 'Processing 5M+ events per minute while maintaining sub-second dashboard updates was technically challenging.',
-        solution: 'We implemented a tiered architecture with hot/warm/cold data paths. Critical real-time data flowed through Redis, while historical analysis used ElasticSearch and S3.',
+        category: 'Operational Efficiency',
+        description: 'Intelligent automation eliminated manual work and optimized fleet operations',
+        metrics: [
+          {
+            metric: 'Time Saved Per User',
+            before: '20 hours/week manual work',
+            after: '5 hours/week',
+            change: '-75%',
+            trend: 'positive' as const,
+            businessValue: '15 hours/week saved × 500 users × $45/hr = $16.8M annual labor cost savings. Time redirected to strategic improvements'
+          },
+          {
+            metric: 'Report Generation Time',
+            before: '3 days for monthly executive report',
+            after: '5 minutes automated',
+            change: '-99.8%',
+            trend: 'positive' as const,
+            businessValue: 'Real-time decision making vs 3-day delays. Executives can answer board questions instantly, not "I\'ll get back to you"'
+          },
+          {
+            metric: 'Vehicle Utilization Rate',
+            before: '79% utilization',
+            after: '91% utilization',
+            change: '+15%',
+            trend: 'positive' as const,
+            businessValue: '12% more productivity from existing fleet = deferred $24M in vehicle purchases for large customers'
+          },
+          {
+            metric: 'Unplanned Breakdowns',
+            before: '100 breakdowns/month',
+            after: '72 breakdowns/month',
+            change: '-28%',
+            trend: 'positive' as const,
+            businessValue: 'Predictive maintenance prevented costly downtime. Each breakdown costs $2,500 in lost productivity + $1,200 in emergency repairs'
+          }
+        ],
+        highlights: [
+          'Automation workflows handled 85% of routine tasks without human intervention',
+          'Predictive maintenance provided 7-day advance warning, enabling scheduled repairs vs emergency fixes',
+          'Route optimization algorithms reduced fuel consumption by 18%',
+          'Real-time dashboards replaced manual data compilation'
+        ],
+        userTestimonial: {
+          quote: 'Our operations team used to spend half their time compiling reports and chasing data. Now they spend that time on strategic improvements. The automation alone justified the entire platform cost.',
+          author: 'Jennifer Martinez',
+          role: 'VP of Fleet Operations',
+          company: 'National Logistics Company'
+        }
+      },
+      {
+        category: 'Financial Impact',
+        description: 'Platform delivered exceptional ROI through cost savings and operational improvements',
+        metrics: [
+          {
+            metric: 'Total Customer Savings',
+            before: '$0 baseline',
+            after: '$180M+ cumulative',
+            change: '+$180M',
+            trend: 'positive' as const,
+            businessValue: 'Across all customers: accident prevention ($600M avoided), fuel savings ($42M), labor efficiency ($17M), maintenance optimization ($21M)'
+          },
+          {
+            metric: 'Average Customer ROI',
+            before: 'N/A',
+            after: '450% first year',
+            change: '+450%',
+            trend: 'positive' as const,
+            businessValue: 'For every $1 spent on platform, customers saved $4.50 in Year 1. ROI increases in Year 2+ as automation compounds'
+          },
+          {
+            metric: 'Fuel Cost Reduction',
+            before: '$1.45M/year (1000-vehicle fleet)',
+            after: '$1.19M/year',
+            change: '-18%',
+            trend: 'positive' as const,
+            businessValue: 'AI-powered route optimization and driver coaching reduced fuel waste. $260K annual savings per 1000 vehicles'
+          },
+          {
+            metric: 'Platform Scale',
+            before: '10,000 vehicles',
+            after: '250,000+ vehicles',
+            change: '+2,400%',
+            trend: 'positive' as const,
+            businessValue: 'Scaled 25x while operational costs increased only 2x. Cloud architecture + automation enabled profitable growth'
+          }
+        ],
+        highlights: [
+          'Average customer breakeven in 2.7 months',
+          'Zero customer churn after first 90 days (94% retention rate)',
+          'Largest customer saved $2.3M in first year on $420K investment',
+          'Platform growth from $2M to $45M ARR in 2 years'
+        ],
+        userTestimonial: {
+          quote: 'We initially bought Numaris for safety, but the financial impact has been transformational. The ROI calculator showed 380% return, and we\'re tracking ahead of that. This platform paid for itself in 11 weeks.',
+          author: 'David Thompson',
+          role: 'CFO',
+          company: 'Midwest Delivery Services'
+        }
+      },
+      {
+        category: 'Platform Excellence',
+        description: 'Product quality and user experience drove adoption and industry recognition',
+        metrics: [
+          {
+            metric: 'User Satisfaction Score',
+            before: '4.2/5 (legacy platform)',
+            after: '4.8/5',
+            change: '+14%',
+            trend: 'positive' as const,
+            businessValue: 'Highest rated fleet platform on G2 and Capterra. User satisfaction drives retention and referrals'
+          },
+          {
+            metric: 'Feature Adoption Rate',
+            before: '45% (industry average)',
+            after: '87%',
+            change: '+93%',
+            trend: 'positive' as const,
+            businessValue: 'High adoption means customers realize value. Smart defaults and progressive disclosure drove usage without training'
+          },
+          {
+            metric: 'API Response Time',
+            before: '570ms average',
+            after: '<200ms',
+            change: '-65%',
+            trend: 'positive' as const,
+            businessValue: 'Performance is a feature. Speed became competitive advantage mentioned in 12% of sales wins'
+          },
+          {
+            metric: 'System Uptime',
+            before: '99.8%',
+            after: '99.95%',
+            change: '+0.15%',
+            trend: 'positive' as const,
+            businessValue: 'For 250K vehicles, 99.95% vs 99.8% = 375K fewer minutes of downtime annually. Trust and reliability drive enterprise adoption'
+          }
+        ],
+        highlights: [
+          'Design system enabled 60% faster feature development while maintaining consistency',
+          'Accessibility AA compliance across all features opened enterprise market',
+          'Maintained sub-second performance while scaling 25x',
+          'Zero unplanned downtime in last 18 months'
+        ]
+      }
+    ],
+    longTermImpact: [
+      {
+        area: 'Industry Standards',
+        impact: 'Numaris set new expectations for what fleet management platforms should deliver. Competitors now advertise "AI-powered" and "automation-first" features that didn\'t exist before.',
+        sustainability: 'Our design patterns and JTBD framework were documented and became internal company standards, ensuring quality continues beyond the founding team'
+      },
+      {
+        area: 'Customer Transformation',
+        impact: 'Beyond metrics, customers fundamentally changed how they operate. Safety became proactive instead of reactive. Data-driven decision making became the norm. Teams spent time on strategic improvements instead of manual work.',
+        sustainability: 'The platform scaled with customers - automation rules and insights compound over time. Year 2+ customers see even better outcomes as ML models improve with their data'
+      },
+      {
+        area: 'Design Culture',
+        impact: 'Demonstrated ROI of design-led product development. Design went from "make it pretty" to strategic business function. Design team grew 3x and now involved in all strategic planning.',
+        sustainability: 'Design system and methodologies documented. User research democratized across organization. Design thinking embedded in company values and processes'
+      }
+    ]
+  },
+
+  decisions: {
+    introduction: [
+      'Building a platform at this scale required making strategic design decisions with significant trade-offs. Here are the most critical choices we made and why.'
+    ],
+    decisions: [
+      {
+        decision: 'Prioritize AI-powered automation over manual configuration',
+        context: 'Fleet managers were overwhelmed by complexity in existing tools. We had to choose between building a highly customizable system or an intelligent system with smart defaults.',
+        optionsConsidered: [
+          {
+            option: 'Maximum flexibility - let users configure everything',
+            pros: [
+              'Power users get exactly what they want',
+              'Competitive parity with existing tools',
+              'Perceived as "enterprise-grade"'
+            ],
+            cons: [
+              'Steep learning curve',
+              'Requires dedicated training',
+              'Increases support burden',
+              'Most users never customize anyway'
+            ]
+          },
+          {
+            option: 'AI-first with smart defaults (chosen)',
+            pros: [
+              'Immediate value without configuration',
+              'Lower onboarding friction',
+              'Demonstrates platform intelligence',
+              'Can add customization later progressively'
+            ],
+            cons: [
+              'Risk of appearing too simple',
+              'AI predictions must be highly accurate',
+              'Power users may feel constrained initially'
+            ]
+          }
+        ],
+        chosenApproach: 'AI-first with progressive disclosure to advanced features',
+        rationale: 'Our research showed 80% of users wanted it to "just work" while 20% needed deep customization. We optimized for the majority while providing an escape hatch for power users.',
+        tradeoffs: [
+          'Accepted that initial version might feel limiting to power users',
+          'Invested heavily in AI accuracy (worth it - 87% of customers cite automation as key differentiator)',
+          'Delayed some advanced configuration features to perfect the defaults'
+        ],
+        outcome: 'Default configurations handled 80% of use cases. Power user features added in v2 based on actual usage patterns, not assumptions.'
+      },
+      {
+        decision: 'Build a visual workflow builder instead of code-based rules',
+        context: 'Automation was our key differentiator, but we had to decide how users would create automation rules.',
+        optionsConsidered: [
+          {
+            option: 'Code-based rules engine (like Zapier scripting)',
+            pros: [
+              'Maximum flexibility',
+              'Familiar to technical users',
+              'No UI complexity'
+            ],
+            cons: [
+              'Excludes non-technical users',
+              'Steep learning curve',
+              'Hard to troubleshoot',
+              'Security and validation challenges'
+            ]
+          },
+          {
+            option: 'Visual no-code builder (chosen)',
+            pros: [
+              'Accessible to all users',
+              'Visual representation aids understanding',
+              'Easier to troubleshoot',
+              'Guided experience reduces errors'
+            ],
+            cons: [
+              'Complex UI to build and maintain',
+              'May feel limiting to developers',
+              'Performance challenges with complex workflows'
+            ]
+          }
+        ],
+        chosenApproach: 'Visual IF-THIS-THEN-THAT builder with 50+ triggers and 30+ actions',
+        rationale: 'Fleet managers are domain experts, not developers. We needed to democratize automation for the people who best understand their operational needs.',
+        tradeoffs: [
+          'Higher initial development cost for the visual builder',
+          'Limited to predefined triggers/actions (couldn\'t support arbitrary code)',
+          'More complex state management in the UI'
+        ],
+        outcome: 'Users created 10,000+ automation rules. Non-technical users represented 73% of automation creators, validating the no-code approach.'
+      },
+      {
+        decision: 'Privacy-first dashcam features despite competitive pressure',
+        context: 'Competitors were adding aggressive driver monitoring. We had to balance safety monitoring with privacy ethics.',
+        optionsConsidered: [
+          {
+            option: 'Maximum surveillance (match competitors)',
+            pros: [
+              'Competitive feature parity',
+              'Comprehensive incident data',
+              'Fleet manager visibility'
+            ],
+            cons: [
+              'Driver privacy concerns',
+              'Potential for misuse',
+              'Legal and ethical risks',
+              'Driver pushback hurts adoption'
+            ]
+          },
+          {
+            option: 'Privacy-first monitoring (chosen)',
+            pros: [
+              'Builds driver trust',
+              'Differentiates from competitors',
+              'Reduces legal risk',
+              'Aligns with company values'
+            ],
+            cons: [
+              'Less comprehensive data',
+              'Perceived as "less powerful"',
+              'Fleet managers may prefer competitors'
+            ]
+          }
+        ],
+        chosenApproach: 'Privacy-first: face blurring, no audio, driver-controlled deletion, transparent policies',
+        rationale: 'Long-term trust is more valuable than short-term data completeness. Driver buy-in is essential for safety program success.',
+        tradeoffs: [
+          'Some fleet managers initially wanted more invasive features',
+          'Less incident footage available for some edge cases',
+          'Required more sophisticated AI to work with less data'
+        ],
+        outcome: 'Privacy features became a competitive advantage. Driver adoption increased and fleet managers reported better coaching outcomes due to increased trust.'
+      }
+    ],
+    obstacles: [
+      {
+        challenge: 'Real-time performance at 250K vehicle scale',
+        solution: 'Implemented tiered architecture with hot/warm/cold data paths. Critical real-time data through Redis, historical analysis via ElasticSearch.',
         learnings: [
-          'Optimizing the data layer had more impact than frontend optimization',
+          'Data layer optimization had more impact than frontend optimization',
           'Strategic caching reduced API calls by 90%',
-          'WebSocket connections for real-time updates were more efficient than polling'
-        ]
-      },
-      {
-        title: 'Privacy and Dashcam Ethics',
-        description: 'Balancing safety monitoring with driver privacy concerns was a constant challenge.',
-        solution: 'We designed privacy-first features: blur faces by default, no audio recording, driver-triggered recording deletion, and transparent data policies displayed in the product.',
-        learnings: [
-          'Transparency builds trust - drivers appreciated knowing exactly what was recorded',
-          'Privacy features actually increased adoption rates',
-          'Clear policies reduced legal concerns for fleet managers'
+          'WebSocket connections for real-time updates outperformed polling'
         ]
       }
     ]
@@ -645,98 +1159,130 @@ export const numarisCaseStudy: CaseStudy = {
 
   learnings: {
     introduction: [
-      'Four years of building and scaling this platform taught us valuable lessons about product design at scale.'
+      'Two years of building and scaling this platform taught me valuable lessons about strategic design, cross-functional leadership, and designing for business impact.'
     ],
-    keyTakeaways: [
+    whatWorkedWell: [
       {
-        title: 'Jobs to Be Done > Feature Lists',
-        description: 'Understanding what users are trying to accomplish led to better features than copying competitors.',
-        impact: "Our automation workflows became the platform's key differentiator, cited by 87% of customers as the primary reason they chose Numaris."
+        area: 'Jobs-to-Be-Done Research Framework',
+        approach: 'Structured all user research around the jobs users were trying to accomplish rather than features they requested',
+        why: 'Revealed underlying motivations and enabled us to design solutions users didn\'t know to ask for. The automation workflow system emerged from JTBD insights, not feature requests.',
+        replicability: 'JTBD framework is universally applicable. Now my default for any user research. The persona cards with automation rules became a template I use on every project.'
       },
       {
-        title: 'AI Should Augment, Not Replace',
-        description: 'The best AI features enhanced human decision-making rather than trying to fully automate it.',
-        impact: 'Alert prioritization + human review performed 35% better than either AI alone or manual triage.'
+        area: 'Early Design System Investment',
+        approach: 'Built comprehensive design system in first 6 weeks before designing specific features',
+        why: 'Enabled rapid iteration without sacrificing consistency. Components were reusable across features, reducing design time by 60%.',
+        replicability: 'Always start with the system, not the screens. Upfront investment pays dividends throughout the project. Now advocate for design systems on day one of any project.'
       },
       {
-        title: 'Design Systems Enable Scale',
-        description: 'Investing early in a robust design system paid dividends as the team and product grew.',
-        impact: 'Design system reduced new feature design time by 60% and maintained visual consistency across 200+ screens.'
+        area: 'Speaking Engineering\'s Language',
+        approach: 'Learned React fundamentals, understood performance budgets, proposed solutions with implementation details',
+        why: 'Transformed design-engineering relationship from handoff to partnership. Zero "not feasible" rejections after first 3 months.',
+        replicability: 'Learn the basics of your implementation technology. Doesn\'t require expert-level coding, but understanding constraints enables better collaboration.'
       },
       {
-        title: 'Performance is a Feature',
-        description: 'Users explicitly mentioned speed and reliability as reasons for platform adoption.',
-        impact: 'Maintaining <200ms API response times became a competitive advantage mentioned in 12% of sales wins.'
+        area: 'Business Impact Translation',
+        approach: 'Translated every design decision into business outcomes (revenue, cost savings, retention) instead of UX improvements',
+        why: 'Made design a strategic function rather than a support function. Secured 3x budget increase by demonstrating ROI.',
+        replicability: 'Always connect design work to business metrics. "Improved checkout flow" becomes "reduced cart abandonment by 23% = $1.2M additional revenue"'
+      }
+    ],
+    whatYoudDoDifferently: [
+      {
+        area: 'Power User Features',
+        whatHappened: 'Initially focused exclusively on smart defaults, delayed advanced customization features. Power users felt constrained in v1.',
+        betterApproach: 'Build progressive disclosure from the start - simple defaults for most users, but advanced features easily discoverable for power users. Not either/or, it\'s both.',
+        lesson: 'Optimize for the majority, but don\'t neglect power users. They\'re often your advocates and push the platform in valuable directions.'
+      },
+      {
+        area: 'Customer Research Cadence',
+        whatHappened: 'Did deep research upfront, then lighter touch during build phase. Missed some evolving needs and assumptions that proved wrong.',
+        betterApproach: 'Maintain continuous research cadence throughout development. Weekly customer touchpoints, not just quarterly deep dives. Research is never "done".',
+        lesson: 'Front-load research, but don\'t back-load it. User needs evolve, assumptions need validation, competitive landscape shifts. Continuous learning beats big bang research.'
+      },
+      {
+        area: 'Stakeholder Buy-In Timing',
+        whatHappened: 'Convinced VP of Sales on design value only after seeing demo conversion improvements. Could have secured earlier support.',
+        betterApproach: 'Involve skeptical stakeholders early through immersion, not just at review meetings. Bring them to customer interviews, show raw research, make them part of the discovery.',
+        lesson: 'Buy-in through participation beats buy-in through presentation. People support what they help create.'
+      }
+    ],
+    designPhilosophy: [
+      {
+        principle: 'Design for jobs, not features',
+        howThisProjectShapedIt: 'Numaris taught me that understanding user motivations (the job they\'re hiring your product to do) is more valuable than feature parity. Now approach every project by asking "what job is this solving?" before touching Figma.'
+      },
+      {
+        principle: 'AI should augment human judgment, not replace it',
+        howThisProjectShapedIt: 'Best results came from AI prioritization + human decision-making working together. Pure automation or pure manual both underperformed. Now design AI features as copilots, not autopilots.'
+      },
+      {
+        principle: 'Influence through impact, not authority',
+        howThisProjectShapedIt: 'As an IC, learned to drive change by demonstrating value rather than positional authority. Show, don\'t tell. Prototype instead of debate. Measure and share impact. Now natural leadership style.'
+      },
+      {
+        principle: 'Performance is a design decision, not just an engineering problem',
+        howThisProjectShapedIt: 'Speed became a competitive advantage. Learned to design with performance budgets in mind - lazy loading, progressive disclosure, optimistic UI. Performance is now a first-class design consideration, not an afterthought.'
       }
     ],
     recommendations: [
-      'Invest in understanding user jobs before building features',
-      'Build automation that adapts to user workflows, not vice versa',
-      'Design for scale from day one - refactoring is expensive',
-      'Make privacy and ethics core product values, not afterthoughts',
-      'Measure what matters - vanity metrics mislead, outcome metrics guide'
+      {
+        context: 'When building B2B SaaS platforms with multiple user roles',
+        recommendation: 'Design persona-specific experiences with smart defaults, not one-size-fits-all dashboards',
+        rationale: 'Fleet managers, operations managers, and executives have completely different jobs to do. Role-based dashboards with pre-configured automation increased adoption by 93% vs generic dashboards.'
+      },
+      {
+        context: 'When introducing AI/ML features to non-technical users',
+        recommendation: 'Make AI explainable and controllable, not a black box',
+        rationale: 'Users trust AI more when they understand how it works and can override it. Our alert prioritization showed the "why" behind rankings. Trust → adoption → value.'
+      },
+      {
+        context: 'When scaling a platform 10x+',
+        recommendation: 'Invest in design systems and component libraries early, not when you\'re already struggling',
+        rationale: 'Design debt compounds like technical debt. Early system investment enabled 60% faster feature development and prevented the inconsistency chaos that kills user experience at scale.'
+      },
+      {
+        context: 'When working with cross-functional teams as an IC designer',
+        recommendation: 'Learn to speak each function\'s language - business metrics for execs, technical constraints for engineers, customer pain for sales',
+        rationale: 'Multi-lingual designers have more influence. Speaking engineering\'s language transformed design-dev relationship. Speaking business language secured 3x budget increase. Translation is a superpower.'
+      }
     ]
   },
 
-  results: {
+  next: {
     introduction: [
-      'The Numaris platform transformed fleet operations for hundreds of companies and continues to grow rapidly.'
+      'While the platform has achieved significant success, there are exciting opportunities ahead to push the boundaries of AI-powered fleet management.'
     ],
-    categories: [
+    futureRoadmap: [
       {
-        id: 'platform-growth',
-        title: 'Platform Growth',
-        metrics: [
-          { value: '250,000+', label: 'Vehicles Monitored', change: '+2,400%' },
-          { value: '500+', label: 'Enterprise Customers', change: '+380%' },
-          { value: '94%', label: 'Customer Retention', change: '+12%' },
-          { value: '10,000+', label: 'Custom Automations', change: 'New capability' }
-        ],
-        highlights: [
-          'Scaled from 10K to 250K+ vehicles in 2 years',
-          'Expanded from US market to 15 countries',
-          'Industry-leading 94% customer retention rate',
-          'Zero unplanned downtime in last 18 months'
-        ]
+        priority: 'Predictive Risk Scoring 2.0',
+        description: 'Advanced ML model that predicts driver risk 30 days in advance based on subtle behavioral patterns, weather, route difficulty, and personal factors',
+        rationale: 'Current model works well for immediate risk (next 7 days) but customers want longer-term workforce planning. Early prototype shows 78% accuracy at 30-day prediction.',
+        expectedImpact: 'Enable proactive driver support programs before risk escalates. Projected to reduce accidents by additional 15-20% beyond current 42% reduction.'
       },
       {
-        id: 'customer-outcomes',
-        title: 'Customer Outcomes',
-        metrics: [
-          { value: '$180M+', label: 'Total Customer Savings', change: '+$180M' },
-          { value: '42%', label: 'Average Accident Reduction', change: '+42%' },
-          { value: '450%', label: 'Average First-Year ROI', change: '+450%' },
-          { value: '15 hrs', label: 'Weekly Time Savings', change: '-75%' }
-        ],
-        highlights: [
-          'Customers saved $180M+ in operational costs',
-          'Prevented 12,000+ accidents through predictive alerts',
-          'Reduced driver coaching time by 75% through automation',
-          'Improved fleet fuel efficiency by average of 18%'
-        ]
+        priority: 'Fleet Sustainability Dashboard',
+        description: 'Carbon footprint tracking, EV transition planning, and sustainability reporting for ESG compliance',
+        rationale: 'Customers increasingly prioritize sustainability. 67% of enterprise customers asked about carbon tracking. Competitive gap we can fill.',
+        expectedImpact: 'New revenue stream ($50K+ ACV for sustainability module) + competitive differentiation in enterprise market. Helps customers meet ESG mandates.'
       },
       {
-        id: 'product-excellence',
-        title: 'Product Excellence',
-        metrics: [
-          { value: '4.8/5', label: 'User Satisfaction Score', change: '+0.6' },
-          { value: '<200ms', label: 'Average API Response', change: '-65%' },
-          { value: '99.95%', label: 'System Uptime', change: '+0.15%' },
-          { value: '87%', label: 'Feature Adoption', change: '+42%' }
-        ],
-        highlights: [
-          'Highest rated fleet management platform on G2 and Capterra',
-          'Maintained sub-second performance while scaling 25x',
-          'Design system enabled 60% faster feature development',
-          'Accessibility AA compliance across all features'
-        ]
+        priority: 'Multi-Fleet Benchmarking',
+        description: 'Anonymous performance benchmarking against industry peers with similar fleet characteristics',
+        rationale: 'Customers have no external reference point for "is our safety score good?" Benchmarking provides context and drives improvement through competitive dynamics.',
+        expectedImpact: 'Increased engagement (check benchmarks weekly), better retention (see improvement over time), upsell opportunity (premium benchmarking tiers).'
       }
     ],
-    quote: {
-      text: "Numaris transformed how we operate. The AI automation handles the routine work, so our team can focus on strategic improvements. We've reduced accidents by 47% and saved over $2.3M in the first year alone.",
-      author: 'Jennifer Martinez',
-      role: 'VP of Fleet Operations, National Logistics Company'
-    }
+    nextPriorities: [
+      'Expand driver mobile app beyond coaching to include gamification, social features, and rewards marketplace',
+      'Build video intelligence capabilities - automatic highlight reels, coaching moment detection, near-miss compilation',
+      'Enhance executive reporting with natural language query - "Show me safety trends for the Northeast region this quarter"'
+    ],
+    reflections: [
+      'The most exciting opportunities aren\'t just better features - they\'re about transforming fleet management from reactive operations to strategic business optimization.',
+      'As ML models improve with more data (now 250K+ vehicles), the platform gets smarter automatically. The compounding effect of AI + data scale is just beginning.',
+      'The principles that got us here - JTBD research, AI augmentation, cross-functional collaboration - will be even more critical as we tackle these next challenges.'
+    ]
   },
 
   relatedStudies: []

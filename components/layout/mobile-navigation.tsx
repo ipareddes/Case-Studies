@@ -15,19 +15,23 @@ export function MobileNavigation({ sections }: MobileNavigationProps) {
   const handleSectionClick = (sectionId: string) => {
     const element = document.getElementById(sectionId)
     if (element) {
-      const offset = 100
-      const elementPosition = element.offsetTop - offset
+      // Account for fixed header (64px) + mobile nav bar (60px) + extra spacing (40px)
+      const offset = 164
+      const elementPosition = element.getBoundingClientRect().top + window.pageYOffset - offset
+
       window.scrollTo({
         top: elementPosition,
         behavior: 'smooth'
       })
+
+      // Close dropdown after navigation
       setIsOpen(false)
     }
   }
 
   return (
     <div className="lg:hidden fixed top-16 left-0 right-0 z-40 bg-background/95 backdrop-blur-sm border-b border-border">
-      <div className="px-4 py-2">
+      <div className="px-4 py-2 relative">
         {/* Toggle Button */}
         <button
           onClick={() => setIsOpen(!isOpen)}
@@ -44,7 +48,7 @@ export function MobileNavigation({ sections }: MobileNavigationProps) {
 
         {/* Dropdown */}
         {isOpen && (
-          <div className="absolute top-full left-0 right-0 mt-2 rounded-lg border border-border bg-card shadow-lg overflow-hidden z-50 max-h-[60vh] overflow-y-auto">
+          <div className="absolute top-full left-4 right-4 mt-2 rounded-lg border border-border bg-card shadow-lg overflow-hidden z-50 max-h-[60vh] overflow-y-auto">
             {sections.map((section) => (
               <button
                 key={section.id}

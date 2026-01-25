@@ -16,7 +16,7 @@ export function HeroSection({ title, author, stats, image }: HeroSectionProps) {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8 md:mb-12 lg:mb-16">
         {/* Left Column: Title and Role Card */}
         <div className="space-y-8">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight tracking-tight text-foreground">
+          <h1 className="preserve-case text-4xl md:text-5xl lg:text-6xl font-bold leading-tight tracking-tight text-foreground">
             {title}
           </h1>
 

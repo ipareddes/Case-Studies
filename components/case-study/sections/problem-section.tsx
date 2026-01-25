@@ -23,7 +23,7 @@ export function ProblemSectionComponent({ data }: ProblemSectionProps) {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-12">
         {data.painPoints.map((point, index) => (
           <div key={index} className="rounded-lg border bg-card p-6">
-            <h4 className="text-lg font-semibold text-foreground mb-2">
+            <h4 className="card-title-small mb-2">
               {point.title}
             </h4>
             <p className="text-sm text-muted-foreground">

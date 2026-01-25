@@ -1,10 +1,11 @@
 import { CaseStudy } from '../types'
 import { numarisCaseStudy } from './numaris-case-study'
+import { clipCaseStudy } from './clip-case-study'
 
 // Registry of all case studies
 export const caseStudies: CaseStudy[] = [
+  clipCaseStudy,
   numarisCaseStudy,
-  // Add more case studies here as they're created
 ]
 
 // Get a single case study by slug

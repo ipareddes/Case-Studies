@@ -8,16 +8,21 @@ export interface CaseStudy {
   heroStats: HeroStat[]
   heroImage: string
   projectMetadata: ProjectMetadata
-  overview: OverviewSection
+
+  // Updated 12-section structure
+  overview: OverviewSection  // Enhanced with strategic context
   problem: ProblemSection
-  research: ResearchSection
+  process: DesignProcessSection  // NEW: Design methodology & approach
+  research: ResearchInsightsSection  // Enhanced with research methods
   solution: SolutionSection
   features: FeaturesSection
-  scale: ScaleSection
-  impact: ImpactSection
-  challenges: ChallengesSection
-  learnings: LearningsSection
-  results: ResultsSection
+  decisions: KeyDecisionsSection  // Renamed from challenges
+  scale: DesignSystemScaleSection  // Enhanced with design system focus
+  collaboration: CollaborationSection  // NEW: Cross-functional collaboration
+  impact: BusinessImpactSection  // Merged from impact + results
+  learnings: LearningsEvolutionSection  // Enhanced with growth narrative
+  next?: NextStepsSection  // NEW: Optional future roadmap
+
   relatedStudies: RelatedStudy[]
 }
 
@@ -45,12 +50,33 @@ export interface ProjectMetadata {
   tools: string[]
 }
 
-// ========== OVERVIEW SECTION ==========
+// ========== OVERVIEW SECTION (Enhanced with strategic context) ==========
 
 export interface OverviewSection {
+  introduction: string[]
   myRole: string[]
   keyResponsibilities: string[]
-  introduction: string[]
+
+  // NEW: Strategic business objectives
+  strategicObjectives?: {
+    objective: string
+    businessGoal: string
+    yourApproach: string
+  }[]
+
+  // NEW: Cross-functional collaborators
+  collaborators?: {
+    function: string  // "Product Management", "Engineering", "Sales"
+    stakeholders: string[]
+    collaborationType: string
+  }[]
+
+  // NEW: Project timeline
+  timeline?: {
+    phase: string
+    duration: string
+    keyMilestone: string
+  }[]
 }
 
 // ========== PROBLEM SECTION ==========
@@ -73,11 +99,65 @@ export interface CompetitiveAnalysisCard {
   opportunity: string
 }
 
-// ========== RESEARCH SECTION (JTBD) ==========
+// ========== DESIGN PROCESS SECTION (NEW) ==========
 
-export interface ResearchSection {
+export interface DesignProcessSection {
   introduction: string[]
+
+  // Design methodology (phases, activities, deliverables)
+  methodology: {
+    phase: string
+    description: string
+    activities: string[]
+    deliverables: string[]
+    duration?: string
+  }[]
+
+  // Frameworks used (JTBD, Design Sprints, etc.)
+  frameworks?: {
+    name: string
+    description: string
+    howUsed: string
+  }[]
+
+  // Collaboration model with each function
+  collaborationModel?: {
+    team: string
+    role: string
+    cadence: string
+    keyActivities: string[]
+  }[]
+}
+
+// ========== RESEARCH & INSIGHTS SECTION (Enhanced with methodology) ==========
+
+export interface ResearchInsightsSection {
+  introduction: string[]
+
+  // NEW: Research methods used
+  researchMethods?: {
+    method: string  // "User interviews", "Analytics analysis"
+    participants: string
+    keyQuestions: string[]
+    findings: string[]
+  }[]
+
+  // Existing personas structure
   personas: Persona[]
+
+  // NEW: Key insights that drove design decisions
+  keyInsights?: {
+    insight: string
+    evidence: string
+    implication: string
+  }[]
+
+  // NEW: Validation of assumptions
+  validation?: {
+    hypothesis: string
+    method: string
+    result: string
+  }[]
 }
 
 export interface Persona {
@@ -173,13 +253,34 @@ export interface DetailedFeature {
   image?: string
 }
 
-// ========== SCALE SECTION ==========
+// ========== DESIGN SYSTEM & SCALE SECTION (Enhanced) ==========
 
-export interface ScaleSection {
+export interface DesignSystemScaleSection {
   introduction: string[]
+
+  // Design system architecture
+  designSystem?: {
+    title: string
+    description: string
+    components: {
+      name: string
+      description: string
+      reusability: string
+    }[]
+  }
+
+  // Technical implementation
   technicalImplementation: TechnicalImplementation
   architecture: ArchitectureDetail[]
   performanceMetrics: PerformanceMetric[]
+
+  // Scaling narrative (e.g., 10K to 250K users)
+  scalingJourney?: {
+    phase: string
+    userCount: string
+    challenges: string[]
+    solutions: string[]
+  }[]
 }
 
 export interface TechnicalImplementation {
@@ -206,82 +307,166 @@ export interface PerformanceMetric {
   description: string
 }
 
-// ========== IMPACT SECTION ==========
+// ========== BUSINESS IMPACT SECTION (Merged from Impact + Results) ==========
 
-export interface ImpactSection {
+export interface BusinessImpactSection {
   introduction: string[]
-  categories: ImpactCategory[]
+
+  // Impact organized by category (Safety, Efficiency, Revenue, etc.)
+  impactCategories: {
+    category: string
+    description: string
+    metrics: {
+      metric: string
+      before: string
+      after: string
+      change: string
+      trend: 'positive' | 'negative' | 'neutral'
+      businessValue: string  // NEW: Explanation of business value
+    }[]
+    highlights: string[]
+
+    // User testimonials within each category
+    userTestimonial?: {
+      quote: string
+      author: string
+      role: string
+      company: string
+    }
+  }[]
+
+  // Long-term sustainability and impact
+  longTermImpact?: {
+    area: string
+    impact: string
+    sustainability: string
+  }[]
 }
 
-export interface ImpactCategory {
-  id: string
-  title: string
-  description: string
-  metrics: ImpactMetric[]
-  details: string[]
-}
+// ========== KEY DECISIONS & TRADE-OFFS SECTION (Restructured from Challenges) ==========
 
-export interface ImpactMetric {
-  value: string
-  label: string
-  change?: string
-  trend?: 'positive' | 'negative' | 'neutral'
-}
-
-// ========== CHALLENGES SECTION ==========
-
-export interface ChallengesSection {
+export interface KeyDecisionsSection {
   introduction: string[]
-  challenges: Challenge[]
+
+  // Major design decisions
+  decisions: {
+    decision: string
+    context: string
+    optionsConsidered: {
+      option: string
+      pros: string[]
+      cons: string[]
+    }[]
+    chosenApproach: string
+    rationale: string
+    tradeoffs: string[]
+    outcome: string
+  }[]
+
+  // Obstacles encountered (optional)
+  obstacles?: {
+    challenge: string
+    solution: string
+    learnings: string[]
+  }[]
 }
 
-export interface Challenge {
-  title: string
-  description: string
-  solution: string
-  learnings: string[]
-}
+// ========== LEARNINGS & EVOLUTION SECTION (Enhanced with growth narrative) ==========
 
-// ========== LEARNINGS SECTION ==========
-
-export interface LearningsSection {
+export interface LearningsEvolutionSection {
   introduction: string[]
-  keyTakeaways: KeyTakeaway[]
-  recommendations: string[]
+
+  // What worked well
+  whatWorkedWell?: {
+    area: string
+    approach: string
+    why: string
+    replicability: string
+  }[]
+
+  // What you'd do differently
+  whatYoudDoDifferently?: {
+    area: string
+    whatHappened: string
+    betterApproach: string
+    lesson: string
+  }[]
+
+  // How this project shaped your design philosophy
+  designPhilosophy?: {
+    principle: string
+    howThisProjectShapedIt: string
+  }[]
+
+  // Context-specific recommendations
+  recommendations?: {
+    context: string
+    recommendation: string
+    rationale: string
+  }[]
+
+  // Legacy key takeaways structure (for backward compatibility)
+  keyTakeaways?: {
+    title: string
+    description: string
+    impact: string
+  }[]
 }
 
-export interface KeyTakeaway {
-  title: string
-  description: string
-  impact: string
-}
+// ========== CROSS-FUNCTIONAL COLLABORATION SECTION (NEW) ==========
 
-// ========== RESULTS SECTION ==========
-
-export interface ResultsSection {
+export interface CollaborationSection {
   introduction: string[]
-  categories: ResultCategory[]
-  quote?: Quote
+
+  // Collaboration by function
+  functions: {
+    team: string  // "Product Management", "Engineering", "Sales"
+    keyPartners: {
+      name: string
+      role: string
+    }[]
+    collaborationModel: string
+    keyActivities: string[]
+    challenges?: string
+    howYouInfluenced: string
+    outcomes: string[]
+  }[]
+
+  // Stakeholder management journey
+  stakeholderManagement?: {
+    stakeholder: string
+    initialAlignment: string  // "Low", "Medium", "High"
+    strategy: string
+    result: string
+  }[]
+
+  // Design advocacy initiatives
+  designAdvocacy?: {
+    initiative: string
+    challenge: string
+    approach: string
+    impact: string
+  }[]
 }
 
-export interface ResultCategory {
-  id: string
-  title: string
-  metrics: ResultMetric[]
-  highlights: string[]
-}
+// ========== NEXT STEPS SECTION (NEW - Optional) ==========
 
-export interface ResultMetric {
-  value: string
-  label: string
-  change?: string
-  description?: string
-}
+export interface NextStepsSection {
+  introduction: string[]
 
-export interface Quote {
-  text: string
-  author: string
-  role: string
+  // Future roadmap
+  futureRoadmap?: {
+    priority: string
+    description: string
+    rationale: string
+    expectedImpact: string
+  }[]
+
+  // What you'd tackle next
+  nextPriorities?: string[]
+
+  // Forward-thinking reflections
+  reflections?: string[]
 }
 
 // ========== RELATED STUDIES ==========

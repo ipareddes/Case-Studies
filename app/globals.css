@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Updated: 2026-01-25 - Sentence case for all headings */
+
 @layer base {
   :root {
     /* ========== DESIGN TOKENS ========== */
@@ -195,21 +197,36 @@
   * {
     @apply border-border;
   }
-  html,
+  html {
+    overflow-x: clip;
+    max-width: 100vw;
+    scroll-behavior: smooth;
+  }
+
   body {
     @apply bg-background text-foreground;
     font-feature-settings: "rlig" 1, "calt" 1;
     font-family: var(--font-sans);
     font-size: var(--font-size-16);
     line-height: var(--line-height-relaxed);
-    overflow-x: hidden;
+    overflow-x: clip;
     max-width: 100vw;
+    min-height: 100vh;
   }
 
   main {
-    overflow-x: hidden !important;
-    overflow-y: visible !important;
+    overflow-x: clip;
     max-width: 100vw;
+    position: relative;
+  }
+
+  /* Apply sentence case to all headings */
+  h1, h2, h3, h4, h5, h6 {
+    text-transform: lowercase;
+  }
+
+  h1::first-letter, h2::first-letter, h3::first-letter, h4::first-letter, h5::first-letter, h6::first-letter {
+    text-transform: uppercase;
   }
 }
 
@@ -219,6 +236,11 @@
   /* Button Components */
   .btn {
     @apply inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50;
+    text-transform: lowercase;
+  }
+
+  .btn::first-letter {
+    text-transform: uppercase;
   }
 
   .btn-primary {
@@ -249,6 +271,10 @@
     @apply text-2xl font-semibold leading-none tracking-tight;
   }
 
+  .card-title-small {
+    @apply text-lg font-semibold text-foreground;
+  }
+
   .card-description {
     @apply text-sm text-muted-foreground;
   }
@@ -272,11 +298,21 @@
 
   .stat-label {
     @apply text-sm text-muted-foreground;
+    text-transform: lowercase;
+  }
+
+  .stat-label::first-letter {
+    text-transform: uppercase;
   }
 
   /* Badge Component */
   .badge {
     @apply inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2;
+    text-transform: lowercase;
+  }
+
+  .badge::first-letter {
+    text-transform: uppercase;
   }
 
   .badge-default {
@@ -294,6 +330,11 @@
   /* Navigation */
   .nav-link {
     @apply text-sm font-medium transition-colors hover:text-accent;
+    text-transform: lowercase;
+  }
+
+  .nav-link::first-letter {
+    text-transform: uppercase;
   }
 
   /* Section Titles */
@@ -303,6 +344,50 @@
 
   .subsection-title {
     @apply text-xl font-semibold tracking-tight text-foreground mt-12 mb-4;
+  }
+
+  /* ========== TEXT TRANSFORM UTILITIES ========== */
+  /* Control text casing through CSS instead of hardcoding in content */
+
+  /* Sentence case: "This is a sentence" */
+  .sentence-case {
+    text-transform: lowercase !important;
+  }
+
+  .sentence-case::first-letter {
+    text-transform: uppercase !important;
+  }
+
+  /* Title case: "This Is A Title" */
+  .title-case {
+    text-transform: capitalize !important;
+  }
+
+  /* Preserve original case from content */
+  .preserve-case {
+    text-transform: none !important;
+  }
+
+  .preserve-case::first-letter {
+    text-transform: none !important;
+  }
+
+  /* Usage Notes:
+     - ALL headings use sentence-case by default (applied in @layer base)
+     - Use .preserve-case for proper nouns, acronyms (e.g., "POS", "API", "iOS")
+     - Use .title-case to override with title case for specific headings
+     - Data can be stored in any case; styling is controlled here
+  */
+
+  /* Section Scroll Margin - ensures proper spacing when navigating via anchor links */
+  section[id] {
+    scroll-margin-top: 120px; /* Desktop: header + spacing */
+  }
+
+  @media (max-width: 1023px) {
+    section[id] {
+      scroll-margin-top: 180px; /* Mobile: header + mobile nav + spacing */
+    }
   }
 
   /* Body Text */
@@ -334,12 +419,35 @@
 
   /* Tabs Component - shadcn/ui pill style */
   .tabs {
-    @apply inline-flex items-center justify-center rounded-lg bg-muted p-1 text-muted-foreground mb-6;
+    @apply flex items-center rounded-lg bg-muted p-1 text-muted-foreground mb-6;
+    width: 100%;
+    gap: 0.25rem;
+    overflow-x: auto;
+    overflow-y: hidden;
+    flex-wrap: nowrap;
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-border-medium) transparent;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .tabs::-webkit-scrollbar {
+    height: 6px;
+  }
+
+  .tabs::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .tabs::-webkit-scrollbar-thumb {
+    background: var(--color-border-medium);
+    border-radius: 3px;
   }
 
   .tab-button {
     @apply inline-flex items-center justify-center whitespace-nowrap rounded-md px-3 py-1.5 text-sm font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50;
     @apply data-[state=active]:bg-background data-[state=active]:text-foreground data-[state=active]:shadow-sm;
+    text-transform: capitalize;
+    flex-shrink: 0;
   }
 
   .tab-button.active {
@@ -366,6 +474,11 @@
 
   .metric-title {
     @apply text-sm font-medium text-muted-foreground mb-2;
+    text-transform: lowercase;
+  }
+
+  .metric-title::first-letter {
+    text-transform: uppercase;
   }
 
   .metric-value {
@@ -401,7 +514,9 @@
 
   /* 3-Column Layout */
   .three-column-layout {
-    @apply grid grid-cols-1 gap-12 items-start;
+    @apply grid grid-cols-1 gap-12;
+    align-items: start;
+    position: relative;
   }
 
   @media (min-width: 768px) {
@@ -422,36 +537,86 @@
     }
   }
 
+  /* Ensure main content column doesn't overflow */
+  .three-column-layout > div:nth-child(2) {
+    min-width: 0;
+  }
+
   /* Project Sidebar */
   @media (min-width: 768px) {
     .project-sidebar {
-      position: sticky !important;
-      top: 100px !important;
+      position: -webkit-sticky;
+      position: sticky;
+      top: 120px;
       align-self: start;
-      max-height: calc(100vh - 120px);
+      height: fit-content;
+      max-height: calc(100vh - 140px);
       overflow-y: auto;
       z-index: 10;
       scrollbar-width: thin;
       scrollbar-color: var(--color-border-medium) transparent;
+    }
+
+    .project-sidebar::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    .project-sidebar::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    .project-sidebar::-webkit-scrollbar-thumb {
+      background: var(--color-border-medium);
+      border-radius: 3px;
     }
   }
 
   /* On This Page Navigation */
   @media (min-width: 1280px) {
     .on-this-page-nav {
+      position: -webkit-sticky;
       position: sticky;
-      top: 100px;
+      top: 120px;
       align-self: start;
-      max-height: calc(100vh - 120px);
+      height: fit-content;
+      max-height: calc(100vh - 140px);
       overflow-y: auto;
+      scrollbar-width: thin;
+      scrollbar-color: var(--color-border-medium) transparent;
+    }
+
+    .on-this-page-nav::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    .on-this-page-nav::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    .on-this-page-nav::-webkit-scrollbar-thumb {
+      background: var(--color-border-medium);
+      border-radius: 3px;
     }
   }
 
   .on-page-link {
     @apply block text-sm text-muted-foreground hover:text-foreground transition-colors py-1;
+    text-transform: lowercase;
+  }
+
+  .on-page-link::first-letter {
+    text-transform: uppercase;
   }
 
   .on-page-link.active {
     @apply text-foreground font-medium;
+  }
+
+  /* Mobile Navigation - Ensure dropdown is visible */
+  @media (max-width: 1023px) {
+    body {
+      overflow-x: clip;
+      overflow-y: auto;
+    }
   }
 }
