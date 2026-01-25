@@ -1,3 +1,5 @@
+'use client'
+
 import { LearningsEvolutionSection } from '@/lib/types'
 import { Accordion } from '@/components/ui/accordion'
 

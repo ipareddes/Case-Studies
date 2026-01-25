@@ -1,3 +1,5 @@
+'use client'
+
 import type { CollaborationSection as CollaborationSectionType } from '@/lib/types'
 import { Accordion } from '@/components/ui/accordion'
 

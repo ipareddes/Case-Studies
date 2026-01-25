@@ -1,3 +1,5 @@
+'use client'
+
 import { DesignSystemScaleSection } from '@/lib/types'
 import { Accordion } from '@/components/ui/accordion'
 
