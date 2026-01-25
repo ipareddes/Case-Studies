@@ -2,20 +2,20 @@ import type { DesignProcessSection as DesignProcessSectionType } from '@/lib/typ
 
 export function DesignProcessSection({ section }: { section: DesignProcessSectionType }) {
   return (
-    <section id="process" className="mb-16">
-      <h2 className="text-3xl font-bold mb-6">Design Process</h2>
+    <section id="process" className="mb-12 md:mb-16 lg:mb-24">
+      <h2 className="section-title">Design process</h2>
 
       {/* Introduction */}
-      <div className="mb-8">
+      <div className="space-y-6 mb-12">
         {section.introduction.map((paragraph, index) => (
-          <p key={index} className="text-gray-600 mb-4">{paragraph}</p>
+          <p key={index} className="body-text">{paragraph}</p>
         ))}
       </div>
 
       {/* Methodology Timeline */}
       {section.methodology && section.methodology.length > 0 && (
         <div className="mb-12">
-          <h3 className="text-2xl font-semibold mb-6">Methodology</h3>
+          <h3 className="subsection-title">Methodology</h3>
           <div className="space-y-8">
             {section.methodology.map((phase, index) => (
               <div key={index} className="relative pl-8 border-l-2 border-blue-200">
@@ -64,7 +64,7 @@ export function DesignProcessSection({ section }: { section: DesignProcessSectio
       {/* Frameworks Used */}
       {section.frameworks && section.frameworks.length > 0 && (
         <div className="mb-12">
-          <h3 className="text-2xl font-semibold mb-6">Frameworks & Methods</h3>
+          <h3 className="subsection-title">Frameworks & methods</h3>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {section.frameworks.map((framework, index) => (
               <div key={index} className="bg-white border border-gray-200 rounded-lg p-6">

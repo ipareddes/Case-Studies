@@ -98,13 +98,13 @@ export function CollaborationSection({ section }: { section: CollaborationSectio
   })) || []
 
   return (
-    <section id="collaboration" className="mb-16">
-      <h2 className="text-3xl font-bold mb-6">Cross-functional collaboration</h2>
+    <section id="collaboration" className="mb-12 md:mb-16 lg:mb-24">
+      <h2 className="section-title">Cross-functional collaboration</h2>
 
       {/* Introduction */}
-      <div className="mb-8">
+      <div className="space-y-6 mb-12">
         {section.introduction.map((paragraph, index) => (
-          <p key={index} className="text-gray-600 mb-4">{paragraph}</p>
+          <p key={index} className="body-text">{paragraph}</p>
         ))}
       </div>
 
@@ -118,7 +118,7 @@ export function CollaborationSection({ section }: { section: CollaborationSectio
       {/* Stakeholder Management Accordion */}
       {stakeholderAccordionItems.length > 0 && (
         <div className="mb-12">
-          <h3 className="text-2xl font-semibold mb-6">Stakeholder management journey</h3>
+          <h3 className="subsection-title">Stakeholder management journey</h3>
           <Accordion items={stakeholderAccordionItems} />
         </div>
       )}
@@ -126,7 +126,7 @@ export function CollaborationSection({ section }: { section: CollaborationSectio
       {/* Design Advocacy */}
       {section.designAdvocacy && section.designAdvocacy.length > 0 && (
         <div>
-          <h3 className="text-2xl font-semibold mb-6">Design advocacy initiatives</h3>
+          <h3 className="subsection-title">Design advocacy initiatives</h3>
           <div className="grid md:grid-cols-2 gap-6">
             {section.designAdvocacy.map((initiative, index) => (
               <div key={index} className="bg-white border border-gray-200 rounded-lg p-6">
