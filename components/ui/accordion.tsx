@@ -58,7 +58,7 @@ export function Accordion({ items, className }: AccordionProps) {
                 isOpen ? "max-h-[2000px] opacity-100" : "max-h-0 opacity-0 overflow-hidden"
               )}
             >
-              <div className="p-6 pt-0 border-t border-border">
+              <div className="px-6 pb-6 pt-4 border-t border-border">
                 {item.content}
               </div>
             </div>
