@@ -527,82 +527,211 @@ export const gbmCaseStudy: CaseStudy = {
     ],
     personaFeatures: [
       {
-        persona: 'Curious Beginner',
-        description: 'First 6 months: Building confidence through low-stakes experimentation',
+        personaId: 'curious-beginner',
+        personaName: 'María',
+        personaTitle: 'The Curious Beginner',
+        jobToBeDone: 'Build confidence through low-stakes experimentation during first 6 months',
         features: [
           {
             title: 'Simplified line charts',
             description: 'Color-coded green (gains) and red (losses) with basic timeframes (1D, 1W, 1M, 1Y). No overwhelming technical indicators.',
-            impact: 'Chart abandonment reduced from 64% to 23% in beginner cohort'
+            solves: [
+              'Complex charts with technical indicators overwhelm beginners',
+              'Chart abandonment rate of 64% in beginner cohort',
+              'Users feel intimidated by professional-looking interfaces'
+            ],
+            benefits: [
+              'Chart abandonment reduced from 64% to 23%',
+              'Color coding makes gains/losses immediately clear',
+              'Focus on essential timeframes reduces cognitive load',
+              'Users feel confident exploring market data'
+            ]
           },
           {
             title: 'Fractional share calculator',
             description: 'Input any amount: "With $50, you own 0.27 shares of Apple." Makes ownership tangible and accessible.',
-            impact: 'Average first deposit increased from $185 to $87, lowering barrier to entry'
+            solves: [
+              'High minimum investment barriers ($10,000+ traditional brokers)',
+              'Abstract concept of fractional ownership',
+              'Users can\'t afford full shares of expensive stocks'
+            ],
+            benefits: [
+              'Average first deposit lowered to $87 (vs $10,000 industry standard)',
+              'Makes ownership tangible with real share calculations',
+              'Removes psychological barrier of high minimums',
+              'Enables diversification with small amounts'
+            ]
           },
           {
             title: 'Goal-based investing prompts',
             description: 'Concrete goals like "Save for iPhone 15: $1/day for 6 months = $180 + earnings." Transforms abstract investing into tangible outcomes.',
-            impact: 'Goal-setters had 2.7x higher retention than non-goal users'
+            solves: [
+              'Abstract "wealth building" feels disconnected from real life',
+              'No clear motivation or purpose for saving',
+              'Difficulty visualizing long-term investment impact'
+            ],
+            benefits: [
+              'Goal-setters have 2.7x higher retention rate',
+              'Concrete targets create motivation and accountability',
+              'Daily amounts make goals feel achievable',
+              'Transforms investing from abstract to tangible'
+            ]
           },
           {
             title: 'Inline financial education',
             description: 'Hover over any term (P/E ratio, dividend, market order) to see plain-language explanation. No mandatory tutorials.',
-            impact: 'Education engagement 340% higher than mandatory tutorial approach'
+            solves: [
+              'Financial jargon creates intimidation and confusion',
+              'Mandatory tutorials feel condescending and boring',
+              'Users want to learn at their own pace, not forced education'
+            ],
+            benefits: [
+              'Education engagement 340% higher than mandatory tutorials',
+              'Learn financial terms in context when needed',
+              'No interruption to primary task flow',
+              'Plain-language explanations build confidence'
+            ]
           }
-        ]
+        ],
+        impact: 'Beginner users achieved 47% first trade conversion (vs 18% before) and 89% onboarding completion, with average first deposit dropping to $87 from industry standard $10,000.'
       },
       {
-        persona: 'Learning Trader',
-        description: '6-18 months: Transitioning to intermediate tools and strategy development',
+        personaId: 'learning-trader',
+        personaName: 'Carlos',
+        personaTitle: 'The Learning Trader',
+        jobToBeDone: 'Transition to intermediate tools and develop investment strategy over 6-18 months',
         features: [
           {
             title: 'Candlestick charts with education',
             description: 'Unlocks after 10+ chart interactions. Inline education explains bullish/bearish patterns without overwhelming.',
-            impact: 'Technical analysis usage increased 3.2x vs static complexity'
+            solves: [
+              'Outgrown simple line charts but overwhelmed by pro complexity',
+              'No clear learning path for technical analysis',
+              'Static interfaces can\'t adapt to growing sophistication'
+            ],
+            benefits: [
+              'Technical analysis usage increased 3.2x',
+              'Progressive unlocking prevents overwhelm',
+              'Inline education maintains learning momentum',
+              'Users feel progress without interface switching'
+            ]
           },
           {
             title: 'Key technical indicators',
             description: '3-5 essential indicators (SMA, RSI, MACD) with plain-language explanations. Not 200+ professional indicators.',
-            impact: 'Holding period extended from 18 to 143 days average'
+            solves: [
+              'Professional platforms offer 200+ indicators causing paralysis',
+              'No guidance on which indicators actually matter',
+              'Overwhelming complexity leads to abandonment'
+            ],
+            benefits: [
+              'Holding period extended from 18 to 143 days',
+              'Focused set of indicators enables better decisions',
+              'Plain-language explanations build understanding',
+              'Users develop systematic analysis approach'
+            ]
           },
           {
             title: 'Stock comparison tool',
             description: 'Compare Apple vs Microsoft vs index. Side-by-side charts with performance metrics.',
-            impact: 'Pre-trade research time increased 2.3x, leading to better decisions'
+            solves: [
+              'Difficulty evaluating stocks against each other',
+              'No benchmark comparison to index performance',
+              'Switching between tabs disrupts analysis flow'
+            ],
+            benefits: [
+              'Pre-trade research time increased 2.3x',
+              'Side-by-side comparison enables informed decisions',
+              'Benchmark against index shows relative performance',
+              'Better decisions lead to longer holding periods'
+            ]
           },
           {
             title: 'Community insights',
             description: 'See popular holdings, trending stocks, peer portfolio allocations. Provides social validation.',
-            impact: 'Portfolio diversification improved from 2.1 to 11.3 average holdings'
+            solves: [
+              'Isolated trading experience with no peer feedback',
+              'Uncertainty about portfolio diversification',
+              'Desire for social validation in investment decisions'
+            ],
+            benefits: [
+              'Portfolio diversification improved from 2.1 to 11.3 holdings',
+              'Social validation reduces decision anxiety',
+              'Learn from successful peer strategies',
+              'Trending insights spark discovery'
+            ]
           }
-        ]
+        ],
+        impact: 'Learning traders increased technical analysis usage 3.2x and extended holding periods from 18 to 143 days, demonstrating more thoughtful investment behavior and strategic decision-making.'
       },
       {
-        persona: 'Power User',
-        description: '18+ months: Full institutional-grade tools on mobile and desktop',
+        personaId: 'power-user',
+        personaName: 'Ana',
+        personaTitle: 'The Power User',
+        jobToBeDone: 'Access institutional-grade tools on mobile and desktop after 18+ months',
         features: [
           {
             title: 'Full TradingView integration',
             description: 'Complete charting suite with Pine Script custom indicators, pattern recognition, multi-chart layouts.',
-            impact: 'Power user retention 94% vs 76% general population'
+            solves: [
+              'Limited charting capabilities on mobile platforms',
+              'Cannot customize indicators with Pine Script',
+              'Need multiple chart panes for comparison analysis'
+            ],
+            benefits: [
+              'Power user retention 94% (vs 76% general population)',
+              'Full professional suite without sacrificing mobile',
+              'Custom indicators enable personalized strategies',
+              'Multi-chart layouts support complex analysis'
+            ]
           },
           {
             title: 'Advanced order types',
             description: 'Stop-loss, trailing stops, limit orders, conditional orders—all accessible on mobile.',
-            impact: 'Risk management adoption increased 5.8x with mobile accessibility'
+            solves: [
+              'Mobile apps typically lack advanced order types',
+              'Desktop-only features force platform switching',
+              'Cannot manage risk effectively on mobile'
+            ],
+            benefits: [
+              'Risk management adoption increased 5.8x',
+              'Full trading capabilities on mobile maintains convenience',
+              'Trailing stops enable dynamic risk management',
+              'Conditional orders automate trading strategies'
+            ]
           },
           {
             title: 'Multi-account management',
             description: 'Manage personal, retirement, family accounts from single dashboard. Bulk trades across accounts.',
-            impact: 'Average power user manages 2.7 accounts, 4.7x lifetime value'
+            solves: [
+              'Managing multiple accounts requires separate logins',
+              'No unified view of total portfolio',
+              'Executing same trade across accounts is tedious'
+            ],
+            benefits: [
+              'Average power user manages 2.7 accounts',
+              '4.7x lifetime value vs single-account users',
+              'Unified dashboard provides holistic view',
+              'Bulk trades save time and ensure consistency'
+            ]
           },
           {
             title: 'API access',
             description: 'RESTful API for automated trading strategies, portfolio rebalancing, custom analytics.',
-            impact: 'API users trade 12x more frequently, highest lifetime value segment'
+            solves: [
+              'Cannot automate trading strategies',
+              'Manual portfolio rebalancing is time-consuming',
+              'No way to build custom analytics'
+            ],
+            benefits: [
+              'API users trade 12x more frequently',
+              'Highest lifetime value segment',
+              'Automated strategies run 24/7',
+              'Custom analytics enable sophisticated analysis'
+            ]
           }
-        ]
+        ],
+        impact: 'Power users achieved 94% retention (vs 76% general population) with 4.7x lifetime value, managing an average of 2.7 accounts per user and driving 12x trading frequency through API access.'
       }
     ],
     automationWorkflow: {
@@ -636,29 +765,7 @@ export const gbmCaseStudy: CaseStudy = {
         'Maintains single codebase—no separate "pro" app needed',
         'Users never feel "stuck" in oversimplified interface'
       ]
-    },
-    featureToNeedMapping: [
-      {
-        need: 'I want to start investing but can\'t afford $10,000 minimum',
-        features: ['Zero minimums', 'Fractional shares from $1', 'Goal-based investing prompts'],
-        metrics: 'Average first deposit $87 (down from $10,000 industry standard)'
-      },
-      {
-        need: 'I don\'t understand financial jargon or how markets work',
-        features: ['Inline education for every term', 'Simplified charts first', 'No mandatory tutorials'],
-        metrics: 'Education engagement 340% higher, 89% onboarding completion'
-      },
-      {
-        need: 'I\'m ready for more advanced tools but don\'t want desktop-only',
-        features: ['Adaptive charting unlocks', 'Advanced orders on mobile', 'Progressive indicator access'],
-        metrics: 'Mobile trading 78% of all trades, 2.4x mobile conversion rate'
-      },
-      {
-        need: 'I want professional tools without sacrificing mobile experience',
-        features: ['Full TradingView on mobile', 'API access', 'Multi-account management'],
-        metrics: 'Power user retention 94%, 4.7x lifetime value vs industry'
-      }
-    ]
+    }
   },
 
   decisions: {
@@ -762,73 +869,100 @@ export const gbmCaseStudy: CaseStudy = {
       'Scaling from 400K to 2.1M users required more than infrastructure—it required a design system that maintained coherence while supporting platform evolution, crisis response playbooks, and accessibility at scale.',
       'The challenge wasn\'t just handling 5.25x user growth; it was maintaining 4.7/5 satisfaction during COVID market crash 10x traffic spikes, adding fractional shares without breaking mental models, and ensuring blind users could trade independently.'
     ],
-    systemArchitecture: {
-      description: 'Component-based design system with adaptive states for each user archetype',
+    technicalImplementation: {
+      title: 'Adaptive Design System Architecture',
+      description: 'Component-based design system with adaptive states for each user archetype, enabling progressive complexity without mode switching',
       components: [
         {
           name: 'Adaptive Chart Component',
           description: 'Single chart component with three complexity states (simple, intermediate, advanced) determined by user sophistication score.',
-          technologies: ['TradingView API', 'React Native', 'Behavioral trigger system'],
-          reusability: 'Used across mobile, web, watchlists, stock detail pages. 64% less abandonment with behavioral adaptation.'
+          technologies: ['TradingView API', 'React Native', 'Behavioral trigger system']
         },
         {
           name: 'Order Entry Modal',
           description: 'Market/limit/stop order forms with contextual education, real-time validation, and smart defaults based on user archetype.',
-          technologies: ['React forms', 'Real-time FX API', 'Regulatory compliance hooks'],
-          reusability: 'Reused for stocks, ETFs, options, crypto. Reduced from 8-step to 3-tap flow on mobile.'
+          technologies: ['React forms', 'Real-time FX API', 'Regulatory compliance hooks']
         },
         {
           name: 'Portfolio Visualization',
           description: 'Adaptive portfolio view: simple pie chart for beginners, detailed holdings table for intermediate, advanced analytics for power users.',
-          technologies: ['D3.js', 'Real-time pricing WebSocket', 'Multi-currency reconciliation'],
-          reusability: 'Scales from 1 holding to 100+ without performance degradation. Handles fractional shares to 0.0001 precision.'
+          technologies: ['D3.js', 'Real-time pricing WebSocket', 'Multi-currency reconciliation']
         },
         {
           name: 'Crisis Communication System',
           description: 'Banner + contextual overlays that activate during circuit breakers, high volatility, system issues. Historical context + educational content.',
-          technologies: ['Real-time event bus', 'Historical market data', 'Behavioral intervention engine'],
-          reusability: 'Activated during COVID crash, March 2020. 28% reduction in panic selling vs historical averages.'
-        }
-      ],
-      technicalChallenges: [
-        {
-          challenge: 'Real-time FX reconciliation across dual markets',
-          solution: 'Built reconciliation engine handling 10K+ transactions/second with <50ms latency. Real-time conversion at execution rates, not quote rates.',
-          result: 'Zero FX-related user complaints during 3 years. 68% of portfolios hold both Mexican and US stocks seamlessly.'
-        },
-        {
-          challenge: 'Fractional share ownership tracking to 0.0001 precision',
-          solution: 'Custom ledger system for fractional positions. Proportional dividend calculation, corporate action handling, voting rights reconciliation.',
-          result: 'Average portfolio diversification increased from 2.1 to 11.3 stocks. 94% fractional share adoption.'
-        },
-        {
-          challenge: '10x traffic spikes during COVID market crash',
-          solution: 'Auto-scaling infrastructure + graceful degradation. Queue trades during high load, clear progress indicators, maintain order integrity.',
-          result: 'Zero trading outages during March 2020 crash. 87% user satisfaction with crisis handling vs 34% competitor average.'
+          technologies: ['Real-time event bus', 'Historical market data', 'Behavioral intervention engine']
         }
       ]
     },
-    growthMetrics: [
+    architecture: [
+      {
+        title: 'Real-time FX reconciliation across dual markets',
+        description: 'Built reconciliation engine handling 10K+ transactions/second with <50ms latency. Real-time conversion at execution rates, not quote rates.',
+        details: [
+          'Multi-currency portfolio tracking (MXN/USD)',
+          'Real-time FX conversion at execution rates',
+          'Handles 10K+ transactions per second',
+          'Sub-50ms latency for price updates',
+          'Zero FX-related complaints in 3 years',
+          '68% of portfolios hold both Mexican and US stocks seamlessly'
+        ]
+      },
+      {
+        title: 'Fractional share ownership tracking to 0.0001 precision',
+        description: 'Custom ledger system for fractional positions. Proportional dividend calculation, corporate action handling, voting rights reconciliation.',
+        details: [
+          'Fractional ownership tracking to 0.0001 precision',
+          'Proportional dividend calculation',
+          'Corporate action handling (splits, mergers)',
+          'Voting rights reconciliation for fractional holders',
+          'Average diversification increased from 2.1 to 11.3 stocks',
+          '94% fractional share adoption rate'
+        ]
+      },
+      {
+        title: 'Crisis resilience during 10x traffic spikes',
+        description: 'Auto-scaling infrastructure + graceful degradation. Queue trades during high load, clear progress indicators, maintain order integrity.',
+        details: [
+          'Auto-scaling infrastructure for traffic spikes',
+          'Graceful degradation during high load',
+          'Trade queueing with clear progress indicators',
+          'Order integrity maintained under stress',
+          'Zero trading outages during March 2020 COVID crash',
+          '87% satisfaction with crisis handling (vs 34% competitor average)'
+        ]
+      }
+    ],
+    performanceMetrics: [
       {
         metric: 'Platform scale',
-        before: '400K active accounts, $800M AUM',
-        after: '2.1M active accounts, $4.8B AUM',
-        change: '5.25x user growth, 6x assets',
-        impact: 'Maintained 4.7/5 satisfaction while scaling. Infrastructure costs grew 2.3x (not 5.25x) due to smart caching.'
+        value: '5.25x user growth (400K → 2.1M)',
+        description: 'Scaled from 400K to 2.1M active accounts and $800M to $4.8B AUM while maintaining 4.7/5 satisfaction. Infrastructure costs grew 2.3x (not 5.25x) due to smart caching and optimization.'
       },
       {
         metric: 'Design system coverage',
-        before: 'Ad-hoc components, no documentation',
-        after: '200+ documented components, 95% design system coverage',
-        change: '95% coverage across mobile/web',
-        impact: 'Feature development time reduced 40%. Consistency increased, user testing focused on new patterns.'
+        value: '95% coverage',
+        description: 'Built 200+ documented components achieving 95% design system coverage across mobile and web. Feature development time reduced 40%, with user testing focused on new patterns rather than inconsistencies.'
       },
       {
         metric: 'Accessibility compliance',
-        before: 'No screen reader support, keyboard navigation broken',
-        after: 'WCAG 2.1 AA compliant, full screen reader support',
-        change: 'First investment app for blind users',
-        impact: '12K+ visually impaired users trading independently. Industry recognition for accessibility leadership.'
+        value: 'WCAG 2.1 AA',
+        description: 'First Mexican investment app with full screen reader support and WCAG 2.1 AA compliance. 12K+ visually impaired users trading independently with industry recognition for accessibility leadership.'
+      },
+      {
+        metric: 'Component reusability',
+        value: '64% abandonment reduction',
+        description: 'Adaptive Chart Component used across mobile, web, watchlists, and stock detail pages. 64% less abandonment with behavioral adaptation vs static complexity.'
+      },
+      {
+        metric: 'Mobile order flow',
+        value: '8-step to 3-tap',
+        description: 'Order Entry Modal reduced from 8-step to 3-tap flow on mobile. Reused for stocks, ETFs, options, and crypto trading with contextual education and smart defaults.'
+      },
+      {
+        metric: 'Crisis response',
+        value: '28% panic selling reduction',
+        description: 'Crisis Communication System activated during COVID crash (March 2020). 28% reduction in panic selling vs historical averages through historical context and educational overlays.'
       }
     ]
   },

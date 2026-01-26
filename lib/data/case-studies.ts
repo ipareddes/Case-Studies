@@ -3,9 +3,11 @@ import { numarisCaseStudy } from './numaris-case-study'
 import { clipCaseStudy } from './clip-case-study'
 import { mercadoPagoCaseStudy } from './mercadopago-case-study'
 import { gbmCaseStudy } from './gbm-case-study'
+import { yaloCaseStudy } from './yalo-case-study'
 
 // Registry of all case studies
 export const caseStudies: CaseStudy[] = [
+  yaloCaseStudy,
   gbmCaseStudy,
   mercadoPagoCaseStudy,
   clipCaseStudy,
