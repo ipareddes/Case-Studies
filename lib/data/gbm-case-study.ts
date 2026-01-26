@@ -666,7 +666,7 @@ export const gbmCaseStudy: CaseStudy = {
       'Three critical architectural decisions shaped the platform: single adaptive interface vs separate beginner/advanced apps, behavioral inference vs manual mode selection, and zero-commission model vs traditional fee structure.',
       'Each decision involved significant technical complexity and cross-functional negotiation with engineering, compliance, and business teams. The trade-offs were not obvious, and wrong choices would have led to feature bloat or simplified dead-ends.'
     ],
-    criticalDecisions: [
+    decisions: [
       {
         decision: 'Single adaptive interface vs separate beginner/advanced apps',
         context: 'Industry standard: Separate "lite" and "pro" apps. Robinhood simple for all. TradingView complex for all. No one successfully served both.',
