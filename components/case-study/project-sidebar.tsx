@@ -1,5 +1,6 @@
 import { ProjectMetadata } from '@/lib/types'
 import { Building2, Users, MapPin, Calendar, Wrench } from 'lucide-react'
+import Image from 'next/image'
 
 interface ProjectSidebarProps {
   metadata: ProjectMetadata
@@ -8,21 +9,37 @@ interface ProjectSidebarProps {
 export function ProjectSidebar({ metadata }: ProjectSidebarProps) {
   return (
     <aside className="project-sidebar">
-      {/* Company */}
-      <div className="mb-3 pb-3 border-b border-border">
-        <div className="flex items-center gap-3 mb-2">
+      {/* Company Logo Header */}
+      <div className="mb-6 pb-4 border-b border-border">
+        <div className="flex items-center gap-4">
+          {/* Logo */}
           {metadata.companyLogo ? (
-            <img
-              src={metadata.companyLogo}
-              alt={metadata.company}
-              className="w-6 h-6"
-            />
+            <div className="flex-shrink-0 w-16 h-16 rounded-2xl bg-gray-100 border border-gray-200 overflow-hidden flex items-center justify-center p-2">
+              <Image
+                src={metadata.companyLogo}
+                alt={metadata.company}
+                width={64}
+                height={64}
+                className="w-full h-full object-contain"
+              />
+            </div>
           ) : (
-            <div className="w-6 h-6 rounded-full bg-gradient-to-br from-accent to-primary flex items-center justify-center text-white text-xs font-semibold">
+            <div className="flex-shrink-0 w-16 h-16 rounded-2xl bg-gradient-to-br from-accent to-primary flex items-center justify-center text-white text-2xl font-bold">
               {metadata.company.charAt(0)}
             </div>
           )}
-          <span className="font-semibold text-foreground">{metadata.company}</span>
+
+          {/* Company Name & Product */}
+          <div className="flex-1 min-w-0">
+            <h2 className="font-bold text-lg text-foreground leading-tight">
+              {metadata.company}
+            </h2>
+            {metadata.productName && (
+              <p className="text-sm text-muted-foreground mt-0.5">
+                {metadata.productName}
+              </p>
+            )}
+          </div>
         </div>
       </div>
 

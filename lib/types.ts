@@ -42,6 +42,7 @@ export interface HeroStat {
 export interface ProjectMetadata {
   company: string
   companyLogo?: string
+  productName?: string
   overview: string
   sector: string
   teamSize: string
@@ -188,9 +189,20 @@ export interface PersonaMetric {
 
 export interface SolutionSection {
   introduction: string[]
-  approach: string[]
+  approach: {
+    title: string
+    description: string
+    image?: string
+  }[]
   beforeAfter: BeforeAfter[]
-  keyFeatures: string[]
+  keyFeatures: {
+    title: string
+    description: string
+  }[]
+  images?: {
+    src: string
+    alt: string
+  }[]
 }
 
 export interface BeforeAfter {

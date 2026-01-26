@@ -338,10 +338,22 @@ export const numarisCaseStudy: CaseStudy = {
       '3. Unified Data - Single source of truth for all fleet operations'
     ],
     approach: [
-      'We redesigned the platform architecture around user jobs rather than data types',
-      'Implemented AI-powered prioritization that surfaced critical actions first',
-      'Created role-based dashboards with intelligent defaults',
-      'Built flexible automation rules that users could customize to their workflows'
+      {
+        title: 'User-centric architecture',
+        description: 'We redesigned the platform architecture around user jobs rather than data types'
+      },
+      {
+        title: 'AI-powered prioritization',
+        description: 'Implemented AI-powered prioritization that surfaced critical actions first'
+      },
+      {
+        title: 'Role-based dashboards',
+        description: 'Created role-based dashboards with intelligent defaults'
+      },
+      {
+        title: 'Flexible automation',
+        description: 'Built flexible automation rules that users could customize to their workflows'
+      }
     ],
     beforeAfter: [
       {
@@ -392,12 +404,30 @@ export const numarisCaseStudy: CaseStudy = {
       }
     ],
     keyFeatures: [
-      'AI-powered alert prioritization',
-      'Custom automation workflows',
-      'Role-based dashboards',
-      'Predictive maintenance',
-      'Real-time KPI tracking',
-      'Automated coaching workflows'
+      {
+        title: 'AI-powered alert prioritization',
+        description: 'Machine learning reduces alert noise by 60% through intelligent filtering'
+      },
+      {
+        title: 'Custom automation workflows',
+        description: 'No-code builder empowers managers to create tailored coaching responses'
+      },
+      {
+        title: 'Role-based dashboards',
+        description: 'Personalized views for fleet managers, safety officers, and executives'
+      },
+      {
+        title: 'Predictive maintenance',
+        description: 'Anticipate vehicle issues before they cause safety incidents or downtime'
+      },
+      {
+        title: 'Real-time KPI tracking',
+        description: 'Live metrics for safety scores, fuel efficiency, and compliance rates'
+      },
+      {
+        title: 'Automated coaching workflows',
+        description: 'Immediate feedback loops turning safety events into learning moments'
+      }
     ]
   },
 

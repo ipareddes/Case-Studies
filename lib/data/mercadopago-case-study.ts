@@ -22,6 +22,8 @@ export const mercadoPagoCaseStudy: CaseStudy = {
 
   projectMetadata: {
     company: 'Mercado Pago',
+    companyLogo: '/images/mercadopago/logo.png',
+    productName: 'Investing',
     overview: 'Trust-first investment platform that transformed 6M+ unbanked users into investors through behavioral insights, transparent design, and zero-commitment entry.',
     sector: 'Fintech & Financial Inclusion',
     teamSize: '25+ (Lead Designer + 3 Designers, 20 Engineers, PMs, Legal/Compliance)',
@@ -59,7 +61,7 @@ export const mercadoPagoCaseStudy: CaseStudy = {
     painPoints: [
       {
         title: 'Institutional distrust',
-        description: 'Users had been systematically excluded by traditional banks through high minimums (₱5,000+), hidden fees, and unclear terms. Past betrayals created deep skepticism toward any financial product, especially from established institutions.'
+        description: 'Users had been systematically excluded by traditional banks through high minimums ($5,000+), hidden fees, and unclear terms. Past betrayals created deep skepticism toward any financial product, especially from established institutions.'
       },
       {
         title: 'Liquidity anxiety',
@@ -80,7 +82,7 @@ export const mercadoPagoCaseStudy: CaseStudy = {
       {
         company: 'Traditional Banks (BBVA/Santander)',
         strengths: ['Regulatory compliance', 'Established infrastructure', 'Physical branch presence'],
-        weaknesses: ['High friction KYC processes', 'Minimum balances ₱5,000+', 'Complex interfaces', 'Excluded our target demographic'],
+        weaknesses: ['High friction KYC processes', 'Minimum balances $5,000+', 'Complex interfaces', 'Excluded our target demographic'],
         opportunity: 'Zero barriers to entry—no minimums, no jargon, no fees. Digital-first with progressive KYC'
       },
       {
@@ -248,9 +250,9 @@ export const mercadoPagoCaseStudy: CaseStudy = {
         id: 'small-business-owner',
         name: 'Sofia',
         title: 'Small Business Owner',
-        pain: 'When Sofia gets her daily sales revenue, she needs to save for upcoming electricity and water bills, but traditional banks require ₱5,000 minimums she can\'t afford and her money earns nothing sitting in her wallet.',
+        pain: 'When Sofia gets her daily sales revenue, she needs to save for upcoming electricity and water bills, but traditional banks require $5,000 minimums she can\'t afford and her money earns nothing sitting in her wallet.',
         painPoints: [
-          'Banks require ₱5,000 minimum deposit she can\'t consistently maintain',
+          'Banks require $5,000 minimum deposit she can\'t consistently maintain',
           'Money sits idle in wallet earning 0% while bills approach',
           'Financial jargon and complex terms make her feel excluded and "not smart enough"',
           'Past experiences with hidden bank fees destroyed institutional trust',
@@ -260,20 +262,20 @@ export const mercadoPagoCaseStudy: CaseStudy = {
         automationRule: {
           trigger: 'After deposit to wallet (sales revenue)',
           conditions: [
-            'Deposit amount >₱500',
+            'Deposit amount >$500',
             'Bill detection shows electricity bill due in 20 days',
             'Current investing balance <bill amount'
           ],
           actions: [
-            'Suggest: "Save ₱200 now to cover electricity bill"',
-            'Show projection: "In 20 days you\'ll have ₱X toward ₱400 bill"',
+            'Suggest: "Save $200 now to cover electricity bill"',
+            'Show projection: "In 20 days you\'ll have $X toward $400 bill"',
             'One-tap accept to auto-invest suggested amount',
             'Celebrate when bill amount goal is reached'
           ],
           result: 'Bill stress reduced significantly. 72% of users reach bill goals before due date, reducing financial anxiety.'
         },
         metrics: [
-          { value: '₱2,300', label: 'Avg first deposit', change: '+130%' },
+          { value: '$2,300', label: 'Avg first deposit', change: '+130%' },
           { value: '3.2x', label: 'Weekly check frequency', change: '+220%' },
           { value: '72%', label: 'Bill goal completion', change: 'New behavior' }
         ]
@@ -290,16 +292,16 @@ export const mercadoPagoCaseStudy: CaseStudy = {
           'Envelope cash system at home has theft risk and earns nothing',
           'Hard to track progress toward family goals like daughter\'s school supplies'
         ],
-        quote: 'Some weeks I make ₱3,000, other weeks ₱800. I need a way to smooth this out without locking my money away where I can\'t reach it in an emergency.',
+        quote: 'Some weeks I make $3,000, other weeks $800. I need a way to smooth this out without locking my money away where I can\'t reach it in an emergency.',
         automationRule: {
-          trigger: 'High-earning week detected (>₱2,500)',
+          trigger: 'High-earning week detected (>$2,500)',
           conditions: [
             'Weekly earnings exceed 30-day average by 50%+',
             'Previous week was below average earnings',
             'User has emergency fund or smoothing goal set'
           ],
           actions: [
-            'Suggest: "Save ₱400 now to cover next slow week"',
+            'Suggest: "Save $400 now to cover next slow week"',
             'Show: "This protects you for 2-3 slow weeks"',
             'Visualize income smoothing projection over 8-week period',
             'Remind: "Instant withdrawal available anytime you need it"'
@@ -316,9 +318,9 @@ export const mercadoPagoCaseStudy: CaseStudy = {
         id: 'freelancer',
         name: 'Ana',
         title: 'Freelance Graphic Designer',
-        pain: 'When Ana receives project payments through Mercado Pago, she needs her idle cash to earn returns while remaining accessible, but traditional investment platforms require proof of employment and have ₱10,000 minimums.',
+        pain: 'When Ana receives project payments through Mercado Pago, she needs her idle cash to earn returns while remaining accessible, but traditional investment platforms require proof of employment and have $10,000 minimums.',
         painPoints: [
-          'Receives large irregular payments (₱5,000-15,000) that sit idle for weeks between projects',
+          'Receives large irregular payments ($5,000-15,000) that sit idle for weeks between projects',
           'Traditional investment platforms require employment proof she doesn\'t have as freelancer',
           'Minimum balances and lock periods exclude her from accessing better interest rates',
           'Frustrated knowing her money earns 0% while banks profit from using it',
@@ -326,7 +328,7 @@ export const mercadoPagoCaseStudy: CaseStudy = {
         ],
         quote: 'I understand how compound interest works and want to maximize returns. I just need a simple way to put my project payments to work without complicated forms or employment verification.',
         automationRule: {
-          trigger: 'Large deposit received (>₱5,000)',
+          trigger: 'Large deposit received (>$5,000)',
           conditions: [
             'Payment from client detected in transaction history',
             'User has auto-invest feature enabled',
@@ -334,7 +336,7 @@ export const mercadoPagoCaseStudy: CaseStudy = {
           ],
           actions: [
             'Automatically invest 20% of deposit amount',
-            'Show immediate confirmation: "₱1,000 now earning returns"',
+            'Show immediate confirmation: "$1,000 now earning returns"',
             'Project growth over typical project cycle (30-60 days)',
             'Maintain 80% liquid for business expenses and flexibility'
           ],
@@ -342,7 +344,7 @@ export const mercadoPagoCaseStudy: CaseStudy = {
         },
         metrics: [
           { value: '45%', label: 'Auto-invest adoption', change: 'New feature' },
-          { value: '₱4,200', label: 'Avg balance maintained', change: '+82%' },
+          { value: '$4,200', label: 'Avg balance maintained', change: '+82%' },
           { value: '28%', label: 'Advanced view usage', change: 'Power users' }
         ]
       }
@@ -356,10 +358,26 @@ export const mercadoPagoCaseStudy: CaseStudy = {
       'Four core strategies formed the foundation: zero barriers to entry, show don\'t tell, concrete personal value, and trust through proof.'
     ],
     approach: [
-      'Zero barriers to entry: Eliminated all traditional obstacles. No minimums (banks required ₱5,000+), no fees (banks charged monthly maintenance), no jargon (replaced APY with "your money grows"). Every removed barrier signaled trust.',
-      'Show, don\'t tell: Interactive simulator with real-time calculations (<50ms response), visual growth curves, and concrete peso amounts instead of abstract percentages. Made daily earnings visible, not hidden in quarterly statements.',
-      'Concrete, personal value: Mapped all value propositions to actual upcoming bills in users\' lives. "Pay your electricity bill + ₱19 extra" resonated 3x more than "Build your emergency fund." Bill detection analyzed payment history for personal relevance.',
-      'Trust through proof: Transparent calculations that showed the math, instant withdrawals proving liquidity, first peso earned notifications providing concrete evidence. Every interaction designed to build trust incrementally through demonstrated reliability.'
+      {
+        title: 'Zero barriers to entry',
+        description: 'Eliminated all traditional obstacles. No minimums (banks required $5,000+), no fees (banks charged monthly maintenance), no jargon (replaced APY with "your money grows"). Every removed barrier signaled trust.',
+        image: '/images/mercadopago/Mercado_Pago_Overview_04.png'
+      },
+      {
+        title: 'Show, don\'t tell',
+        description: 'Interactive simulator with real-time calculations (<50ms response), visual growth curves, and concrete Mexican Pesos (MXN) amounts instead of abstract percentages. Made daily earnings visible, not hidden in quarterly statements.',
+        image: '/images/mercadopago/Mercado_Pago_Overview_01.png'
+      },
+      {
+        title: 'Concrete, personal value',
+        description: 'Mapped all value propositions to actual upcoming bills in users\' lives. "Pay your electricity bill + $19 extra" resonated 3x more than "Build your emergency fund." Bill detection analyzed payment history for personal relevance.',
+        image: '/images/mercadopago/Mercado_Pago_Overview_02.png'
+      },
+      {
+        title: 'Trust through proof',
+        description: 'Transparent calculations that showed the math, instant withdrawals proving liquidity, first Mexican Pesos (MXN) earned notifications providing concrete evidence. Every interaction designed to build trust incrementally through demonstrated reliability.',
+        image: '/images/mercadopago/Mercado_Pago_Overview_03.png'
+      }
     ],
     beforeAfter: [
       {
@@ -368,7 +386,7 @@ export const mercadoPagoCaseStudy: CaseStudy = {
           description: 'High-friction approach requiring commitment before value demonstration',
           painPoints: [
             'KYC verification required upfront causing 70% drop-off before seeing product',
-            'Minimum deposit requirements of ₱5,000+ excluded target demographic',
+            'Minimum deposit requirements of $5,000+ excluded target demographic',
             'Complex application forms with financial jargon created anxiety',
             'Value proposition remained unclear until after full commitment made'
           ]
@@ -379,7 +397,7 @@ export const mercadoPagoCaseStudy: CaseStudy = {
           benefits: [
             '40% simulator-to-KYC conversion vs. 15% industry average through self-persuasion',
             'Progressive KYC triggered only when needed, positioned as unlock not barrier',
-            'No minimums—users test with any amount, even ₱1 to build trust',
+            'No minimums—users test with any amount, even $1 to build trust',
             'Full value experience before any personal information requested'
           ]
         }
@@ -396,10 +414,10 @@ export const mercadoPagoCaseStudy: CaseStudy = {
           ]
         },
         after: {
-          title: 'Peso-first bill comparisons',
+          title: 'MXN-first bill comparisons',
           description: 'Concrete value in personal context',
           benefits: [
-            '"₱19 earned—that\'s your water bill!" resonated immediately with users',
+            '"$19 earned—that\'s your water bill!" resonated immediately with users',
             '3x higher engagement with bill-referenced messages vs. generic value props',
             'Immediate personal relevance connecting to actual upcoming expenses',
             'Users could visualize exact benefit in terms of real life needs'
@@ -452,11 +470,44 @@ export const mercadoPagoCaseStudy: CaseStudy = {
       }
     ],
     keyFeatures: [
-      'Interactive simulator with zero-commitment entry, real-time calculations (<50ms), and bill detection for personal relevance',
-      'Progressive KYC verification triggered only when needed, positioned as "unlock higher savings" rather than barrier',
-      'Bill-linked goal suggestions based on payment history analysis ("Save for electricity bill" vs. abstract goals)',
-      'Real-time earnings display with daily visibility, animated counters, and micro-celebrations for small wins',
-      'Instant withdrawals with one-tap access to full balance anytime, proving liquidity and eliminating anxiety'
+      {
+        title: 'Interactive simulator',
+        description: 'Zero-commitment entry with real-time calculations and bill detection for personal relevance'
+      },
+      {
+        title: 'Progressive KYC verification',
+        description: 'Triggered only when needed, positioned as "unlock higher savings" rather than barrier'
+      },
+      {
+        title: 'Bill-linked goal suggestions',
+        description: 'Based on payment history analysis ("Save for electricity bill" vs. abstract goals)'
+      },
+      {
+        title: 'Real-time earnings display',
+        description: 'Daily visibility with animated counters and micro-celebrations for small wins'
+      },
+      {
+        title: 'Instant withdrawals',
+        description: 'One-tap access to full balance anytime, proving liquidity and eliminating anxiety'
+      }
+    ],
+    images: [
+      {
+        src: '/images/mercadopago/Mercado_Pago_Overview_01.png',
+        alt: 'Mercado Pago investment simulator screen'
+      },
+      {
+        src: '/images/mercadopago/Mercado_Pago_Overview_02.png',
+        alt: 'Mercado Pago wallet with earnings display'
+      },
+      {
+        src: '/images/mercadopago/Mercado_Pago_Overview_03.png',
+        alt: 'Mercado Pago balance and transaction history'
+      },
+      {
+        src: '/images/mercadopago/Mercado_Pago_Overview_04.png',
+        alt: 'Mercado Pago onboarding and how it works'
+      }
     ]
   },
 
@@ -482,7 +533,7 @@ export const mercadoPagoCaseStudy: CaseStudy = {
         {
           number: 3,
           title: 'Suggest optimal action',
-          description: 'Context-specific prompts: "Save ₱200 now to cover electricity bill" after deposit or "Save for next month?" after bill payment'
+          description: 'Context-specific prompts: "Save $200 now to cover electricity bill" after deposit or "Save for next month?" after bill payment'
         },
         {
           number: 4,
@@ -492,7 +543,7 @@ export const mercadoPagoCaseStudy: CaseStudy = {
       ],
       benefits: [
         '40% engagement rate vs. 15% for scheduled prompts through behavioral relevance',
-        'Users save ₱300/month average through round-ups alone without effort',
+        'Users save $300/month average through round-ups alone without effort',
         '60% of scheduled deposit users maintain 6+ month streaks through automation',
         '85% bill payment completion when prompted at goal achievement moment'
       ]
@@ -528,7 +579,7 @@ export const mercadoPagoCaseStudy: CaseStudy = {
               'Anxiety about choosing between growth and security'
             ],
             benefits: [
-              'Dual categories: "Business growth: ₱500 | Emergency: ₱300"',
+              'Dual categories: "Business growth: $500 | Emergency: $300"',
               'One-tap transfers between categories as needs change',
               'Maintains savings discipline without sacrificing liquidity',
               '72% of business users actively use dual-goal feature'
@@ -552,7 +603,7 @@ export const mercadoPagoCaseStudy: CaseStudy = {
               'No systematic approach to managing irregular earnings'
             ],
             benefits: [
-              'Smart prompts: "Save ₱200 now to cover slow week"',
+              'Smart prompts: "Save $200 now to cover slow week"',
               'Visual projection shows "Covers 2-3 slow weeks ahead"',
               'Timing matches high-earning moments when saving feels possible',
               'Users report feeling "more in control" of irregular income'
@@ -567,7 +618,7 @@ export const mercadoPagoCaseStudy: CaseStudy = {
               'Lack of visible momentum reduces commitment to save'
             ],
             benefits: [
-              'Concrete goals: "School supplies: 68% saved (₱680 of ₱1,000)"',
+              'Concrete goals: "School supplies: 68% saved ($680 of $1,000)"',
               'Days until goal achieved countdown creates urgency',
               'Visual progress builds pride in accomplishment',
               'Shareable achievements strengthen family provider identity'
@@ -592,7 +643,7 @@ export const mercadoPagoCaseStudy: CaseStudy = {
             ],
             benefits: [
               'Configure once: "20% of project payments → savings"',
-              'Automatic execution: "₱1,000 now earning returns"',
+              'Automatic execution: "$1,000 now earning returns"',
               'Manual override always available for control and flexibility',
               '45% of freelancers enable auto-invest after experiencing 2nd deposit'
             ]
@@ -613,7 +664,7 @@ export const mercadoPagoCaseStudy: CaseStudy = {
             ]
           }
         ],
-        impact: 'Effortless growth without decision fatigue. Average maintained balance ₱4,200 (+82% vs. manual investors).'
+        impact: 'Effortless growth without decision fatigue. Average maintained balance $4,200 (+82% vs. manual investors).'
       }
     ]
   },
@@ -647,10 +698,10 @@ export const mercadoPagoCaseStudy: CaseStudy = {
         chosenApproach: 'Built fully functional simulator requiring zero personal information. Users could explore and calculate for hours before being asked for anything, even name or email.',
         rationale: 'Behavioral research showed users test with tiny amounts before trusting institutions. Simulator allowed complete psychological testing without any financial risk. Trust must be earned through proof, not assumed through promises.',
         tradeoffs: ['Accepted lower immediate conversion rate for much higher long-term trust and commitment', 'Invested significant engineering time in users who never convert to demonstrate category credibility'],
-        outcome: '40% simulator-to-KYC conversion vs. 15% industry average. Higher-quality leads with stronger initial commitment: ₱2,300 average first deposit vs. ₱1,000 competitor average.'
+        outcome: '40% simulator-to-KYC conversion vs. 15% industry average. Higher-quality leads with stronger initial commitment: $2,300 average first deposit vs. $1,000 competitor average.'
       },
       {
-        decision: 'Concrete peso amounts vs. industry-standard percentage returns',
+        decision: 'Concrete Mexican Pesos (MXN) amounts vs. industry-standard percentage returns',
         context: 'Financial industry universally displays APY percentages, compound interest rates, and percentage-based returns. Our user testing showed confusion and disconnection with this standard language approach.',
         optionsConsidered: [
           {
@@ -659,17 +710,17 @@ export const mercadoPagoCaseStudy: CaseStudy = {
             cons: ['User testing revealed confusion: "15% of what?"', 'Abstract numbers have no connection to daily life reality', 'Reinforces "this isn\'t for me" feeling among target users']
           },
           {
-            option: 'Dual display showing both percentages and peso amounts',
+            option: 'Dual display showing both percentages and Mexican Pesos (MXN) amounts',
             pros: ['Serves both financially literate and novice audiences', 'Provides educational opportunity'],
             cons: ['Interface clutter and complexity', 'Doesn\'t solve fundamental relevance problem', 'Still emphasizes wrong primary metric']
           },
           {
-            option: 'Peso-first display with bill comparisons (chosen)',
+            option: 'MXN-first display with bill comparisons (chosen)',
             pros: ['Immediate personal relevance to real needs', 'Concrete value easy to visualize', 'Connects to actual life expenses and goals'],
             cons: ['Makes direct competitor comparison harder', 'Requires bill detection system investment', 'Non-standard presentation may confuse some']
           }
         ],
-        chosenApproach: 'Primary prominent display: "₱19 earned" with contextual secondary: "That\'s your water bill!" Percentages available in settings for curious users wanting comparison data.',
+        chosenApproach: 'Primary prominent display: "$19 earned" with contextual secondary: "That\'s your water bill!" Percentages available in settings for curious users wanting comparison data.',
         rationale: 'Language analysis revealed users think in bills and expenses, not abstract percentages. "Cover your electricity bill" message resonated 3x more than "15% APY" in A/B testing.',
         tradeoffs: ['Made competitor comparison deliberately harder (users can\'t easily shop on APY alone)', 'Required engineering investment in payment history analysis and bill detection'],
         outcome: '3x higher perceived value and relevance. Users could instantly envision concrete benefit in terms of actual life needs and upcoming obligations.'
@@ -694,7 +745,7 @@ export const mercadoPagoCaseStudy: CaseStudy = {
             cons: ['Complex state management across KYC tiers', 'User education required', 'Significant engineering complexity']
           }
         ],
-        chosenApproach: 'Basic KYC tier for deposits up to ₱X, enhanced KYC for higher amounts. Triggered when user hits limit, positioned as "Unlock higher savings limits" opportunity message.',
+        chosenApproach: 'Basic KYC tier for deposits up to $X, enhanced KYC for higher amounts. Triggered when user hits limit, positioned as "Unlock higher savings limits" opportunity message.',
         rationale: 'Users already engaged and seeing tangible value when prompted for verification. Context transformed compliance requirement from barrier into progressive feature unlock.',
         tradeoffs: ['Engineering complexity managing multiple KYC state tiers', 'Multiple verification flows to maintain and optimize', 'Required close coordination with legal team for each tier'],
         outcome: '40% of users hitting limits convert to enhanced KYC (vs. typical 15% upfront completion rate). Compliance positioned as progressive opportunity rather than upfront obstacle.'
@@ -730,7 +781,7 @@ export const mercadoPagoCaseStudy: CaseStudy = {
       components: [
         {
           name: 'Animated number counters',
-          description: 'Smooth peso amount transitions from ₱0 → ₱X over 300ms with configurable easing curves, color theming, and celebration thresholds for milestones.',
+          description: 'Smooth Mexican Pesos (MXN) amount transitions from $0 → $X over 300ms with configurable easing curves, color theming, and celebration thresholds for milestones.',
           reusability: 'Used across earnings display, goal progress tracking, and milestone celebrations. Reduced development time 40% for subsequent financial features needing similar patterns.'
         },
         {
@@ -751,7 +802,7 @@ export const mercadoPagoCaseStudy: CaseStudy = {
         {
           name: 'Micro-celebration animations',
           description: 'Configurable celebration moments ranging from 300ms subtle acknowledgments to 2-second major milestone celebrations with confetti, glow effects, and optional sound.',
-          reusability: 'Psychological reinforcement at scale: first peso earned, goal reached, streak milestone hit. Positive reinforcement system across platform.'
+          reusability: 'Psychological reinforcement at scale: first Mexican Pesos (MXN) earned, goal reached, streak milestone hit. Positive reinforcement system across platform.'
         },
         {
           name: 'Error recovery workflows',
@@ -1083,7 +1134,7 @@ export const mercadoPagoCaseStudy: CaseStudy = {
             after: '40%+',
             change: '+20-25pts',
             trend: 'positive',
-            businessValue: 'Higher quality leads with demonstrably stronger initial commitment. First deposit average ₱2,300 vs. ₱1,000 industry competitor average.'
+            businessValue: 'Higher quality leads with demonstrably stronger initial commitment. First deposit average $2,300 vs. $1,000 industry competitor average.'
           },
           {
             metric: 'Withdrawal-redeposit rate',
@@ -1112,7 +1163,7 @@ export const mercadoPagoCaseStudy: CaseStudy = {
         ],
         highlights: [
           'Trust genuinely earned through proof: 85% redeposit after liquidity test validation',
-          'Higher quality committed leads: ₱2,300 first deposit vs. ₱1,000 industry average',
+          'Higher quality committed leads: $2,300 first deposit vs. $1,000 industry average',
           'Self-service success: 92% error recovery without support intervention required'
         ]
       },

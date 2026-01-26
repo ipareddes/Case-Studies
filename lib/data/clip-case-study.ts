@@ -404,10 +404,22 @@ export const clipCaseStudy: CaseStudy = {
       'The solution centered on a keystone innovation: pre-loaded inventory. This single feature unlocked speed, insights, and chargeback prevention simultaneously—addressing all three critical merchant jobs.'
     ],
     approach: [
-      'Designed a platform architecture with payment as the hub connecting inventory, employees, insights, and financial services',
-      'Created three distinct modes optimized for different contexts: Checkout (speed), Inventory (management), Insights (decisions)',
-      'Co-designed data access layer with engineering to maintain PCI-DSS compliance while enabling platform features',
-      'Established design principles: Speed Above All, Data Without Effort, Offline-First, Platform Coherence'
+      {
+        title: 'Platform architecture',
+        description: 'Designed a platform architecture with payment as the hub connecting inventory, employees, insights, and financial services'
+      },
+      {
+        title: 'Three distinct modes',
+        description: 'Created three distinct modes optimized for different contexts: Checkout (speed), Inventory (management), Insights (decisions)'
+      },
+      {
+        title: 'Data access layer',
+        description: 'Co-designed data access layer with engineering to maintain PCI-DSS compliance while enabling platform features'
+      },
+      {
+        title: 'Design principles',
+        description: 'Established design principles: Speed Above All, Data Without Effort, Offline-First, Platform Coherence'
+      }
     ],
     beforeAfter: [
       {
@@ -463,12 +475,30 @@ export const clipCaseStudy: CaseStudy = {
       }
     ],
     keyFeatures: [
-      'Pre-loaded inventory with visual product grid',
-      'Three-mode architecture (Checkout, Inventory, Insights)',
-      'Detailed digital receipts with itemization',
-      'Offline-first design for unreliable connectivity',
-      'Automatic business intelligence generation',
-      'Platform expansion: employees, bill payments, financial services'
+      {
+        title: 'Pre-loaded inventory',
+        description: 'Visual product grid for faster checkout and improved customer experience'
+      },
+      {
+        title: 'Three-mode architecture',
+        description: 'Seamless switching between Checkout, Inventory, and Insights modes'
+      },
+      {
+        title: 'Digital receipts',
+        description: 'Detailed itemization building trust and enabling customer insights'
+      },
+      {
+        title: 'Offline-first design',
+        description: 'Reliable operation even with unreliable connectivity'
+      },
+      {
+        title: 'Business intelligence',
+        description: 'Automatic generation of actionable insights from transaction data'
+      },
+      {
+        title: 'Platform expansion',
+        description: 'Extended capabilities: employee management, bill payments, financial services'
+      }
     ]
   },
 
