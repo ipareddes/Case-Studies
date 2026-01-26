@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import { caseStudies } from '@/lib/data/case-studies'
 import { Header } from '@/components/layout/header'
 
@@ -28,6 +29,35 @@ export default function HomePage() {
                 className="group"
               >
                 <div className="card p-6 hover:shadow-lg transition-all h-full">
+                  {/* Logo and Company */}
+                  <div className="flex items-center gap-4 mb-4">
+                    {cs.projectMetadata.companyLogo ? (
+                      <div className="flex-shrink-0 w-16 h-16 rounded-xl bg-gray-100 border border-gray-200 overflow-hidden flex items-center justify-center p-2">
+                        <Image
+                          src={cs.projectMetadata.companyLogo}
+                          alt={cs.projectMetadata.company}
+                          width={64}
+                          height={64}
+                          className="w-full h-full object-contain"
+                        />
+                      </div>
+                    ) : (
+                      <div className="flex-shrink-0 w-16 h-16 rounded-xl bg-gradient-to-br from-accent to-primary flex items-center justify-center text-white text-2xl font-bold">
+                        {cs.projectMetadata.company.charAt(0)}
+                      </div>
+                    )}
+                    <div className="flex-1 min-w-0">
+                      <div className="text-base font-semibold text-foreground">
+                        {cs.projectMetadata.company}
+                      </div>
+                      {cs.projectMetadata.productName && (
+                        <div className="text-sm text-muted-foreground">
+                          {cs.projectMetadata.productName}
+                        </div>
+                      )}
+                    </div>
+                  </div>
+
                   <h3 className="text-xl font-semibold text-foreground mb-2 group-hover:text-accent transition-colors">
                     {cs.title}
                   </h3>

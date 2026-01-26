@@ -2,9 +2,11 @@ import { CaseStudy } from '../types'
 import { numarisCaseStudy } from './numaris-case-study'
 import { clipCaseStudy } from './clip-case-study'
 import { mercadoPagoCaseStudy } from './mercadopago-case-study'
+import { gbmCaseStudy } from './gbm-case-study'
 
 // Registry of all case studies
 export const caseStudies: CaseStudy[] = [
+  gbmCaseStudy,
   mercadoPagoCaseStudy,
   clipCaseStudy,
   numarisCaseStudy,

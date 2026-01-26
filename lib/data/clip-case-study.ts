@@ -22,6 +22,8 @@ export const clipCaseStudy: CaseStudy = {
 
   projectMetadata: {
     company: 'Clip',
+    companyLogo: '/images/clip/logo.png',
+    productName: 'POS Platform',
     overview: 'Led the strategic pivot from simple payment tool to comprehensive business platform for small merchants across Latin America.',
     sector: 'FinTech & Point of Sale',
     teamSize: '18 (3 Designers, 15 Engineers, 2 PM, 2 Compliance)',

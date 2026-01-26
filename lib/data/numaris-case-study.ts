@@ -22,6 +22,8 @@ export const numarisCaseStudy: CaseStudy = {
 
   projectMetadata: {
     company: 'Numaris',
+    companyLogo: '/images/numaris/logo.png',
+    productName: 'Fleet Management',
     overview: 'An AI-powered fleet management platform that helps companies reduce accidents, optimize operations, and save millions in operational costs.',
     sector: 'Fleet Management & IoT',
     teamSize: '12 (3 Designers, 6 Engineers, 2 PM, 1 QA)',
