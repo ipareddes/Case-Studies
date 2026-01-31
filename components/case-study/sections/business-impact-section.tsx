@@ -1,6 +1,8 @@
 import { BusinessImpactSection } from '@/lib/types'
 import { TabsSection } from '../tabs-section'
 import { QuoteCallout } from '../quote-callout'
+import { MetricCard } from '../metric-card'
+import { LongTermImpactCard } from '../long-term-impact-card'
 
 interface BusinessImpactSectionProps {
   data: BusinessImpactSection
@@ -17,31 +19,15 @@ export function BusinessImpactSectionComponent({ data }: BusinessImpactSectionPr
         {/* Metrics Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {category.metrics.map((metric, index) => (
-            <div key={index} className="rounded-lg border bg-card p-6">
-              <div className="mb-4">
-                <div className="text-sm font-medium text-muted-foreground mb-1">{metric.metric}</div>
-                <div className="flex items-baseline gap-3">
-                  <div className="text-3xl font-bold text-foreground">{metric.after}</div>
-                  {metric.change && (
-                    <div className={`text-sm font-semibold ${
-                      metric.trend === 'positive' ? 'text-green-600' :
-                      metric.trend === 'negative' ? 'text-red-600' :
-                      'text-gray-600'
-                    }`}>
-                      {metric.change}
-                    </div>
-                  )}
-                </div>
-                <div className="text-xs text-muted-foreground mt-1">
-                  From: {metric.before}
-                </div>
-              </div>
-              <div className="pt-3 border-t">
-                <p className="text-sm text-muted-foreground">
-                  <span className="font-semibold text-foreground">Business Value:</span> {metric.businessValue}
-                </p>
-              </div>
-            </div>
+            <MetricCard
+              key={index}
+              metric={metric.metric}
+              before={metric.before}
+              after={metric.after}
+              change={metric.change}
+              trend={metric.trend}
+              businessValue={metric.businessValue}
+            />
           ))}
         </div>
 
@@ -94,14 +80,12 @@ export function BusinessImpactSectionComponent({ data }: BusinessImpactSectionPr
           <h3 className="text-2xl font-semibold mb-6">Long-term Impact & Sustainability</h3>
           <div className="grid md:grid-cols-3 gap-6">
             {data.longTermImpact.map((item, index) => (
-              <div key={index} className="rounded-lg border bg-card p-6">
-                <h4 className="font-semibold text-foreground mb-3">{item.area}</h4>
-                <p className="text-sm text-muted-foreground mb-3">{item.impact}</p>
-                <div className="pt-3 border-t">
-                  <p className="text-xs font-semibold text-foreground mb-1">Sustainability:</p>
-                  <p className="text-xs text-muted-foreground">{item.sustainability}</p>
-                </div>
-              </div>
+              <LongTermImpactCard
+                key={index}
+                area={item.area}
+                impact={item.impact}
+                sustainability={item.sustainability}
+              />
             ))}
           </div>
         </div>

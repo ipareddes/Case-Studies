@@ -1,5 +1,5 @@
 import { ProblemSection } from '@/lib/types'
-import { ExpandableMetricCard } from '../expandable-metric-card'
+import { CompetitiveAnalysisAccordion } from '../competitive-analysis-accordion'
 
 interface ProblemSectionProps {
   data: ProblemSection
@@ -35,45 +35,10 @@ export function ProblemSectionComponent({ data }: ProblemSectionProps) {
 
       {/* Competitive Analysis */}
       <h3 className="subsection-title">Competitive Analysis</h3>
-      <div className="space-y-3 mb-8">
-        {data.competitiveAnalysis.map((competitor, index) => (
-          <ExpandableMetricCard
-            key={index}
-            header="Competitor Analysis"
-            title={competitor.company}
-            content={
-              <div className="space-y-4">
-                <div>
-                  <div className="text-sm font-medium text-foreground mb-2">Strengths</div>
-                  <ul className="space-y-1">
-                    {competitor.strengths.map((strength, idx) => (
-                      <li key={idx} className="text-sm text-muted-foreground flex items-start gap-2">
-                        <span className="text-green-600 mt-0.5">+</span>
-                        <span>{strength}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-                <div>
-                  <div className="text-sm font-medium text-foreground mb-2">Weaknesses</div>
-                  <ul className="space-y-1">
-                    {competitor.weaknesses.map((weakness, idx) => (
-                      <li key={idx} className="text-sm text-muted-foreground flex items-start gap-2">
-                        <span className="text-red-600 mt-0.5">-</span>
-                        <span>{weakness}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-                <div className="pt-3 border-t">
-                  <div className="text-sm font-semibold text-foreground mb-1">Our Opportunity</div>
-                  <p className="text-sm text-muted-foreground">{competitor.opportunity}</p>
-                </div>
-              </div>
-            }
-          />
-        ))}
-      </div>
+      <CompetitiveAnalysisAccordion
+        items={data.competitiveAnalysis}
+        className="mb-8"
+      />
     </section>
   )
 }

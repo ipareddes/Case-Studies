@@ -1,0 +1,42 @@
+// Layout Components
+export { Header } from '../layout/header'
+export { Breadcrumb } from '../layout/breadcrumb'
+export { MobileNavigation } from '../layout/mobile-navigation'
+
+// Core Case Study Components
+export { HeroSection } from './hero-section'
+export { ProjectSidebar } from './project-sidebar'
+export { OnThisPageNav } from './on-this-page-nav'
+export { ScrollToHash } from './scroll-to-hash'
+
+// Section Components
+export { OverviewSectionComponent } from './sections/overview-section'
+export { ProblemSectionComponent } from './sections/problem-section'
+export { DesignProcessSection } from './sections/design-process-section'
+export { ResearchSectionComponent } from './sections/research-section'
+export { SolutionSectionComponent } from './sections/solution-section'
+export { FeaturesSectionComponent } from './sections/features-section'
+export { KeyDecisionsSectionComponent } from './sections/key-decisions-section'
+export { ScaleSectionComponent } from './sections/scale-section'
+export { CollaborationSection } from './sections/collaboration-section'
+export { BusinessImpactSectionComponent } from './sections/business-impact-section'
+export { LearningsSectionComponent } from './sections/learnings-section'
+export { NextStepsSection } from './sections/next-steps-section'
+
+// Reusable UI Components
+export { CompetitiveAnalysisAccordion } from './competitive-analysis-accordion'
+export { DecisionCard } from './decision-card'
+export { ExpandableMetricCard } from './expandable-metric-card'
+export { MetricCard } from './metric-card'
+export { LongTermImpactCard } from './long-term-impact-card'
+export { TimelineCard } from './timeline-card'
+export { FrameworkCard } from './framework-card'
+export { TabsSection } from './tabs-section'
+export { PersonaCard } from './persona-card'
+export { PersonaFeaturesCard } from './persona-features-card'
+export { BeforeAfterComparison } from './before-after-comparison'
+export { QuoteCallout } from './quote-callout'
+export { StatCard } from './stat-card'
+export { ApproachCarousel } from './approach-carousel'
+export { ImageCarousel } from './image-carousel'
+export { ReadMoreSection } from './read-more-section'
