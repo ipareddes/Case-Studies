@@ -17,6 +17,107 @@ export default function HomePage() {
             Lead Product Designer specializing in AI-powered platforms
           </p>
 
+          {/* Components and Blocks Section */}
+          <div className="grid md:grid-cols-2 gap-6 mb-16">
+            <Link
+              href="/components"
+              className="group relative overflow-hidden rounded-xl border bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-blue-950/20 dark:to-indigo-950/20 p-8 hover:shadow-lg transition-all"
+            >
+              <div className="flex items-center gap-3 mb-4">
+                <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-blue-600 text-white">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    <rect width="7" height="7" x="3" y="3" rx="1" />
+                    <rect width="7" height="7" x="14" y="3" rx="1" />
+                    <rect width="7" height="7" x="14" y="14" rx="1" />
+                    <rect width="7" height="7" x="3" y="14" rx="1" />
+                  </svg>
+                </div>
+                <h3 className="text-2xl font-semibold group-hover:text-blue-600 transition-colors">
+                  Components
+                </h3>
+              </div>
+              <p className="text-muted-foreground mb-4">
+                Reusable UI components built with Radix UI and Tailwind CSS. Copy and paste into your apps.
+              </p>
+              <div className="flex items-center gap-2 text-sm font-medium text-blue-600">
+                <span>Browse components</span>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <path d="M5 12h14" />
+                  <path d="m12 5 7 7-7 7" />
+                </svg>
+              </div>
+            </Link>
+
+            <Link
+              href="/blocks"
+              className="group relative overflow-hidden rounded-xl border bg-gradient-to-br from-purple-50 to-pink-50 dark:from-purple-950/20 dark:to-pink-950/20 p-8 hover:shadow-lg transition-all"
+            >
+              <div className="flex items-center gap-3 mb-4">
+                <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-purple-600 text-white">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    <path d="M5 3h14" />
+                    <path d="M5 9h14" />
+                    <path d="M5 15h14" />
+                    <path d="M5 21h14" />
+                  </svg>
+                </div>
+                <h3 className="text-2xl font-semibold group-hover:text-purple-600 transition-colors">
+                  Blocks
+                </h3>
+              </div>
+              <p className="text-muted-foreground mb-4">
+                Ready-to-use sections and layouts. Build pages faster with pre-designed blocks.
+              </p>
+              <div className="flex items-center gap-2 text-sm font-medium text-purple-600">
+                <span>Explore blocks</span>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <path d="M5 12h14" />
+                  <path d="m12 5 7 7-7 7" />
+                </svg>
+              </div>
+            </Link>
+          </div>
+
           <h2 id="case-studies" className="text-3xl font-semibold mb-8 text-foreground">
             Case Studies
           </h2>

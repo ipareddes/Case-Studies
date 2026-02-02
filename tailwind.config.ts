@@ -77,10 +77,20 @@ const config = {
         '8xl': ['4.5rem', { lineHeight: '1.1' }],
       },
       spacing: {
+        '0.5': '0.125rem',
+        '5.5': '1.375rem',
+        '8.5': '2.125rem',
+        '15': '3.75rem',
         '18': '4.5rem',
+        '45': '11.25rem',
+        '67.5': '16.875rem',
         '88': '22rem',
         '112': '28rem',
         '128': '32rem',
+      },
+      zIndex: {
+        '-1': '-1',
+        '1': '1',
       },
       keyframes: {
         "accordion-down": {
@@ -91,10 +101,15 @@ const config = {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: "0" },
         },
+        "marquee-horizontal": {
+          from: { transform: "translateX(0)" },
+          to: { transform: "translateX(calc(-100% - var(--marquee-gap)))" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "marquee-horizontal": "marquee-horizontal var(--marquee-duration, 22s) linear infinite",
       },
     },
   },
