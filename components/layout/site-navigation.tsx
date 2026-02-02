@@ -2,10 +2,13 @@
 
 import Link from "next/link";
 import { useState } from "react";
-import { Menu, X, Search, Moon, Sun, Github } from "lucide-react";
+import { Menu, Search, Moon, Sun, Github, LogIn } from "lucide-react";
 
-export function SiteNavigation() {
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+interface SiteNavigationProps {
+  onMenuClick?: () => void;
+}
+
+export function SiteNavigation({ onMenuClick }: SiteNavigationProps) {
   const [isDark, setIsDark] = useState(false);
 
   const navLinks = [
@@ -19,7 +22,7 @@ export function SiteNavigation() {
       <div className="mx-auto flex h-full w-full max-w-[1400px] items-center border-dashed">
         <div className="flex w-full items-center justify-between px-4 gap-4 sm:px-6 lg:px-8">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2.5">
+          <Link href="/" className="flex items-center gap-2.5 shrink-0">
             <svg
               width="34"
               height="34"
@@ -70,10 +73,21 @@ export function SiteNavigation() {
           </nav>
 
           {/* Right side actions */}
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-1.5 sm:gap-2">
+            {/* Hamburger menu - mobile only */}
+            {onMenuClick && (
+              <button
+                onClick={onMenuClick}
+                className="lg:hidden flex h-9 w-9 items-center justify-center rounded-md border transition-colors hover:bg-muted"
+                aria-label="Toggle menu"
+              >
+                <Menu className="h-5 w-5" />
+              </button>
+            )}
+
             {/* Search */}
             <button
-              className="hidden sm:flex h-9 w-9 items-center justify-center rounded-md border transition-colors hover:bg-muted"
+              className="flex h-9 w-9 items-center justify-center rounded-md border transition-colors hover:bg-muted"
               aria-label="Search"
             >
               <Search className="h-4 w-4" />
@@ -82,7 +96,7 @@ export function SiteNavigation() {
             {/* Theme toggle */}
             <button
               onClick={() => setIsDark(!isDark)}
-              className="hidden sm:flex h-9 w-9 items-center justify-center rounded-md border transition-colors hover:bg-muted"
+              className="flex h-9 w-9 items-center justify-center rounded-md border transition-colors hover:bg-muted"
               aria-label="Toggle theme"
             >
               {isDark ? (
@@ -97,7 +111,7 @@ export function SiteNavigation() {
               href="https://discord.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="hidden sm:flex h-9 w-9 items-center justify-center rounded-md border transition-colors hover:bg-muted"
+              className="flex h-9 w-9 items-center justify-center rounded-md bg-primary text-primary-foreground transition-colors hover:bg-primary/90"
               aria-label="Discord"
             >
               <svg
@@ -111,56 +125,29 @@ export function SiteNavigation() {
               </svg>
             </Link>
 
-            {/* GitHub */}
-            <Link
-              href="https://github.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hidden sm:flex h-9 w-9 items-center justify-center rounded-md border transition-colors hover:bg-muted"
-              aria-label="GitHub"
-            >
-              <Github className="h-4 w-4" />
-            </Link>
-
-            {/* X (Twitter) */}
-            <Link
-              href="https://x.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hidden sm:flex h-9 w-9 items-center justify-center rounded-md border transition-colors hover:bg-muted"
-              aria-label="X"
-            >
-              <svg
-                width="16"
-                height="16"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-              </svg>
-            </Link>
-
-            {/* Sign in button - desktop */}
+            {/* Sign in - icon on mobile, button on desktop */}
             <Link
               href="/auth/login"
-              className="hidden lg:inline-flex h-9 items-center justify-center rounded-md px-4 text-sm font-medium transition-colors hover:bg-muted border"
+              className="flex h-9 w-9 items-center justify-center rounded-md border transition-colors hover:bg-muted lg:w-auto lg:px-4 lg:gap-2"
+              aria-label="Sign in"
             >
-              Sign in
+              <LogIn className="h-4 w-4 lg:hidden" />
+              <span className="hidden lg:inline text-sm font-medium">Sign in</span>
             </Link>
 
-            {/* Get all access button - desktop */}
+            {/* Get all access button */}
             <Link
               href="/pricing"
-              className="hidden lg:inline-flex h-9 items-center justify-center gap-2 rounded-md bg-primary px-4 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
+              className="flex h-9 w-9 items-center justify-center rounded-md bg-foreground text-background transition-colors hover:bg-foreground/90 lg:w-auto lg:px-4 lg:gap-2"
+              aria-label="Get all access"
             >
-              Get all access
               <svg
                 width="16"
                 height="16"
                 viewBox="0 0 328 329"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
+                className="lg:order-2"
               >
                 <rect
                   y="0.5"
@@ -170,57 +157,11 @@ export function SiteNavigation() {
                   fill="currentColor"
                 />
               </svg>
+              <span className="hidden lg:inline text-sm font-medium">Get all access</span>
             </Link>
-
-            {/* Mobile menu button */}
-            <button
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="lg:hidden flex h-9 w-9 items-center justify-center rounded-md border transition-colors hover:bg-muted"
-              aria-label="Toggle menu"
-            >
-              {isMobileMenuOpen ? (
-                <X className="h-5 w-5" />
-              ) : (
-                <Menu className="h-5 w-5" />
-              )}
-            </button>
           </div>
         </div>
       </div>
-
-      {/* Mobile menu */}
-      {isMobileMenuOpen && (
-        <div className="lg:hidden absolute top-full left-0 w-full border-b bg-background/95 backdrop-blur-sm">
-          <nav className="flex flex-col p-4 space-y-3">
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                onClick={() => setIsMobileMenuOpen(false)}
-                className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground py-2"
-              >
-                {link.label}
-              </Link>
-            ))}
-            <div className="border-t pt-3 space-y-2">
-              <Link
-                href="/auth/login"
-                onClick={() => setIsMobileMenuOpen(false)}
-                className="block w-full text-center py-2 text-sm font-medium transition-colors hover:bg-muted rounded-md border"
-              >
-                Sign in
-              </Link>
-              <Link
-                href="/pricing"
-                onClick={() => setIsMobileMenuOpen(false)}
-                className="block w-full text-center py-2 text-sm font-medium bg-primary text-primary-foreground transition-colors hover:bg-primary/90 rounded-md"
-              >
-                Get all access
-              </Link>
-            </div>
-          </nav>
-        </div>
-      )}
     </header>
   );
 }
