@@ -2,7 +2,7 @@
 
 import { ComponentLayout } from "@/components/layout/component-layout";
 import { useState } from "react";
-import { X, Sparkles, Code2, Copy, Check, CircleFadingPlus, BadgeCheck, UserPlus, Heart, Star, TrendingUp, TrendingDown, Quote, ArrowRight } from "lucide-react";
+import { X, Sparkles, Code2, Copy, Check, CircleFadingPlus, BadgeCheck, UserPlus, Heart, Star, TrendingUp, TrendingDown, Quote, ArrowRight, ChevronUp, ChevronDown, MoreHorizontal, ShoppingCart, DollarSign, CreditCard, Mail, MailOpen, MousePointerClick, BellRing, TriangleAlert, CircleOff, CircleDollarSign, TicketCheck } from "lucide-react";
 import ReactDOM from "react-dom";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from "@/components/ui/card";
@@ -11,6 +11,8 @@ import { Avatar, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { Separator } from "@/components/ui/separator";
+import { cn } from "@/lib";
 
 // --- Code Modal ---
 function CodeModal({ code, onClose, variantId }: { code: string; onClose: () => void; variantId: string }) {
@@ -811,6 +813,331 @@ function Card25() {
   );
 }
 
+// --- Dashboard Card Variants ---
+
+function Card26() {
+  return (
+    <Card className="max-w-xs">
+      <CardContent className="pt-6">
+        <div className="flex items-center justify-between mb-4">
+          <span className="flex items-center justify-center size-10 rounded-lg bg-chart-1/10 text-chart-1">
+            <TicketCheck className="size-5" />
+          </span>
+          <p className="flex items-center gap-1 text-sm font-medium">
+            +38%
+            <ChevronUp className="size-4" />
+          </p>
+        </div>
+        <div className="space-y-1">
+          <span className="text-2xl font-bold">$13.4k</span>
+          <p className="text-sm text-muted-foreground">Total Sales</p>
+        </div>
+        <Badge variant="outline" className="mt-4 rounded-full px-2 py-0.5 text-xs font-medium">
+          Last 6 months
+        </Badge>
+      </CardContent>
+    </Card>
+  );
+}
+
+function Card27() {
+  return (
+    <Card className="max-w-md">
+      <CardHeader className="pb-2">
+        <div className="flex items-center justify-between">
+          <div>
+            <CardTitle className="text-base">Total Income</CardTitle>
+            <CardDescription>Weekly report overview</CardDescription>
+          </div>
+          <Button variant="ghost" size="icon" className="h-8 w-8">
+            <MoreHorizontal className="h-4 w-4" />
+          </Button>
+        </div>
+      </CardHeader>
+      <CardContent>
+        <div className="flex">
+          <div className="flex flex-col justify-between text-[10px] text-muted-foreground pr-2 h-32">
+            {["$6k", "$5k", "$4k", "$3k", "$2k", "$1k"].map((label) => (
+              <span key={label}>{label}</span>
+            ))}
+          </div>
+          <div className="flex-1 relative h-32">
+            <div className="absolute inset-0 flex flex-col justify-between pointer-events-none">
+              {[0, 1, 2, 3, 4, 5].map((i) => (
+                <div key={i} className="border-t border-dashed border-muted-foreground/30" />
+              ))}
+            </div>
+            <svg viewBox="0 0 200 100" className="w-full h-full relative z-10" preserveAspectRatio="none">
+              <defs>
+                <linearGradient id="areaGradient26" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" className="text-chart-1" stopColor="currentColor" stopOpacity="0.4" />
+                  <stop offset="100%" className="text-chart-1" stopColor="currentColor" stopOpacity="0.05" />
+                </linearGradient>
+              </defs>
+              <path d="M0 60 L15 60 L25 65 L40 20 L70 20 L100 20 L120 30 L150 40 L170 40 L185 15 L200 0 L200 100 L0 100 Z" fill="url(#areaGradient26)" />
+              <path d="M0 60 L15 60 L25 65 L40 20 L70 20 L100 20 L120 30 L150 40 L170 40 L185 15 L200 0" className="stroke-chart-1" strokeWidth="2" fill="none" />
+            </svg>
+          </div>
+        </div>
+        <div className="flex justify-between text-[10px] text-muted-foreground mt-2 pl-8">
+          {["MO", "TU", "WE", "TH", "FR", "SA", "SU"].map((day) => (
+            <span key={day}>{day}</span>
+          ))}
+        </div>
+      </CardContent>
+    </Card>
+  );
+}
+
+function Card28() {
+  return (
+    <Card className="max-w-xs">
+      <CardHeader className="pb-2">
+        <div className="flex items-center justify-between">
+          <div>
+            <CardTitle className="text-base">Report</CardTitle>
+            <CardDescription>Weekly activity</CardDescription>
+          </div>
+          <Button variant="ghost" size="icon" className="h-8 w-8">
+            <MoreHorizontal className="h-4 w-4" />
+          </Button>
+        </div>
+      </CardHeader>
+      <CardContent className="space-y-3">
+        {[
+          { label: "Income", value: "$5,550", change: "+2.34K", icon: CreditCard, color: "text-chart-2 bg-chart-2/10" },
+          { label: "Expense", value: "$3,520", change: "-1.4K", icon: CreditCard, color: "text-chart-1 bg-chart-1/10" },
+          { label: "Profit", value: "$2,350", change: "+3.22K", icon: CircleDollarSign, color: "text-chart-4 bg-chart-4/10" },
+        ].map((item) => (
+          <div key={item.label} className="flex items-center gap-3 p-3 bg-muted/50 rounded-xl">
+            <div className={cn("w-10 h-10 rounded-full flex items-center justify-center", item.color)}>
+              <item.icon className="w-5 h-5" />
+            </div>
+            <div className="flex-1">
+              <div className="text-sm text-muted-foreground">{item.label}</div>
+              <div className="font-semibold">{item.value}</div>
+            </div>
+            <div className={cn("text-sm font-medium", item.change.startsWith("+") ? "text-chart-2" : "text-muted-foreground")}>
+              {item.change}
+            </div>
+          </div>
+        ))}
+      </CardContent>
+    </Card>
+  );
+}
+
+function Card29() {
+  return (
+    <Card className="max-w-sm">
+      <CardHeader className="pb-2">
+        <div className="flex items-center justify-between">
+          <div>
+            <CardTitle className="text-base">Monthly campaign state</CardTitle>
+            <CardDescription>7.58k Social Visitors</CardDescription>
+          </div>
+          <Button variant="ghost" size="icon" className="h-8 w-8">
+            <MoreHorizontal className="h-4 w-4" />
+          </Button>
+        </div>
+      </CardHeader>
+      <CardContent className="space-y-1">
+        {[
+          { label: "Emails", value: "14,250", change: "0.3%", icon: Mail, color: "text-chart-3 bg-chart-3/15" },
+          { label: "Opened", value: "4,523", change: "3.1%", icon: MailOpen, color: "text-chart-2 bg-chart-2/15" },
+          { label: "Clicked", value: "1,250", change: "1.3%", icon: MousePointerClick, color: "text-chart-3 bg-chart-3/15" },
+          { label: "Subscribed", value: "750", change: "9.8%", icon: BellRing, color: "text-chart-1 bg-chart-1/15" },
+          { label: "Errors", value: "20", change: "1.5%", icon: TriangleAlert, color: "text-chart-4 bg-chart-4/15" },
+          { label: "Unsubscribed", value: "86", change: "0.6%", icon: CircleOff, color: "text-muted-foreground bg-muted" },
+        ].map((stat) => (
+          <div key={stat.label} className="flex items-center justify-between py-2">
+            <div className="flex items-center gap-3">
+              <div className={cn("w-8 h-8 rounded-lg flex items-center justify-center", stat.color)}>
+                <stat.icon className="w-4 h-4" />
+              </div>
+              <span className="text-sm font-medium">{stat.label}</span>
+            </div>
+            <div className="flex items-center gap-4">
+              <span className="font-semibold">{stat.value}</span>
+              <span className="text-xs text-muted-foreground w-10 text-right">{stat.change}</span>
+            </div>
+          </div>
+        ))}
+      </CardContent>
+    </Card>
+  );
+}
+
+function Card30() {
+  return (
+    <Card className="max-w-xs">
+      <CardHeader className="pb-2">
+        <div className="flex items-center justify-between">
+          <CardTitle className="text-base">Total earning</CardTitle>
+          <Button variant="ghost" size="icon" className="h-8 w-8">
+            <MoreHorizontal className="h-4 w-4" />
+          </Button>
+        </div>
+      </CardHeader>
+      <CardContent>
+        <div className="flex items-baseline gap-2 mb-3">
+          <span className="text-3xl font-bold">87%</span>
+          <span className="text-sm flex items-center text-chart-2">
+            <TrendingUp className="w-3 h-3 mr-1" />+38%
+          </span>
+        </div>
+        <div className="flex items-end gap-2 h-24 mb-3">
+          {[45, 70, 55, 85, 60, 75, 50, 90, 65].map((h, i) => (
+            <div
+              key={i}
+              className="flex-1 rounded-full bg-chart-1"
+              style={{ height: `${h}%` }}
+            />
+          ))}
+        </div>
+        <Separator className="my-3" />
+        <div className="space-y-2">
+          <div className="flex items-center gap-3">
+            <div className="w-8 h-8 rounded-full bg-muted flex items-center justify-center">
+              <CircleDollarSign className="w-4 h-4 text-muted-foreground" />
+            </div>
+            <div className="flex-1">
+              <div className="text-sm font-medium">Total revenue</div>
+              <div className="text-xs text-muted-foreground">Successful payments</div>
+            </div>
+            <span className="text-sm font-semibold">+$250</span>
+          </div>
+          <div className="flex items-center gap-3">
+            <div className="w-8 h-8 rounded-full bg-muted flex items-center justify-center">
+              <ShoppingCart className="w-4 h-4 text-muted-foreground" />
+            </div>
+            <div className="flex-1">
+              <div className="text-sm font-medium">Total sales</div>
+              <div className="text-xs text-muted-foreground">Refund</div>
+            </div>
+            <span className="text-sm font-semibold">+$80</span>
+          </div>
+        </div>
+      </CardContent>
+    </Card>
+  );
+}
+
+function Card31() {
+  return (
+    <Card className="max-w-sm">
+      <CardHeader className="pb-2">
+        <div className="flex items-center justify-between">
+          <CardTitle className="text-base">For Business Shark</CardTitle>
+          <Button variant="ghost" size="icon" className="h-8 w-8">
+            <MoreHorizontal className="h-4 w-4" />
+          </Button>
+        </div>
+      </CardHeader>
+      <CardContent>
+        <p className="text-sm text-muted-foreground mb-4">
+          Here, I focus on a range of items and features that we use in life without them
+        </p>
+        <div className="text-sm font-semibold mb-3">Choose a plan to get started</div>
+        <div className="space-y-2 mb-4">
+          {[
+            { name: "Branding", price: "$60", selected: false },
+            { name: "Marketing", price: "$120", selected: true },
+            { name: "Web Development", price: "$250", selected: false },
+            { name: "App Development", price: "$320", selected: false },
+          ].map((plan) => (
+            <div
+              key={plan.name}
+              className={cn(
+                "flex items-center justify-between p-3 rounded-xl border cursor-pointer transition-colors",
+                plan.selected ? "border-primary bg-primary/5" : "hover:bg-muted"
+              )}
+            >
+              <div className="flex items-center gap-3">
+                <div className={cn(
+                  "w-5 h-5 rounded border-2 flex items-center justify-center",
+                  plan.selected ? "border-primary bg-primary" : "border-muted-foreground"
+                )}>
+                  {plan.selected && <Check className="w-3 h-3 text-primary-foreground" />}
+                </div>
+                <span className="text-sm">{plan.name}</span>
+              </div>
+              <Badge variant={plan.selected ? "default" : "outline"} className={cn("text-xs", !plan.selected && "text-primary border-primary/30")}>
+                {plan.price}
+              </Badge>
+            </div>
+          ))}
+        </div>
+        <div className="flex justify-between text-sm mb-2">
+          <span className="text-muted-foreground">Taxes</span>
+          <span>$32</span>
+        </div>
+        <div className="flex justify-between text-sm font-semibold mb-4">
+          <span>Total amount</span>
+          <span>$152</span>
+        </div>
+        <Button className="w-full rounded-xl">Pay now</Button>
+      </CardContent>
+    </Card>
+  );
+}
+
+function Card32() {
+  return (
+    <Card className="max-w-sm">
+      <CardHeader className="pb-2">
+        <div className="flex items-center justify-between">
+          <CardTitle className="text-base">Vehicles Condition</CardTitle>
+          <Button variant="ghost" size="icon" className="h-8 w-8">
+            <MoreHorizontal className="h-4 w-4" />
+          </Button>
+        </div>
+      </CardHeader>
+      <CardContent className="space-y-1">
+        {[
+          { label: "Excellent", value: "55%", sub: "12% increase", change: "+25%" },
+          { label: "Good", value: "20%", sub: "24 vehicles", change: "+30%" },
+          { label: "Average", value: "12%", sub: "182 Tasks", change: "-15%" },
+          { label: "Bad", value: "7%", sub: "9 vehicles", change: "+35%" },
+          { label: "Not Working", value: "4%", sub: "3 vehicles", change: "-2%" },
+          { label: "Scraped", value: "2%", sub: "2 vehicles", change: "+1%" },
+        ].map((item) => (
+          <div key={item.label} className="flex items-center gap-3">
+            <div className="relative w-12 h-12">
+              <svg viewBox="0 0 36 36" className="w-12 h-12 -rotate-90">
+                <circle cx="18" cy="18" r="14" fill="none" className="stroke-muted" strokeWidth="3" />
+                <circle
+                  cx="18"
+                  cy="18"
+                  r="14"
+                  fill="none"
+                  className="stroke-chart-1"
+                  strokeWidth="3"
+                  strokeLinecap="round"
+                  strokeDasharray={`${parseFloat(item.value) * 0.88} 88`}
+                />
+              </svg>
+              <span className="absolute inset-0 flex items-center justify-center text-[10px] font-medium">
+                {item.value}
+              </span>
+            </div>
+            <div className="flex-1">
+              <div className="text-sm font-medium">{item.label}</div>
+              <div className="text-xs text-muted-foreground">{item.sub}</div>
+            </div>
+            <span className={cn(
+              "text-xs font-medium",
+              item.change.startsWith("+") ? "text-primary" : "text-destructive"
+            )}>
+              {item.change}
+            </span>
+          </div>
+        ))}
+      </CardContent>
+    </Card>
+  );
+}
+
 // --- Code strings ---
 const codes: Record<string, string> = {
   "card-01": `import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from "@/components/ui/card"
@@ -943,6 +1270,352 @@ export default function Card17() {
     </Card>
   )
 }`,
+  "card-26": `import { Card, CardContent } from "@/components/ui/card"
+import { Badge } from "@/components/ui/badge"
+import { TicketCheck, ChevronUp } from "lucide-react"
+
+export default function Card26() {
+  return (
+    <Card className="max-w-xs">
+      <CardContent className="pt-6">
+        <div className="flex items-center justify-between mb-4">
+          <span className="flex items-center justify-center size-10 rounded-lg bg-chart-1/10 text-chart-1">
+            <TicketCheck className="size-5" />
+          </span>
+          <p className="flex items-center gap-1 text-sm font-medium">
+            +38%
+            <ChevronUp className="size-4" />
+          </p>
+        </div>
+        <div className="space-y-1">
+          <span className="text-2xl font-bold">$13.4k</span>
+          <p className="text-sm text-muted-foreground">Total Sales</p>
+        </div>
+        <Badge variant="outline" className="mt-4 rounded-full px-2 py-0.5 text-xs font-medium">
+          Last 6 months
+        </Badge>
+      </CardContent>
+    </Card>
+  )
+}`,
+  "card-27": `import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card"
+import { Button } from "@/components/ui/button"
+import { MoreHorizontal } from "lucide-react"
+
+export default function Card27() {
+  return (
+    <Card className="max-w-md">
+      <CardHeader className="pb-2">
+        <div className="flex items-center justify-between">
+          <div>
+            <CardTitle className="text-base">Total Income</CardTitle>
+            <CardDescription>Weekly report overview</CardDescription>
+          </div>
+          <Button variant="ghost" size="icon" className="h-8 w-8">
+            <MoreHorizontal className="h-4 w-4" />
+          </Button>
+        </div>
+      </CardHeader>
+      <CardContent>
+        <div className="flex">
+          <div className="flex flex-col justify-between text-[10px] text-muted-foreground pr-2 h-32">
+            {["$6k", "$5k", "$4k", "$3k", "$2k", "$1k"].map((label) => (
+              <span key={label}>{label}</span>
+            ))}
+          </div>
+          <div className="flex-1 relative h-32">
+            <svg viewBox="0 0 200 100" className="w-full h-full" preserveAspectRatio="none">
+              <defs>
+                <linearGradient id="areaGradient" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" className="text-chart-1" stopColor="currentColor" stopOpacity="0.4" />
+                  <stop offset="100%" className="text-chart-1" stopColor="currentColor" stopOpacity="0.05" />
+                </linearGradient>
+              </defs>
+              <path d="M0 60 L40 20 L100 20 L150 40 L200 0 L200 100 L0 100 Z" fill="url(#areaGradient)" />
+              <path d="M0 60 L40 20 L100 20 L150 40 L200 0" className="stroke-chart-1" strokeWidth="2" fill="none" />
+            </svg>
+          </div>
+        </div>
+        <div className="flex justify-between text-[10px] text-muted-foreground mt-2 pl-8">
+          {["MO", "TU", "WE", "TH", "FR", "SA", "SU"].map((day) => (
+            <span key={day}>{day}</span>
+          ))}
+        </div>
+      </CardContent>
+    </Card>
+  )
+}`,
+  "card-28": `import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card"
+import { Button } from "@/components/ui/button"
+import { MoreHorizontal, CreditCard, CircleDollarSign } from "lucide-react"
+import { cn } from "@/lib"
+
+export default function Card28() {
+  const items = [
+    { label: "Income", value: "$5,550", change: "+2.34K", icon: CreditCard, color: "text-chart-2 bg-chart-2/10" },
+    { label: "Expense", value: "$3,520", change: "-1.4K", icon: CreditCard, color: "text-chart-1 bg-chart-1/10" },
+    { label: "Profit", value: "$2,350", change: "+3.22K", icon: CircleDollarSign, color: "text-chart-4 bg-chart-4/10" },
+  ]
+
+  return (
+    <Card className="max-w-xs">
+      <CardHeader className="pb-2">
+        <div className="flex items-center justify-between">
+          <div>
+            <CardTitle className="text-base">Report</CardTitle>
+            <CardDescription>Weekly activity</CardDescription>
+          </div>
+          <Button variant="ghost" size="icon" className="h-8 w-8">
+            <MoreHorizontal className="h-4 w-4" />
+          </Button>
+        </div>
+      </CardHeader>
+      <CardContent className="space-y-3">
+        {items.map((item) => (
+          <div key={item.label} className="flex items-center gap-3 p-3 bg-muted/50 rounded-xl">
+            <div className={cn("w-10 h-10 rounded-full flex items-center justify-center", item.color)}>
+              <item.icon className="w-5 h-5" />
+            </div>
+            <div className="flex-1">
+              <div className="text-sm text-muted-foreground">{item.label}</div>
+              <div className="font-semibold">{item.value}</div>
+            </div>
+            <div className={cn("text-sm font-medium", item.change.startsWith("+") ? "text-chart-2" : "text-muted-foreground")}>
+              {item.change}
+            </div>
+          </div>
+        ))}
+      </CardContent>
+    </Card>
+  )
+}`,
+  "card-29": `import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card"
+import { Button } from "@/components/ui/button"
+import { MoreHorizontal, Mail, MailOpen, MousePointerClick, BellRing, TriangleAlert, CircleOff } from "lucide-react"
+import { cn } from "@/lib"
+
+export default function Card29() {
+  const stats = [
+    { label: "Emails", value: "14,250", change: "0.3%", icon: Mail, color: "text-chart-3 bg-chart-3/15" },
+    { label: "Opened", value: "4,523", change: "3.1%", icon: MailOpen, color: "text-chart-2 bg-chart-2/15" },
+    { label: "Clicked", value: "1,250", change: "1.3%", icon: MousePointerClick, color: "text-chart-3 bg-chart-3/15" },
+    { label: "Subscribed", value: "750", change: "9.8%", icon: BellRing, color: "text-chart-1 bg-chart-1/15" },
+    { label: "Errors", value: "20", change: "1.5%", icon: TriangleAlert, color: "text-chart-4 bg-chart-4/15" },
+    { label: "Unsubscribed", value: "86", change: "0.6%", icon: CircleOff, color: "text-muted-foreground bg-muted" },
+  ]
+
+  return (
+    <Card className="max-w-sm">
+      <CardHeader className="pb-2">
+        <div className="flex items-center justify-between">
+          <div>
+            <CardTitle className="text-base">Monthly campaign state</CardTitle>
+            <CardDescription>7.58k Social Visitors</CardDescription>
+          </div>
+          <Button variant="ghost" size="icon" className="h-8 w-8">
+            <MoreHorizontal className="h-4 w-4" />
+          </Button>
+        </div>
+      </CardHeader>
+      <CardContent className="space-y-1">
+        {stats.map((stat) => (
+          <div key={stat.label} className="flex items-center justify-between py-2">
+            <div className="flex items-center gap-3">
+              <div className={cn("w-8 h-8 rounded-lg flex items-center justify-center", stat.color)}>
+                <stat.icon className="w-4 h-4" />
+              </div>
+              <span className="text-sm font-medium">{stat.label}</span>
+            </div>
+            <div className="flex items-center gap-4">
+              <span className="font-semibold">{stat.value}</span>
+              <span className="text-xs text-muted-foreground w-10 text-right">{stat.change}</span>
+            </div>
+          </div>
+        ))}
+      </CardContent>
+    </Card>
+  )
+}`,
+  "card-30": `import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card"
+import { Button } from "@/components/ui/button"
+import { Separator } from "@/components/ui/separator"
+import { MoreHorizontal, TrendingUp, CircleDollarSign, ShoppingCart } from "lucide-react"
+
+export default function Card30() {
+  return (
+    <Card className="max-w-xs">
+      <CardHeader className="pb-2">
+        <div className="flex items-center justify-between">
+          <CardTitle className="text-base">Total earning</CardTitle>
+          <Button variant="ghost" size="icon" className="h-8 w-8">
+            <MoreHorizontal className="h-4 w-4" />
+          </Button>
+        </div>
+      </CardHeader>
+      <CardContent>
+        <div className="flex items-baseline gap-2 mb-3">
+          <span className="text-3xl font-bold">87%</span>
+          <span className="text-sm flex items-center text-chart-2">
+            <TrendingUp className="w-3 h-3 mr-1" />+38%
+          </span>
+        </div>
+        <div className="flex items-end gap-2 h-24 mb-3">
+          {[45, 70, 55, 85, 60, 75, 50, 90, 65].map((h, i) => (
+            <div key={i} className="flex-1 rounded-full bg-chart-1" style={{ height: h + "%" }} />
+          ))}
+        </div>
+        <Separator className="my-3" />
+        <div className="space-y-2">
+          <div className="flex items-center gap-3">
+            <div className="w-8 h-8 rounded-full bg-muted flex items-center justify-center">
+              <CircleDollarSign className="w-4 h-4 text-muted-foreground" />
+            </div>
+            <div className="flex-1">
+              <div className="text-sm font-medium">Total revenue</div>
+              <div className="text-xs text-muted-foreground">Successful payments</div>
+            </div>
+            <span className="text-sm font-semibold">+$250</span>
+          </div>
+          <div className="flex items-center gap-3">
+            <div className="w-8 h-8 rounded-full bg-muted flex items-center justify-center">
+              <ShoppingCart className="w-4 h-4 text-muted-foreground" />
+            </div>
+            <div className="flex-1">
+              <div className="text-sm font-medium">Total sales</div>
+              <div className="text-xs text-muted-foreground">Refund</div>
+            </div>
+            <span className="text-sm font-semibold">+$80</span>
+          </div>
+        </div>
+      </CardContent>
+    </Card>
+  )
+}`,
+  "card-31": `import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card"
+import { Button } from "@/components/ui/button"
+import { Badge } from "@/components/ui/badge"
+import { MoreHorizontal, Check } from "lucide-react"
+import { cn } from "@/lib"
+
+export default function Card31() {
+  const plans = [
+    { name: "Branding", price: "$60", selected: false },
+    { name: "Marketing", price: "$120", selected: true },
+    { name: "Web Development", price: "$250", selected: false },
+    { name: "App Development", price: "$320", selected: false },
+  ]
+
+  return (
+    <Card className="max-w-sm">
+      <CardHeader className="pb-2">
+        <div className="flex items-center justify-between">
+          <CardTitle className="text-base">For Business Shark</CardTitle>
+          <Button variant="ghost" size="icon" className="h-8 w-8">
+            <MoreHorizontal className="h-4 w-4" />
+          </Button>
+        </div>
+      </CardHeader>
+      <CardContent>
+        <p className="text-sm text-muted-foreground mb-4">
+          Here, I focus on a range of items and features that we use in life without them
+        </p>
+        <div className="text-sm font-semibold mb-3">Choose a plan to get started</div>
+        <div className="space-y-2 mb-4">
+          {plans.map((plan) => (
+            <div
+              key={plan.name}
+              className={cn(
+                "flex items-center justify-between p-3 rounded-xl border cursor-pointer transition-colors",
+                plan.selected ? "border-primary bg-primary/5" : "hover:bg-muted"
+              )}
+            >
+              <div className="flex items-center gap-3">
+                <div className={cn(
+                  "w-5 h-5 rounded border-2 flex items-center justify-center",
+                  plan.selected ? "border-primary bg-primary" : "border-muted-foreground"
+                )}>
+                  {plan.selected && <Check className="w-3 h-3 text-primary-foreground" />}
+                </div>
+                <span className="text-sm">{plan.name}</span>
+              </div>
+              <Badge variant={plan.selected ? "default" : "outline"} className={cn("text-xs", !plan.selected && "text-primary border-primary/30")}>
+                {plan.price}
+              </Badge>
+            </div>
+          ))}
+        </div>
+        <div className="flex justify-between text-sm mb-2">
+          <span className="text-muted-foreground">Taxes</span>
+          <span>$32</span>
+        </div>
+        <div className="flex justify-between text-sm font-semibold mb-4">
+          <span>Total amount</span>
+          <span>$152</span>
+        </div>
+        <Button className="w-full rounded-xl">Pay now</Button>
+      </CardContent>
+    </Card>
+  )
+}`,
+  "card-32": `import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card"
+import { Button } from "@/components/ui/button"
+import { MoreHorizontal } from "lucide-react"
+import { cn } from "@/lib"
+
+export default function Card32() {
+  const items = [
+    { label: "Excellent", value: "55%", sub: "12% increase", change: "+25%" },
+    { label: "Good", value: "20%", sub: "24 vehicles", change: "+30%" },
+    { label: "Average", value: "12%", sub: "182 Tasks", change: "-15%" },
+    { label: "Bad", value: "7%", sub: "9 vehicles", change: "+35%" },
+    { label: "Not Working", value: "4%", sub: "3 vehicles", change: "-2%" },
+    { label: "Scraped", value: "2%", sub: "2 vehicles", change: "+1%" },
+  ]
+
+  return (
+    <Card className="max-w-sm">
+      <CardHeader className="pb-2">
+        <div className="flex items-center justify-between">
+          <CardTitle className="text-base">Vehicles Condition</CardTitle>
+          <Button variant="ghost" size="icon" className="h-8 w-8">
+            <MoreHorizontal className="h-4 w-4" />
+          </Button>
+        </div>
+      </CardHeader>
+      <CardContent className="space-y-1">
+        {items.map((item) => (
+          <div key={item.label} className="flex items-center gap-3">
+            <div className="relative w-12 h-12">
+              <svg viewBox="0 0 36 36" className="w-12 h-12 -rotate-90">
+                <circle cx="18" cy="18" r="14" fill="none" className="stroke-muted" strokeWidth="3" />
+                <circle
+                  cx="18" cy="18" r="14" fill="none"
+                  className="stroke-chart-1"
+                  strokeWidth="3"
+                  strokeLinecap="round"
+                  strokeDasharray={parseFloat(item.value) * 0.88 + " 88"}
+                />
+              </svg>
+              <span className="absolute inset-0 flex items-center justify-center text-[10px] font-medium">
+                {item.value}
+              </span>
+            </div>
+            <div className="flex-1">
+              <div className="text-sm font-medium">{item.label}</div>
+              <div className="text-xs text-muted-foreground">{item.sub}</div>
+            </div>
+            <span className={cn(
+              "text-xs font-medium",
+              item.change.startsWith("+") ? "text-primary" : "text-destructive"
+            )}>
+              {item.change}
+            </span>
+          </div>
+        ))}
+      </CardContent>
+    </Card>
+  )
+}`,
 };
 
 function getCode(id: string) {
@@ -976,6 +1649,13 @@ const variants = [
   { id: "card-23", title: "Card 23 - Impact", preview: <Card23 /> },
   { id: "card-24", title: "Card 24 - Workflow", preview: <Card24 /> },
   { id: "card-25", title: "Card 25 - Before/After", preview: <Card25 />, fullWidth: true },
+  { id: "card-26", title: "Card 26 - Stat Card", preview: <Card26 /> },
+  { id: "card-27", title: "Card 27 - Area Chart", preview: <Card27 /> },
+  { id: "card-28", title: "Card 28 - Report List", preview: <Card28 /> },
+  { id: "card-29", title: "Card 29 - Campaign Stats", preview: <Card29 /> },
+  { id: "card-30", title: "Card 30 - Bar Chart Earnings", preview: <Card30 /> },
+  { id: "card-31", title: "Card 31 - Pricing Plan", preview: <Card31 /> },
+  { id: "card-32", title: "Card 32 - Progress Indicators", preview: <Card32 /> },
 ];
 
 export default function CardPage() {
