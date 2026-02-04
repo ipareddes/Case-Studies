@@ -1,12 +1,11 @@
 "use client";
 
+import { Label, Select, SelectContent, SelectGroup, SelectItem, SelectLabel, SelectSeparator, SelectTrigger, SelectValue, Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@ipareddes/ui-components";
+
 import { ComponentLayout } from "@/components/layout/component-layout";
 import { useState } from "react";
 import { X, Sparkles, Code2, Copy, Check, ChevronDown, Film, Globe, MapPin, User, Briefcase, Clock, Languages, Palette, Heart, Music, BookOpen, Zap, Star } from "lucide-react";
 import ReactDOM from "react-dom";
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
-import { Select, SelectContent, SelectGroup, SelectItem, SelectLabel, SelectSeparator, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Label } from "@/components/ui/label";
 
 // --- Code Modal ---
 function CodeModal({ code, onClose, variantId }: { code: string; onClose: () => void; variantId: string }) {
@@ -670,8 +669,7 @@ function Select25() {
 
 // --- Code strings ---
 const codes: Record<string, string> = {
-  "select-01": `import { Label } from "@/components/ui/label"
-import { ChevronDown } from "lucide-react"
+  "select-01": `import { ChevronDown } from "lucide-react"
 
 export default function Select01() {
   return (
@@ -690,9 +688,7 @@ export default function Select01() {
     </div>
   )
 }`,
-  "select-10": `import { Label } from "@/components/ui/label"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-
+  "select-10": `
 export default function Select10() {
   return (
     <div className="w-full max-w-xs space-y-2">
@@ -712,9 +708,7 @@ export default function Select10() {
     </div>
   )
 }`,
-  "select-17": `import { Label } from "@/components/ui/label"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-
+  "select-17": `
 export default function Select17() {
   return (
     <div className="w-full max-w-xs space-y-2">
@@ -733,9 +727,7 @@ export default function Select17() {
     </div>
   )
 }`,
-  "select-21": `import { Label } from "@/components/ui/label"
-import { Select, SelectContent, SelectGroup, SelectItem, SelectLabel, SelectSeparator, SelectTrigger, SelectValue } from "@/components/ui/select"
-
+  "select-21": `
 export default function Select21() {
   return (
     <div className="w-full max-w-xs space-y-2">
@@ -763,9 +755,7 @@ export default function Select21() {
     </div>
   )
 }`,
-  "select-25": `import { Label } from "@/components/ui/label"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-
+  "select-25": `
 export default function Select25() {
   return (
     <div className="w-full max-w-xs space-y-2">

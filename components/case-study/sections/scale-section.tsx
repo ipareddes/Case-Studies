@@ -1,7 +1,8 @@
 'use client'
 
+import { Accordion } from "@ipareddes/ui-components";
+
 import { DesignSystemScaleSection } from '@/lib/types'
-import { Accordion } from '@/components/ui/accordion'
 
 interface ScaleSectionProps {
   data: DesignSystemScaleSection

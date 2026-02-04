@@ -1,20 +1,9 @@
 "use client";
 
+import { Badge, Button, Card, CardContent, CardDescription, CardHeader, CardTitle, Collapsible, CollapsibleContent, CollapsibleTrigger, Input, Label, Separator, Switch, Tabs, TabsContent, TabsList, TabsTrigger } from "@ipareddes/ui-components";
+
 import { useState, useEffect, useCallback, useRef } from "react";
 import { SiteNavigation } from "@/components/layout/site-navigation";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { Switch } from "@/components/ui/switch";
-import { Separator } from "@/components/ui/separator";
-import {
-  Collapsible,
-  CollapsibleContent,
-  CollapsibleTrigger,
-} from "@/components/ui/collapsible";
 import {
   Palette,
   Copy,

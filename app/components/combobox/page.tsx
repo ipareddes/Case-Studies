@@ -1,15 +1,11 @@
 "use client";
 
+import { Badge, Button, Command, CommandEmpty, CommandGroup, CommandInput, CommandItem, CommandList, CommandSeparator, Label, Popover, PopoverContent, PopoverTrigger, Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@ipareddes/ui-components";
+
 import { ComponentLayout } from "@/components/layout/component-layout";
 import { useState } from "react";
 import { X, Sparkles, Code2, Copy, Check, ChevronsUpDown, ChevronDown, Plus, Globe, Building2, Briefcase, HeartPulse, GraduationCap, Landmark, Clock, User } from "lucide-react";
 import ReactDOM from "react-dom";
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
-import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
-import { Command, CommandEmpty, CommandGroup, CommandInput, CommandItem, CommandList, CommandSeparator } from "@/components/ui/command";
-import { Badge } from "@/components/ui/badge";
-import { Label } from "@/components/ui/label";
-import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/cn";
 
 // --- Code Modal ---
@@ -252,7 +248,7 @@ function Combobox01() {
                 <CommandItem
                   key={f.value}
                   value={f.value}
-                  onSelect={(v) => { setValue(v === value ? "" : v); setOpen(false); }}
+                  onSelect={(v: string) => { setValue(v === value ? "" : v); setOpen(false); }}
                 >
                   {f.label}
                   <Check className={cn("ml-auto h-4 w-4", value === f.value ? "opacity-100" : "opacity-0")} />
@@ -298,7 +294,7 @@ function Combobox02() {
                     <CommandItem
                       key={item.value}
                       value={item.value}
-                      onSelect={(v) => { setValue(v === value ? "" : v); setOpen(false); }}
+                      onSelect={(v: string) => { setValue(v === value ? "" : v); setOpen(false); }}
                     >
                       {item.label}
                       <Check className={cn("ml-auto h-4 w-4", value === item.value ? "opacity-100" : "opacity-0")} />
@@ -354,7 +350,7 @@ function Combobox03() {
                     key={item.value}
                     value={item.value}
                     disabled={item.disabled}
-                    onSelect={(v) => { setValue(v === value ? "" : v); setOpen(false); }}
+                    onSelect={(v: string) => { setValue(v === value ? "" : v); setOpen(false); }}
                   >
                     {item.label}
                     {item.disabled && <span className="ml-auto text-xs text-muted-foreground">Disabled</span>}
@@ -408,7 +404,7 @@ function Combobox04() {
                     <CommandItem
                       key={ind.value}
                       value={ind.value}
-                      onSelect={(v) => { setValue(v === value ? "" : v); setOpen(false); }}
+                      onSelect={(v: string) => { setValue(v === value ? "" : v); setOpen(false); }}
                     >
                       <Icon className="mr-2 h-4 w-4" />
                       {ind.label}
@@ -458,7 +454,7 @@ function Combobox05() {
                     <CommandItem
                       key={ind.value}
                       value={ind.value}
-                      onSelect={(v) => { setValue(v === value ? "" : v); setOpen(false); }}
+                      onSelect={(v: string) => { setValue(v === value ? "" : v); setOpen(false); }}
                     >
                       <Icon className="mr-2 h-4 w-4" />
                       {ind.label}
@@ -508,7 +504,7 @@ function Combobox06() {
                   <CommandItem
                     key={u.value}
                     value={u.value}
-                    onSelect={(v) => { setValue(v === value ? "" : v); setOpen(false); }}
+                    onSelect={(v: string) => { setValue(v === value ? "" : v); setOpen(false); }}
                   >
                     {u.label}
                     <Check className={cn("ml-auto h-4 w-4", value === u.value ? "opacity-100" : "opacity-0")} />
@@ -561,7 +557,7 @@ function Combobox07() {
                   <CommandItem
                     key={tz.value}
                     value={tz.value}
-                    onSelect={(v) => { setValue(v === value ? "" : v); setOpen(false); }}
+                    onSelect={(v: string) => { setValue(v === value ? "" : v); setOpen(false); }}
                   >
                     <Clock className="mr-2 h-4 w-4 text-muted-foreground" />
                     {tz.label}
@@ -608,7 +604,7 @@ function Combobox08() {
                   <CommandItem
                     key={u.value}
                     value={u.value}
-                    onSelect={(v) => { setValue(v === value ? "" : v); setOpen(false); }}
+                    onSelect={(v: string) => { setValue(v === value ? "" : v); setOpen(false); }}
                   >
                     <div className="flex items-center gap-2">
                       <span className="flex size-7 shrink-0 items-center justify-center rounded-full bg-muted text-xs font-bold">
@@ -667,7 +663,7 @@ function Combobox09() {
                   <CommandItem
                     key={c.value}
                     value={c.value}
-                    onSelect={(v) => { setValue(v === value ? "" : v); setOpen(false); }}
+                    onSelect={(v: string) => { setValue(v === value ? "" : v); setOpen(false); }}
                   >
                     <span className="mr-2">{c.flag}</span>
                     {c.label}
@@ -796,7 +792,7 @@ function Combobox11() {
                 <Badge
                   variant="outline"
                   className="rounded-sm cursor-pointer"
-                  onClick={(e) => { e.stopPropagation(); setExpanded(true); }}
+                  onClick={(e: React.MouseEvent) => { e.stopPropagation(); setExpanded(true); }}
                 >
                   +{hiddenCount}
                 </Badge>
@@ -805,7 +801,7 @@ function Combobox11() {
                 <Badge
                   variant="outline"
                   className="rounded-sm cursor-pointer"
-                  onClick={(e) => { e.stopPropagation(); setExpanded(false); }}
+                  onClick={(e: React.MouseEvent) => { e.stopPropagation(); setExpanded(false); }}
                 >
                   Show less
                 </Badge>
@@ -920,7 +916,7 @@ function Combobox13() {
                   <CommandItem
                     key={f.value}
                     value={f.value}
-                    onSelect={(v) => { setValue(v === value ? "" : v); setOpen(false); }}
+                    onSelect={(v: string) => { setValue(v === value ? "" : v); setOpen(false); }}
                   >
                     {f.label}
                     <Check className={cn("ml-auto h-4 w-4", value === f.value ? "opacity-100" : "opacity-0")} />
@@ -964,7 +960,7 @@ function Combobox14() {
                   <CommandItem
                     key={f.value}
                     value={f.value}
-                    onSelect={(v) => { setValue(v === value ? "" : v); setOpen(false); }}
+                    onSelect={(v: string) => { setValue(v === value ? "" : v); setOpen(false); }}
                   >
                     {f.label}
                     <Check className={cn("ml-auto h-4 w-4", value === f.value ? "opacity-100" : "opacity-0")} />
@@ -986,9 +982,6 @@ const codes: Record<string, string> = {
 import { useState } from "react"
 import { Check, ChevronsUpDown } from "lucide-react"
 import { cn } from "@/lib/utils"
-import { Button } from "@/components/ui/button"
-import { Command, CommandEmpty, CommandGroup, CommandInput, CommandItem, CommandList } from "@/components/ui/command"
-import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover"
 
 const frameworks = [
   { value: "next.js", label: "Next.js" },
@@ -1017,7 +1010,7 @@ export default function Combobox01() {
             <CommandEmpty>No framework found.</CommandEmpty>
             <CommandGroup>
               {frameworks.map((f) => (
-                <CommandItem key={f.value} value={f.value} onSelect={(v) => { setValue(v === value ? "" : v); setOpen(false) }}>
+                <CommandItem key={f.value} value={f.value} onSelect={(v: string) => { setValue(v === value ? "" : v); setOpen(false) }}>
                   {f.label}
                   <Check className={cn("ml-auto h-4 w-4", value === f.value ? "opacity-100" : "opacity-0")} />
                 </CommandItem>
@@ -1034,10 +1027,6 @@ export default function Combobox01() {
 import { useState } from "react"
 import { Check, ChevronsUpDown } from "lucide-react"
 import { cn } from "@/lib/utils"
-import { Button } from "@/components/ui/button"
-import { Command, CommandEmpty, CommandGroup, CommandInput, CommandItem, CommandList } from "@/components/ui/command"
-import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover"
-import { Label } from "@/components/ui/label"
 
 const groupedItems = [
   { group: "Frontend", items: [{ value: "react", label: "React" }, { value: "vue", label: "Vue" }, { value: "angular", label: "Angular" }] },
@@ -1068,7 +1057,7 @@ export default function Combobox02() {
               {groupedItems.map((g) => (
                 <CommandGroup key={g.group} heading={g.group}>
                   {g.items.map((item) => (
-                    <CommandItem key={item.value} value={item.value} onSelect={(v) => { setValue(v === value ? "" : v); setOpen(false) }}>
+                    <CommandItem key={item.value} value={item.value} onSelect={(v: string) => { setValue(v === value ? "" : v); setOpen(false) }}>
                       {item.label}
                       <Check className={cn("ml-auto h-4 w-4", value === item.value ? "opacity-100" : "opacity-0")} />
                     </CommandItem>
@@ -1087,11 +1076,6 @@ export default function Combobox02() {
 import { useState } from "react"
 import { Check, ChevronsUpDown, X } from "lucide-react"
 import { cn } from "@/lib/utils"
-import { Button } from "@/components/ui/button"
-import { Badge } from "@/components/ui/badge"
-import { Command, CommandEmpty, CommandGroup, CommandInput, CommandItem, CommandList } from "@/components/ui/command"
-import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover"
-import { Label } from "@/components/ui/label"
 
 const allItems = [
   { value: "react", label: "React" },

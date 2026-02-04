@@ -1,12 +1,11 @@
 "use client";
 
+import { Input, Label, Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@ipareddes/ui-components";
+
 import { ComponentLayout } from "@/components/layout/component-layout";
 import { useState, useRef, useCallback, ChangeEvent, KeyboardEvent } from "react";
 import { X, Sparkles, Code2, Copy, Check, CreditCard } from "lucide-react";
 import ReactDOM from "react-dom";
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
 
 // --- Code Modal ---
 function CodeModal({ code, onClose, variantId }: { code: string; onClose: () => void; variantId: string }) {
@@ -393,9 +392,7 @@ function InputMask06() {
 
 // --- Code strings ---
 const codes: Record<string, string> = {
-  "input-mask-01": `import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import { useState, useCallback, ChangeEvent } from "react"
+  "input-mask-01": `import { useState, useCallback, ChangeEvent } from "react"
 
 function useMaskedInput(mask: string, maskChar = "_") {
   const [value, setValue] = useState("")
@@ -436,9 +433,7 @@ export default function InputMask01() {
     </div>
   )
 }`,
-  "input-mask-02": `import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import { useState } from "react"
+  "input-mask-02": `import { useState } from "react"
 
 export default function InputMask02() {
   const [value, setValue] = useState("")
@@ -463,9 +458,7 @@ export default function InputMask02() {
     </div>
   )
 }`,
-  "input-mask-03": `import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import { CreditCard } from "lucide-react"
+  "input-mask-03": `import { CreditCard } from "lucide-react"
 import { useState } from "react"
 
 export default function InputMask03() {
@@ -497,9 +490,7 @@ export default function InputMask03() {
     </div>
   )
 }`,
-  "input-mask-06": `import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import { CreditCard } from "lucide-react"
+  "input-mask-06": `import { CreditCard } from "lucide-react"
 import { useState } from "react"
 
 export default function InputMask06() {

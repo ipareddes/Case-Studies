@@ -1,5 +1,7 @@
 "use client";
 
+import { Dialog, DialogContent } from "@ipareddes/ui-components";
+
 import * as React from "react";
 import { useRouter } from "next/navigation";
 import {
@@ -14,7 +16,6 @@ import {
   Circle
 } from "lucide-react";
 import { Command as CommandPrimitive } from "cmdk";
-import { Dialog, DialogContent } from "@/components/ui/dialog";
 import { cn } from "@/lib";
 
 // Searchable items with icons - matching reference UI

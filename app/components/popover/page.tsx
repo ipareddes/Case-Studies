@@ -1,11 +1,11 @@
 "use client";
 
+import { Popover, PopoverContent, PopoverTrigger, Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@ipareddes/ui-components";
+
 import { ComponentLayout } from "@/components/layout/component-layout";
 import { useState } from "react";
 import { X, Sparkles, Code2, Copy, Check, Star, PencilRuler, DollarSign, Volume2, Info, Download, FileWarning, MessageCircle, FunnelPlus, Search, Bell, MapPin } from "lucide-react";
 import ReactDOM from "react-dom";
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
-import { Popover, PopoverTrigger, PopoverContent } from "@/components/ui/popover";
 
 // --- Code Modal ---
 function CodeModal({ code, onClose, variantId }: { code: string; onClose: () => void; variantId: string }) {
@@ -597,8 +597,7 @@ function Popover15() {
 
 // --- Code strings ---
 const codes: Record<string, string> = {
-  "popover-01": `import { Popover, PopoverTrigger, PopoverContent } from "@/components/ui/popover"
-import { Star } from "lucide-react"
+  "popover-01": `import { Star } from "lucide-react"
 
 export default function Popover01() {
   return (
@@ -625,8 +624,7 @@ export default function Popover01() {
     </Popover>
   )
 }`,
-  "popover-02": `import { Popover, PopoverTrigger, PopoverContent } from "@/components/ui/popover"
-import { PencilRuler } from "lucide-react"
+  "popover-02": `import { PencilRuler } from "lucide-react"
 
 export default function Popover02() {
   return (
@@ -657,8 +655,7 @@ export default function Popover02() {
     </Popover>
   )
 }`,
-  "popover-07": `import { Popover, PopoverTrigger, PopoverContent } from "@/components/ui/popover"
-import { FileWarning } from "lucide-react"
+  "popover-07": `import { FileWarning } from "lucide-react"
 
 export default function Popover07() {
   return (
@@ -683,8 +680,7 @@ export default function Popover07() {
     </Popover>
   )
 }`,
-  "popover-11": `import { Popover, PopoverTrigger, PopoverContent } from "@/components/ui/popover"
-import { Bell } from "lucide-react"
+  "popover-11": `import { Bell } from "lucide-react"
 
 export default function Popover11() {
   return (
@@ -715,8 +711,7 @@ export default function Popover11() {
     </Popover>
   )
 }`,
-  "popover-13": `import { Popover, PopoverTrigger, PopoverContent } from "@/components/ui/popover"
-
+  "popover-13": `
 export default function Popover13() {
   return (
     <Popover>

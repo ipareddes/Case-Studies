@@ -1,12 +1,11 @@
 "use client";
 
+import { Toggle, ToggleGroup, ToggleGroupItem, Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@ipareddes/ui-components";
+
 import { ComponentLayout } from "@/components/layout/component-layout";
 import { useState } from "react";
 import { X, Sparkles, Code2, Copy, Check, Bold, Italic, Underline, AlignLeft, AlignCenter, AlignRight, AlignJustify, List, ListOrdered, Grid, LayoutGrid, Moon, Sun, Wifi, WifiOff, Mic, MicOff, Video, VideoOff, Pin, Star, Heart, Bookmark } from "lucide-react";
 import ReactDOM from "react-dom";
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
-import { Toggle } from "@/components/ui/toggle";
-import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
 
 // --- Code Modal ---
 function CodeModal({ code, onClose, variantId }: { code: string; onClose: () => void; variantId: string }) {
@@ -354,8 +353,7 @@ function Toggle16() {
 
 // --- Code strings ---
 const codes: Record<string, string> = {
-  "toggle-01": `import { Toggle } from "@/components/ui/toggle"
-import { Bold } from "lucide-react"
+  "toggle-01": `import { Bold } from "lucide-react"
 
 export default function Toggle01() {
   return (
@@ -364,8 +362,7 @@ export default function Toggle01() {
     </Toggle>
   )
 }`,
-  "toggle-04": `import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group"
-import { AlignLeft, AlignCenter, AlignRight, AlignJustify } from "lucide-react"
+  "toggle-04": `import { AlignLeft, AlignCenter, AlignRight, AlignJustify } from "lucide-react"
 
 export default function Toggle04() {
   return (

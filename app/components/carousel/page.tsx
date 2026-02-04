@@ -1,12 +1,11 @@
 "use client";
 
+import { Card, CardContent, Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious, Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@ipareddes/ui-components";
+
 import { ComponentLayout } from "@/components/layout/component-layout";
 import { useState } from "react";
 import { X, Sparkles, Code2, Copy, Check } from "lucide-react";
 import ReactDOM from "react-dom";
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
-import { Card, CardContent } from "@/components/ui/card";
 
 // --- Code Modal ---
 function CodeModal({ code, onClose, variantId }: { code: string; onClose: () => void; variantId: string }) {
@@ -326,9 +325,7 @@ function Carousel08() {
 
 // --- Code strings ---
 const codes: Record<string, string> = {
-  "carousel-01": `import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel"
-import { Card, CardContent } from "@/components/ui/card"
-
+  "carousel-01": `
 export default function Carousel01() {
   return (
     <Carousel className="w-full max-w-xs">

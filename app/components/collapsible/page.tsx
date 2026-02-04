@@ -1,14 +1,11 @@
 "use client";
 
+import { Button, Card, CardTitle, Collapsible, CollapsibleContent, CollapsibleTrigger, Separator, Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@ipareddes/ui-components";
+
 import { ComponentLayout } from "@/components/layout/component-layout";
 import { useState } from "react";
 import { X, Sparkles, Code2, Copy, Check, ChevronsUpDown, ChevronRight, ChevronDown, ChevronUp, Folder, FolderOpen, File, MapPin, Truck, CreditCard } from "lucide-react";
 import ReactDOM from "react-dom";
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
-import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
-import { Separator } from "@/components/ui/separator";
-import { Button } from "@/components/ui/button";
-import { Card, CardTitle } from "@/components/ui/card";
 
 // --- Code Modal ---
 function CodeModal({ code, onClose, variantId }: { code: string; onClose: () => void; variantId: string }) {
@@ -522,9 +519,7 @@ function Collapsible10Preview() {
 
 // --- Code strings ---
 const codes: Record<string, string> = {
-  "collapsible-01": `import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible"
-import { Button } from "@/components/ui/button"
-import { ChevronsUpDown } from "lucide-react"
+  "collapsible-01": `import { ChevronsUpDown } from "lucide-react"
 import { useState } from "react"
 
 export default function Collapsible01() {
@@ -547,8 +542,7 @@ export default function Collapsible01() {
     </Collapsible>
   )
 }`,
-  "collapsible-02": `import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible"
-import { ChevronRight, Folder, FolderOpen, File } from "lucide-react"
+  "collapsible-02": `import { ChevronRight, Folder, FolderOpen, File } from "lucide-react"
 import { useState } from "react"
 
 export default function Collapsible02() {
@@ -590,8 +584,7 @@ export default function Collapsible02() {
     </div>
   )
 }`,
-  "collapsible-03": `import { Button } from "@/components/ui/button"
-import { ChevronUp } from "lucide-react"
+  "collapsible-03": `import { ChevronUp } from "lucide-react"
 import { useState } from "react"
 
 export default function Collapsible03() {
@@ -628,9 +621,7 @@ export default function Collapsible03() {
     </div>
   )
 }`,
-  "collapsible-05": `import { Button } from "@/components/ui/button"
-import { Separator } from "@/components/ui/separator"
-import { ChevronDown } from "lucide-react"
+  "collapsible-05": `import { ChevronDown } from "lucide-react"
 import { useState } from "react"
 
 export default function Collapsible05() {
@@ -700,8 +691,7 @@ export default function Collapsible06() {
     </div>
   )
 }`,
-  "collapsible-07": `import { Button } from "@/components/ui/button"
-import { ChevronUp } from "lucide-react"
+  "collapsible-07": `import { ChevronUp } from "lucide-react"
 import { useState } from "react"
 
 export default function Collapsible07() {
@@ -724,9 +714,7 @@ export default function Collapsible07() {
     </div>
   )
 }`,
-  "collapsible-09": `import { Button } from "@/components/ui/button"
-import { Separator } from "@/components/ui/separator"
-import { ChevronDown, MapPin, Truck, CreditCard } from "lucide-react"
+  "collapsible-09": `import { ChevronDown, MapPin, Truck, CreditCard } from "lucide-react"
 import { useState } from "react"
 
 export default function Collapsible09() {

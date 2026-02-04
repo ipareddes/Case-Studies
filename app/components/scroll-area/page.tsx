@@ -1,12 +1,11 @@
 "use client";
 
+import { ScrollArea, ScrollBar, Separator, Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@ipareddes/ui-components";
+
 import { ComponentLayout } from "@/components/layout/component-layout";
 import { useState } from "react";
 import { X, Sparkles, Code2, Copy, Check, User, Bell, Mail, Settings, FileText, Image, Music, Video, Star, Heart, Bookmark, Clock, Calendar, MessageSquare } from "lucide-react";
 import ReactDOM from "react-dom";
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
-import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
-import { Separator } from "@/components/ui/separator";
 
 // --- Code Modal ---
 function CodeModal({ code, onClose, variantId }: { code: string; onClose: () => void; variantId: string }) {
@@ -469,9 +468,7 @@ function ScrollArea10() {
 
 // --- Code strings ---
 const codes: Record<string, string> = {
-  "scroll-area-01": `import { ScrollArea } from "@/components/ui/scroll-area"
-import { Separator } from "@/components/ui/separator"
-
+  "scroll-area-01": `
 const tags = Array.from({ length: 50 }).map((_, i, a) => \`v1.2.0-beta.\${a.length - i}\`)
 
 export default function ScrollArea01() {

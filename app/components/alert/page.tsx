@@ -1,11 +1,11 @@
 "use client";
 
+import { Alert, AlertDescription, AlertTitle, Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@ipareddes/ui-components";
+
 import { ComponentLayout } from "@/components/layout/component-layout";
 import { useState } from "react";
 import { X, Sparkles, Code2, Copy, Check, CircleAlert, TriangleAlert, FileWarning, UserCheck, UserRoundX, Upload, CheckCheck } from "lucide-react";
 import ReactDOM from "react-dom";
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
-import { Alert, AlertTitle, AlertDescription } from "@/components/ui/alert";
 
 // --- Code Modal ---
 function CodeModal({ code, onClose, variantId }: { code: string; onClose: () => void; variantId: string }) {
@@ -493,8 +493,7 @@ function Alert30() {
 
 // --- Code strings ---
 const codes: Record<string, string> = {
-  "alert-01": `import { Alert, AlertTitle } from "@/components/ui/alert"
-import { CircleAlert } from "lucide-react"
+  "alert-01": `import { CircleAlert } from "lucide-react"
 
 export default function Alert01() {
   return (
@@ -504,8 +503,7 @@ export default function Alert01() {
     </Alert>
   )
 }`,
-  "alert-11": `import { Alert, AlertTitle } from "@/components/ui/alert"
-import { UserCheck } from "lucide-react"
+  "alert-11": `import { UserCheck } from "lucide-react"
 
 export default function Alert11() {
   return (
@@ -515,8 +513,7 @@ export default function Alert11() {
     </Alert>
   )
 }`,
-  "alert-17": `import { Alert, AlertTitle, AlertDescription } from "@/components/ui/alert"
-import { CircleAlert } from "lucide-react"
+  "alert-17": `import { CircleAlert } from "lucide-react"
 
 export default function Alert17() {
   return (
@@ -527,8 +524,7 @@ export default function Alert17() {
     </Alert>
   )
 }`,
-  "alert-19": `import { Alert, AlertTitle, AlertDescription } from "@/components/ui/alert"
-import { CheckCheck } from "lucide-react"
+  "alert-19": `import { CheckCheck } from "lucide-react"
 
 export default function Alert19() {
   return (
@@ -541,8 +537,7 @@ export default function Alert19() {
     </Alert>
   )
 }`,
-  "alert-26": `import { Alert, AlertTitle, AlertDescription } from "@/components/ui/alert"
-import { CircleAlert } from "lucide-react"
+  "alert-26": `import { CircleAlert } from "lucide-react"
 
 export default function Alert26() {
   return (
@@ -555,8 +550,7 @@ export default function Alert26() {
     </Alert>
   )
 }`,
-  "alert-30": `import { Alert, AlertTitle, AlertDescription } from "@/components/ui/alert"
-import { TriangleAlert } from "lucide-react"
+  "alert-30": `import { TriangleAlert } from "lucide-react"
 
 export default function Alert30() {
   return (

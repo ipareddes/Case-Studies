@@ -1,22 +1,11 @@
 "use client";
 
+import { Avatar, AvatarFallback, AvatarImage, Checkbox, Table, TableBody, TableCaption, TableCell, TableFooter, TableHead, TableHeader, TableRow, Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@ipareddes/ui-components";
+
 import { ComponentLayout } from "@/components/layout/component-layout";
 import { useState } from "react";
 import { X, Sparkles, Code2, Copy, Check, MoreHorizontal } from "lucide-react";
 import ReactDOM from "react-dom";
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
-import {
-  Table,
-  TableBody,
-  TableCaption,
-  TableCell,
-  TableFooter,
-  TableHead,
-  TableHeader,
-  TableRow,
-} from "@/components/ui/table";
-import { Checkbox } from "@/components/ui/checkbox";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 // --- Code Modal ---
 function CodeModal({ code, onClose, variantId }: { code: string; onClose: () => void; variantId: string }) {
@@ -707,11 +696,7 @@ function Table16() {
 
 // --- Code strings ---
 const codes: Record<string, string> = {
-  "table-01": `import {
-  Table, TableBody, TableCaption, TableCell,
-  TableFooter, TableHead, TableHeader, TableRow,
-} from "@/components/ui/table"
-
+  "table-01": `
 export default function Table01() {
   const invoices = [
     { invoice: "INV001", status: "Paid", method: "Credit Card", amount: "$250.00" },
@@ -749,11 +734,7 @@ export default function Table01() {
     </Table>
   )
 }`,
-  "table-03": `import {
-  Table, TableBody, TableCell, TableFooter,
-  TableHead, TableHeader, TableRow,
-} from "@/components/ui/table"
-
+  "table-03": `
 export default function Table03() {
   return (
     <div className="overflow-hidden rounded-md border">
@@ -773,11 +754,7 @@ export default function Table03() {
     </div>
   )
 }`,
-  "table-06": `import {
-  Table, TableBody, TableCaption, TableCell,
-  TableHead, TableHeader, TableRow,
-} from "@/components/ui/table"
-
+  "table-06": `
 export default function Table06() {
   return (
     <Table>
@@ -803,10 +780,7 @@ export default function Table06() {
     </Table>
   )
 }`,
-  "table-12": `import {
-  Table, TableBody, TableCell, TableRow,
-} from "@/components/ui/table"
-
+  "table-12": `
 export default function Table12() {
   const details = [
     { label: "Product Name", value: "Iphone 16 PRO" },
@@ -831,13 +805,7 @@ export default function Table12() {
     </div>
   )
 }`,
-  "table-15": `import {
-  Table, TableBody, TableCell,
-  TableHead, TableHeader, TableRow,
-} from "@/components/ui/table"
-import { Checkbox } from "@/components/ui/checkbox"
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
-
+  "table-15": `
 export default function Table15() {
   return (
     <div className="overflow-hidden rounded-md border">

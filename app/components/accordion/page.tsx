@@ -1,10 +1,11 @@
 "use client";
 
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@ipareddes/ui-components";
+
 import { ComponentLayout } from "@/components/layout/component-layout";
 import { useState } from "react";
 import { X, Sparkles, Code2, Copy, Check, Plus, Minus, ArrowRight, Circle, HelpCircle, Settings, CreditCard, Users } from "lucide-react";
 import ReactDOM from "react-dom";
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 
 const items = [
   { q: "How do I track my order?", a: "You can track your order by logging into your account and visiting the \"Orders\" section. You'll receive tracking information via email once your order ships. For real-time updates, you can also use the tracking number provided in your shipping confirmation email." },

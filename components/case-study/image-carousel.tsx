@@ -1,15 +1,9 @@
 'use client'
 
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious, type CarouselApi } from "@ipareddes/ui-components";
+
 import { useEffect, useState } from 'react'
 import Image from 'next/image'
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-  type CarouselApi,
-} from '@/components/ui/carousel'
 import { cn } from '@/lib/cn'
 
 interface ImageCarouselProps {

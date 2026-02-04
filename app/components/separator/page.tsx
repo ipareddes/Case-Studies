@@ -1,11 +1,11 @@
 "use client";
 
+import { Separator, Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@ipareddes/ui-components";
+
 import { ComponentLayout } from "@/components/layout/component-layout";
 import { useState } from "react";
 import { X, Sparkles, Code2, Copy, Check } from "lucide-react";
 import ReactDOM from "react-dom";
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
-import { Separator } from "@/components/ui/separator";
 
 // --- Code Modal ---
 function CodeModal({ code, onClose, variantId }: { code: string; onClose: () => void; variantId: string }) {
@@ -306,8 +306,7 @@ function Separator12() {
 
 // --- Code strings ---
 const codes: Record<string, string> = {
-  "separator-01": `import { Separator } from "@/components/ui/separator"
-
+  "separator-01": `
 export default function Separator01() {
   return (
     <div>

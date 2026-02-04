@@ -1,11 +1,11 @@
 "use client";
 
+import { Avatar, AvatarFallback, AvatarImage, Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@ipareddes/ui-components";
+
 import { ComponentLayout } from "@/components/layout/component-layout";
 import { useState } from "react";
 import { X, Sparkles, Code2, Copy, Check, House, Plus, CirclePlus, BadgeCheck } from "lucide-react";
 import ReactDOM from "react-dom";
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
-import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 
 // --- Code Modal ---
 function CodeModal({ code, onClose, variantId }: { code: string; onClose: () => void; variantId: string }) {
@@ -561,8 +561,7 @@ function Avatar21() {
 
 // --- Code strings ---
 const codes: Record<string, string> = {
-  "avatar-01": `import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar"
-
+  "avatar-01": `
 export default function Avatar01() {
   return (
     <Avatar className="size-8">
@@ -571,8 +570,7 @@ export default function Avatar01() {
     </Avatar>
   )
 }`,
-  "avatar-05": `import { Avatar, AvatarFallback } from "@/components/ui/avatar"
-
+  "avatar-05": `
 export default function Avatar05() {
   return (
     <Avatar className="size-8">
@@ -580,8 +578,7 @@ export default function Avatar05() {
     </Avatar>
   )
 }`,
-  "avatar-07": `import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar"
-
+  "avatar-07": `
 export default function Avatar07() {
   return (
     <div className="relative w-fit">
@@ -595,8 +592,7 @@ export default function Avatar07() {
     </div>
   )
 }`,
-  "avatar-13": `import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar"
-
+  "avatar-13": `
 export default function Avatar13() {
   return (
     <div className="flex -space-x-2">
@@ -619,8 +615,7 @@ export default function Avatar13() {
     </div>
   )
 }`,
-  "avatar-17": `import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar"
-
+  "avatar-17": `
 export default function Avatar17() {
   return (
     <div className="flex -space-x-2 hover:space-x-1">
@@ -643,8 +638,7 @@ export default function Avatar17() {
     </div>
   )
 }`,
-  "avatar-21": `import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar"
-
+  "avatar-21": `
 export default function Avatar21() {
   return (
     <div className="bg-background flex flex-wrap items-center justify-center rounded-full border p-1 shadow-sm">

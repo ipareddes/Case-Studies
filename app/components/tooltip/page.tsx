@@ -1,14 +1,11 @@
 "use client";
 
+import { Avatar, AvatarFallback, AvatarImage, Badge, Button, HoverCard, HoverCardContent, HoverCardTrigger, Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@ipareddes/ui-components";
+
 import { ComponentLayout } from "@/components/layout/component-layout";
 import { useState } from "react";
 import { X, Sparkles, Code2, Copy, Check, CircleAlert, TriangleAlert, Info, Settings, Bold, Italic, Underline, Star, Heart, MapPin, Calendar, CheckCircle2, Clock, Users, FolderOpen, ListTodo } from "lucide-react";
 import ReactDOM from "react-dom";
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
-import { Button } from "@/components/ui/button";
-import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
-import { Badge } from "@/components/ui/badge";
-import { HoverCard, HoverCardContent, HoverCardTrigger } from "@/components/ui/hover-card";
 
 // --- Code Modal ---
 function CodeModal({ code, onClose, variantId }: { code: string; onClose: () => void; variantId: string }) {
@@ -556,9 +553,7 @@ function Tooltip17() {
 
 // --- Code strings ---
 const codes: Record<string, string> = {
-  "tooltip-01": `import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip"
-import { Button } from "@/components/ui/button"
-
+  "tooltip-01": `
 export default function Tooltip01() {
   return (
     <TooltipProvider>
@@ -573,9 +568,7 @@ export default function Tooltip01() {
     </TooltipProvider>
   )
 }`,
-  "tooltip-02": `import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip"
-import { Button } from "@/components/ui/button"
-
+  "tooltip-02": `
 export default function Tooltip02() {
   return (
     <TooltipProvider>
@@ -590,9 +583,7 @@ export default function Tooltip02() {
     </TooltipProvider>
   )
 }`,
-  "tooltip-04": `import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip"
-import { Button } from "@/components/ui/button"
-
+  "tooltip-04": `
 export default function Tooltip04() {
   return (
     <TooltipProvider>
@@ -607,9 +598,7 @@ export default function Tooltip04() {
     </TooltipProvider>
   )
 }`,
-  "tooltip-07": `import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip"
-import { Button } from "@/components/ui/button"
-
+  "tooltip-07": `
 export default function Tooltip07() {
   return (
     <TooltipProvider>
@@ -625,9 +614,7 @@ export default function Tooltip07() {
     </TooltipProvider>
   )
 }`,
-  "tooltip-10": `import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip"
-import { Button } from "@/components/ui/button"
-
+  "tooltip-10": `
 export default function Tooltip10() {
   return (
     <TooltipProvider>
@@ -660,9 +647,7 @@ export default function Tooltip10() {
     </TooltipProvider>
   )
 }`,
-  "tooltip-17": `import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip"
-import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar"
-
+  "tooltip-17": `
 const people = [
   { name: "Howard Lloyd", src: "https://cdn.shadcnstudio.com/ss-assets/avatar/avatar-3.png", initials: "HL" },
   { name: "Olivia Sparks", src: "https://cdn.shadcnstudio.com/ss-assets/avatar/avatar-6.png", initials: "OS" },

@@ -1,14 +1,11 @@
 "use client";
 
+import { Avatar, AvatarFallback, AvatarImage, Badge, Button, HoverCard, HoverCardContent, HoverCardTrigger, Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@ipareddes/ui-components";
+
 import { ComponentLayout } from "@/components/layout/component-layout";
 import { useState } from "react";
 import { X, Sparkles, Code2, Copy, Check, CalendarDays, MapPin, Link as LinkIcon, Mail, Phone, Github, Twitter } from "lucide-react";
 import ReactDOM from "react-dom";
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
-import { HoverCard, HoverCardContent, HoverCardTrigger } from "@/components/ui/hover-card";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
 
 // --- Code Modal ---
 function CodeModal({ code, onClose, variantId }: { code: string; onClose: () => void; variantId: string }) {
@@ -401,10 +398,7 @@ function HoverCard10() {
 
 // --- Code strings ---
 const codes: Record<string, string> = {
-  "hovercard-01": `import { HoverCard, HoverCardContent, HoverCardTrigger } from "@/components/ui/hover-card"
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
-import { Button } from "@/components/ui/button"
-import { CalendarDays } from "lucide-react"
+  "hovercard-01": `import { CalendarDays } from "lucide-react"
 
 export default function HoverCard01() {
   return (

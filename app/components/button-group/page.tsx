@@ -1,11 +1,11 @@
 "use client";
 
+import { Button, Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@ipareddes/ui-components";
+
 import { ComponentLayout } from "@/components/layout/component-layout";
 import { useState } from "react";
 import { X, Sparkles, Code2, Copy, Check, Download, Heart, MousePointer, Square, Type, SkipBack, Play, Pause, SkipForward, Twitch, Dribbble, Github, ZoomOut, ZoomIn, Minus, Plus, ExternalLink, SquarePen, CopyIcon, Trash2, FlipHorizontal, FlipVertical, ChevronDown, Settings, Box, LayoutGrid, Inbox, Archive, Send, ThumbsUp, ThumbsDown, ChevronLeft, ChevronRight, Upload as UploadIcon } from "lucide-react";
 import ReactDOM from "react-dom";
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
-import { Button } from "@/components/ui/button";
 
 // --- Code Modal ---
 function CodeModal({ code, onClose, variantId }: { code: string; onClose: () => void; variantId: string }) {
@@ -422,8 +422,7 @@ function ButtonGroup16() {
 
 // --- Code strings ---
 const codes: Record<string, string> = {
-  "button-group-01": `import { Button } from "@/components/ui/button"
-import { Download } from "lucide-react"
+  "button-group-01": `import { Download } from "lucide-react"
 
 export default function ButtonGroup01() {
   return (
@@ -436,8 +435,7 @@ export default function ButtonGroup01() {
     </div>
   )
 }`,
-  "button-group-02": `import { Button } from "@/components/ui/button"
-import { Heart } from "lucide-react"
+  "button-group-02": `import { Heart } from "lucide-react"
 
 export default function ButtonGroup02() {
   return (
@@ -450,8 +448,7 @@ export default function ButtonGroup02() {
     </div>
   )
 }`,
-  "button-group-05": `import { Button } from "@/components/ui/button"
-import { Twitch, Dribbble, Github } from "lucide-react"
+  "button-group-05": `import { Twitch, Dribbble, Github } from "lucide-react"
 
 export default function ButtonGroup05() {
   return (
@@ -477,8 +474,7 @@ export default function ButtonGroup05() {
     </div>
   )
 }`,
-  "button-group-11": `import { Button } from "@/components/ui/button"
-import { ChevronDown } from "lucide-react"
+  "button-group-11": `import { ChevronDown } from "lucide-react"
 
 export default function ButtonGroup11() {
   return (
@@ -493,8 +489,7 @@ export default function ButtonGroup11() {
     </div>
   )
 }`,
-  "button-group-15": `import { Button } from "@/components/ui/button"
-import { ChevronLeft, ChevronRight } from "lucide-react"
+  "button-group-15": `import { ChevronLeft, ChevronRight } from "lucide-react"
 
 export default function ButtonGroup15() {
   return (

@@ -1,20 +1,11 @@
 "use client";
 
+import { Command, CommandEmpty, CommandGroup, CommandInput, CommandItem, CommandList, CommandSeparator, CommandShortcut, Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@ipareddes/ui-components";
+
 import { ComponentLayout } from "@/components/layout/component-layout";
 import { useState } from "react";
 import { X, Sparkles, Code2, Copy, Check, Calculator, Calendar, Smile, CreditCard, Settings, User, Mail, MessageSquare, PlusCircle, Search, File, FileText, Music, Image, Video, Sun, Moon, Laptop, Command as CommandIcon, ArrowRight } from "lucide-react";
 import ReactDOM from "react-dom";
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
-import {
-  Command,
-  CommandEmpty,
-  CommandGroup,
-  CommandInput,
-  CommandItem,
-  CommandList,
-  CommandSeparator,
-  CommandShortcut,
-} from "@/components/ui/command";
 
 // --- Code Modal ---
 function CodeModal({ code, onClose, variantId }: { code: string; onClose: () => void; variantId: string }) {
@@ -484,17 +475,7 @@ function Command10() {
 
 // --- Code strings ---
 const codes: Record<string, string> = {
-  "command-01": `import {
-  Command,
-  CommandEmpty,
-  CommandGroup,
-  CommandInput,
-  CommandItem,
-  CommandList,
-  CommandSeparator,
-  CommandShortcut,
-} from "@/components/ui/command"
-import { Calendar, Calculator, CreditCard, Settings, Smile, User } from "lucide-react"
+  "command-01": `import { Calendar, Calculator, CreditCard, Settings, Smile, User } from "lucide-react"
 
 export default function Command01() {
   return (

@@ -1,12 +1,11 @@
 "use client";
 
+import { Label, Switch, Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@ipareddes/ui-components";
+
 import { ComponentLayout } from "@/components/layout/component-layout";
 import { useState } from "react";
 import { X, Sparkles, Code2, Copy, Check, Moon, Sun, Database, Code, ChartPie, Cpu } from "lucide-react";
 import ReactDOM from "react-dom";
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
-import { Switch } from "@/components/ui/switch";
-import { Label } from "@/components/ui/label";
 
 // --- Code Modal ---
 function CodeModal({ code, onClose, variantId }: { code: string; onClose: () => void; variantId: string }) {
@@ -475,9 +474,7 @@ function Switch20() {
 
 // --- Code strings ---
 const codes: Record<string, string> = {
-  "switch-01": `import { Switch } from "@/components/ui/switch"
-import { Label } from "@/components/ui/label"
-
+  "switch-01": `
 export default function Switch01() {
   return (
     <div className="flex items-center space-x-2">
@@ -486,8 +483,7 @@ export default function Switch01() {
     </div>
   )
 }`,
-  "switch-02": `import { Switch } from "@/components/ui/switch"
-
+  "switch-02": `
 export default function Switch02() {
   return (
     <Switch
@@ -496,8 +492,7 @@ export default function Switch02() {
     />
   )
 }`,
-  "switch-03": `import { Switch } from "@/components/ui/switch"
-
+  "switch-03": `
 export default function Switch03() {
   return (
     <Switch
@@ -506,8 +501,7 @@ export default function Switch03() {
     />
   )
 }`,
-  "switch-04": `import { Switch } from "@/components/ui/switch"
-
+  "switch-04": `
 export default function Switch04() {
   return (
     <div className="flex items-center gap-3">
@@ -534,8 +528,7 @@ export default function Switch04() {
     </div>
   )
 }`,
-  "switch-05": `import { Switch } from "@/components/ui/switch"
-
+  "switch-05": `
 export default function Switch05() {
   return (
     <div className="flex items-center gap-3">
@@ -551,8 +544,7 @@ export default function Switch05() {
     </div>
   )
 }`,
-  "switch-06": `import { Switch } from "@/components/ui/switch"
-
+  "switch-06": `
 export default function Switch06() {
   return (
     <div className="flex items-center gap-3">
@@ -574,8 +566,7 @@ export default function Switch06() {
     </div>
   )
 }`,
-  "switch-07": `import { Switch } from "@/components/ui/switch"
-
+  "switch-07": `
 export default function Switch07() {
   return (
     <Switch
@@ -586,8 +577,6 @@ export default function Switch07() {
 }`,
   "switch-08": `"use client"
 import { useState } from "react"
-import { Switch } from "@/components/ui/switch"
-import { Label } from "@/components/ui/label"
 
 export default function Switch08() {
   const [checked, setChecked] = useState(true)
@@ -600,7 +589,6 @@ export default function Switch08() {
 }`,
   "switch-09": `"use client"
 import { useState } from "react"
-import { Switch } from "@/components/ui/switch"
 
 export default function Switch09() {
   const [checked, setChecked] = useState(false)
@@ -612,9 +600,7 @@ export default function Switch09() {
     </div>
   )
 }`,
-  "switch-15": `import { Switch } from "@/components/ui/switch"
-import { Label } from "@/components/ui/label"
-import { Database } from "lucide-react"
+  "switch-15": `import { Database } from "lucide-react"
 
 export default function Switch15() {
   return (
@@ -634,8 +620,7 @@ export default function Switch15() {
     </div>
   )
 }`,
-  "switch-18": `import { Switch } from "@/components/ui/switch"
-import { Code, ChartPie, Cpu } from "lucide-react"
+  "switch-18": `import { Code, ChartPie, Cpu } from "lucide-react"
 
 export default function Switch18() {
   return (

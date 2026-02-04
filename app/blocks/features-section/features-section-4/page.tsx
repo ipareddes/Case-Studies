@@ -1,7 +1,6 @@
 "use client";
 
-import { FeatureSection4 } from "@/components/blocks/features-section-4";
-import { BlockPreview } from "@/components/blocks/block-preview";
+import { FeatureSection4, BlockPreview } from "@ipareddes/ui-components";
 import { ComponentLayout } from "@/components/layout/component-layout";
 
 const usageCode = `import { FeatureSection4 } from "@/components/blocks/features-section-4";

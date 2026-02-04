@@ -1,7 +1,6 @@
 "use client";
 
-import { FeatureSection2 } from "@/components/blocks/features-section-2";
-import { BlockPreview } from "@/components/blocks/block-preview";
+import { FeatureSection2, BlockPreview } from "@ipareddes/ui-components";
 import { ComponentLayout } from "@/components/layout/component-layout";
 import { LineChart, BarChart3 } from "lucide-react";
 

@@ -1,12 +1,11 @@
 "use client";
 
+import { Label, Slider, Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@ipareddes/ui-components";
+
 import { ComponentLayout } from "@/components/layout/component-layout";
 import { useState } from "react";
 import { X, Sparkles, Code2, Copy, Check, Volume2, VolumeX, Sun, Moon } from "lucide-react";
 import ReactDOM from "react-dom";
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
-import { Slider } from "@/components/ui/slider";
-import { Label } from "@/components/ui/label";
 
 // --- Code Modal ---
 function CodeModal({ code, onClose, variantId }: { code: string; onClose: () => void; variantId: string }) {
@@ -308,14 +307,11 @@ function Slider12() {
 
 // --- Code strings ---
 const codes: Record<string, string> = {
-  "slider-01": `import { Slider } from "@/components/ui/slider"
-
+  "slider-01": `
 export default function Slider01() {
   return <Slider defaultValue={[50]} max={100} step={1} />
 }`,
   "slider-02": `import { useState } from "react"
-import { Slider } from "@/components/ui/slider"
-import { Label } from "@/components/ui/label"
 
 export default function Slider02() {
   const [value, setValue] = useState([50])

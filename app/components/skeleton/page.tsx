@@ -1,11 +1,11 @@
 "use client";
 
+import { Skeleton, Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@ipareddes/ui-components";
+
 import { ComponentLayout } from "@/components/layout/component-layout";
 import { useState } from "react";
 import { X, Sparkles, Code2, Copy, Check } from "lucide-react";
 import ReactDOM from "react-dom";
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
-import { Skeleton } from "@/components/ui/skeleton";
 
 // --- Code Modal ---
 function CodeModal({ code, onClose, variantId }: { code: string; onClose: () => void; variantId: string }) {
@@ -363,8 +363,7 @@ function Skeleton12() {
 
 // --- Code strings ---
 const codes: Record<string, string> = {
-  "skeleton-01": `import { Skeleton } from "@/components/ui/skeleton"
-
+  "skeleton-01": `
 export default function Skeleton01() {
   return (
     <div className="flex items-center space-x-4">

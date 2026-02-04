@@ -1,19 +1,11 @@
 "use client";
 
+import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle, DialogTrigger, Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@ipareddes/ui-components";
+
 import { ComponentLayout } from "@/components/layout/component-layout";
 import { useState } from "react";
 import { X, Sparkles, Code2, Copy, Check, TriangleAlert, Star, Mail, Gift, Users, LogIn, UserPlus, KeyRound, ScrollText, Maximize, ArrowUp, ArrowRight, ArrowDown, ArrowLeft, ZoomIn } from "lucide-react";
 import ReactDOM from "react-dom";
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogFooter,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from "@/components/ui/dialog";
 
 // --- Code Modal ---
 function CodeModal({ code, onClose, variantId }: { code: string; onClose: () => void; variantId: string }) {
@@ -788,16 +780,7 @@ function Dialog26() {
 
 // --- Code strings ---
 const codes: Record<string, string> = {
-  "dialog-01": `import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogFooter,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from "@/components/ui/dialog"
-
+  "dialog-01": `
 export default function Dialog01() {
   return (
     <Dialog>
@@ -820,16 +803,7 @@ export default function Dialog01() {
     </Dialog>
   )
 }`,
-  "dialog-03": `import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogFooter,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from "@/components/ui/dialog"
-
+  "dialog-03": `
 export default function Dialog03() {
   return (
     <Dialog>
@@ -851,16 +825,7 @@ export default function Dialog03() {
     </Dialog>
   )
 }`,
-  "dialog-09": `import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogFooter,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from "@/components/ui/dialog"
-
+  "dialog-09": `
 export default function Dialog09() {
   return (
     <Dialog>
@@ -884,16 +849,7 @@ export default function Dialog09() {
     </Dialog>
   )
 }`,
-  "dialog-13": `import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogFooter,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from "@/components/ui/dialog"
-import { UserPlus } from "lucide-react"
+  "dialog-13": `import { UserPlus } from "lucide-react"
 
 export default function Dialog13() {
   return (
@@ -918,16 +874,7 @@ export default function Dialog13() {
     </Dialog>
   )
 }`,
-  "dialog-16": `import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogFooter,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from "@/components/ui/dialog"
-
+  "dialog-16": `
 export default function Dialog16() {
   return (
     <Dialog>
@@ -946,16 +893,7 @@ export default function Dialog16() {
     </Dialog>
   )
 }`,
-  "dialog-26": `import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogFooter,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from "@/components/ui/dialog"
-
+  "dialog-26": `
 export default function Dialog26() {
   return (
     <Dialog>

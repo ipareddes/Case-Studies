@@ -1,7 +1,6 @@
 "use client";
 
-import { FeatureSection21 } from "@/components/blocks/features-section-21";
-import { BlockPreview } from "@/components/blocks/block-preview";
+import { FeatureSection21, BlockPreview } from "@ipareddes/ui-components";
 import { ComponentLayout } from "@/components/layout/component-layout";
 import { Palette, Layers, Zap, Sparkles } from "lucide-react";
 

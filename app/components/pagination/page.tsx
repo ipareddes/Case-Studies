@@ -1,21 +1,11 @@
 "use client";
 
+import { Label, Pagination, PaginationContent, PaginationEllipsis, PaginationItem, PaginationLink, PaginationNext, PaginationPrevious, Select, SelectContent, SelectItem, SelectTrigger, SelectValue, Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@ipareddes/ui-components";
+
 import { ComponentLayout } from "@/components/layout/component-layout";
 import { useState } from "react";
 import { X, Sparkles, Code2, Copy, Check, ChevronLeft, ChevronRight, ChevronFirst, ChevronLast } from "lucide-react";
 import ReactDOM from "react-dom";
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
-import {
-  Pagination,
-  PaginationContent,
-  PaginationEllipsis,
-  PaginationItem,
-  PaginationLink,
-  PaginationNext,
-  PaginationPrevious,
-} from "@/components/ui/pagination";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Label } from "@/components/ui/label";
 
 // --- Code Modal ---
 function CodeModal({ code, onClose, variantId }: { code: string; onClose: () => void; variantId: string }) {
@@ -596,15 +586,7 @@ function Pagination15() {
 
 // --- Code strings ---
 const codes: Record<string, string> = {
-  "pagination-01": `import {
-  Pagination,
-  PaginationContent,
-  PaginationItem,
-  PaginationLink,
-  PaginationNext,
-  PaginationPrevious,
-} from "@/components/ui/pagination"
-
+  "pagination-01": `
 export default function Pagination01() {
   return (
     <Pagination>
@@ -628,15 +610,7 @@ export default function Pagination01() {
     </Pagination>
   )
 }`,
-  "pagination-05": `import {
-  Pagination,
-  PaginationContent,
-  PaginationItem,
-  PaginationLink,
-  PaginationNext,
-  PaginationPrevious,
-} from "@/components/ui/pagination"
-
+  "pagination-05": `
 export default function Pagination05() {
   return (
     <Pagination>
@@ -662,16 +636,7 @@ export default function Pagination05() {
     </Pagination>
   )
 }`,
-  "pagination-08": `import {
-  Pagination,
-  PaginationContent,
-  PaginationEllipsis,
-  PaginationItem,
-  PaginationLink,
-  PaginationNext,
-  PaginationPrevious,
-} from "@/components/ui/pagination"
-
+  "pagination-08": `
 export default function Pagination08() {
   return (
     <Pagination>
@@ -701,14 +666,7 @@ export default function Pagination08() {
     </Pagination>
   )
 }`,
-  "pagination-12": `import {
-  Pagination,
-  PaginationContent,
-  PaginationItem,
-  PaginationNext,
-  PaginationPrevious,
-} from "@/components/ui/pagination"
-
+  "pagination-12": `
 export default function Pagination12() {
   return (
     <Pagination>
@@ -728,15 +686,7 @@ export default function Pagination12() {
     </Pagination>
   )
 }`,
-  "pagination-15": `import {
-  Pagination,
-  PaginationContent,
-  PaginationItem,
-  PaginationLink,
-} from "@/components/ui/pagination"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { Label } from "@/components/ui/label"
-import { ChevronFirst, ChevronLeft, ChevronRight, ChevronLast } from "lucide-react"
+  "pagination-15": `import { ChevronFirst, ChevronLeft, ChevronRight, ChevronLast } from "lucide-react"
 
 export default function Pagination15() {
   return (

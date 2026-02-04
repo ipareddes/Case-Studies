@@ -1,24 +1,11 @@
 "use client";
 
+import { Button, Checkbox, Input, Label, Sheet, SheetClose, SheetContent, SheetDescription, SheetFooter, SheetHeader, SheetTitle, SheetTrigger, Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@ipareddes/ui-components";
+
 import { ComponentLayout } from "@/components/layout/component-layout";
 import { useState } from "react";
 import { X, Sparkles, Code2, Copy, Check, Plus, Home, Settings, User, Mail, Bell, LogOut, Search } from "lucide-react";
 import ReactDOM from "react-dom";
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
-import {
-  Sheet,
-  SheetTrigger,
-  SheetContent,
-  SheetHeader,
-  SheetTitle,
-  SheetDescription,
-  SheetFooter,
-  SheetClose,
-} from "@/components/ui/sheet";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Checkbox } from "@/components/ui/checkbox";
 
 // --- Code Modal ---
 function CodeModal({ code, onClose, variantId }: { code: string; onClose: () => void; variantId: string }) {
@@ -424,14 +411,7 @@ function Sheet07() {
 
 // --- Code strings ---
 const codes: Record<string, string> = {
-  "sheet-01": `import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import {
-  Sheet, SheetClose, SheetContent, SheetDescription,
-  SheetFooter, SheetHeader, SheetTitle, SheetTrigger,
-} from "@/components/ui/sheet"
-
+  "sheet-01": `
 export default function Sheet01() {
   return (
     <Sheet>
@@ -464,12 +444,7 @@ export default function Sheet01() {
     </Sheet>
   )
 }`,
-  "sheet-02": `import { Button } from "@/components/ui/button"
-import {
-  Sheet, SheetContent, SheetDescription,
-  SheetHeader, SheetTitle, SheetTrigger,
-} from "@/components/ui/sheet"
-
+  "sheet-02": `
 export default function Sheet02() {
   return (
     <div className="flex flex-wrap gap-2">
@@ -493,14 +468,7 @@ export default function Sheet02() {
     </div>
   )
 }`,
-  "sheet-05": `import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import {
-  Sheet, SheetClose, SheetContent, SheetDescription,
-  SheetFooter, SheetHeader, SheetTitle, SheetTrigger,
-} from "@/components/ui/sheet"
-
+  "sheet-05": `
 export default function Sheet05() {
   return (
     <Sheet>
@@ -538,12 +506,7 @@ export default function Sheet05() {
     </Sheet>
   )
 }`,
-  "sheet-06": `import { Button } from "@/components/ui/button"
-import { Home, User, Mail, Bell, Settings, LogOut } from "lucide-react"
-import {
-  Sheet, SheetContent, SheetDescription,
-  SheetHeader, SheetTitle, SheetTrigger,
-} from "@/components/ui/sheet"
+  "sheet-06": `import { Home, User, Mail, Bell, Settings, LogOut } from "lucide-react"
 
 export default function Sheet06() {
   return (
@@ -584,14 +547,7 @@ export default function Sheet06() {
     </Sheet>
   )
 }`,
-  "sheet-07": `import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import { Plus } from "lucide-react"
-import {
-  Sheet, SheetClose, SheetContent, SheetDescription,
-  SheetFooter, SheetHeader, SheetTitle, SheetTrigger,
-} from "@/components/ui/sheet"
+  "sheet-07": `import { Plus } from "lucide-react"
 
 export default function Sheet07() {
   return (

@@ -1,10 +1,11 @@
 "use client";
 
+import { Button, Calendar, Card, CardContent, CardDescription, CardHeader, CardTitle, Checkbox, Command, CommandEmpty, CommandGroup, CommandInput, CommandItem, CommandList, Form, FormControl, FormDescription, FormField, FormItem, FormLabel, Input, InputOTP, InputOTPGroup, InputOTPSlot, Popover, PopoverContent, PopoverTrigger, RadioGroup, RadioGroupItem, Select, SelectContent, SelectItem, SelectTrigger, SelectValue, Switch, Textarea, Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@ipareddes/ui-components";
+
 import { ComponentLayout } from "@/components/layout/component-layout";
 import { useState } from "react";
-import { X, Sparkles, Code2, Copy, Check, Calendar, ChevronDown, ChevronsUpDown } from "lucide-react";
+import { X, Sparkles, Code2, Copy, Check, Calendar as CalendarIcon2, ChevronDown, ChevronsUpDown } from "lucide-react";
 import ReactDOM from "react-dom";
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 
 // --- Code Modal ---
 function CodeModal({ code, onClose, variantId }: { code: string; onClose: () => void; variantId: string }) {
@@ -291,7 +292,7 @@ function Form09Preview() {
         <label className="text-sm font-medium">Timeless Trends for You</label>
         <button type="button" className="flex items-center justify-between gap-2 rounded-md border border-input bg-transparent px-3 py-2 text-sm shadow-xs h-9 w-full text-left font-normal text-muted-foreground">
           <span>Pick a date</span>
-          <Calendar className="ml-auto size-4 opacity-50" />
+          <CalendarIcon2 className="ml-auto size-4 opacity-50" />
         </button>
         <p className="text-muted-foreground text-sm">Enter your birth date to reveal styles and outfits tailored to your fashion journey.</p>
       </div>
@@ -345,9 +346,6 @@ const codes: Record<string, string> = {
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from "react-hook-form"
 import { z } from "zod"
-import { Button } from "@/components/ui/button"
-import { Form, FormControl, FormField, FormItem, FormLabel } from "@/components/ui/form"
-import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
 
 const FormSchema = z.object({
   dataSharingPreference: z.enum(["share data", "do not share", "anonymous only"], {
@@ -402,9 +400,6 @@ export default function Form01() {
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from "react-hook-form"
 import { z } from "zod"
-import { Button } from "@/components/ui/button"
-import { Checkbox } from "@/components/ui/checkbox"
-import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel } from "@/components/ui/form"
 
 const FormSchema = z.object({
   agreeToJoin: z.boolean().default(false).refine((val) => val === true, {
@@ -452,9 +447,6 @@ export default function Form02() {
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from "react-hook-form"
 import { z } from "zod"
-import { Button } from "@/components/ui/button"
-import { Switch } from "@/components/ui/switch"
-import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel } from "@/components/ui/form"
 
 const FormSchema = z.object({
   stepTracker: z.boolean().default(false),
@@ -498,9 +490,6 @@ export default function Form03() {
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from "react-hook-form"
 import { z } from "zod"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel } from "@/components/ui/form"
 
 const FormSchema = z.object({
   email: z.string().email({ message: "Please enter a valid email address." }),
@@ -542,9 +531,6 @@ export default function Form04() {
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from "react-hook-form"
 import { z } from "zod"
-import { Button } from "@/components/ui/button"
-import { InputOTP, InputOTPGroup, InputOTPSlot } from "@/components/ui/input-otp"
-import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel } from "@/components/ui/form"
 
 const FormSchema = z.object({
   pin: z.string().min(6, { message: "Your one-time password must be 6 characters." }),
@@ -595,9 +581,6 @@ export default function Form05() {
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from "react-hook-form"
 import { z } from "zod"
-import { Button } from "@/components/ui/button"
-import { Textarea } from "@/components/ui/textarea"
-import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel } from "@/components/ui/form"
 
 const FormSchema = z.object({
   message: z.string().min(10, { message: "Message must be at least 10 characters." }).max(500),
@@ -639,9 +622,6 @@ export default function Form06() {
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from "react-hook-form"
 import { z } from "zod"
-import { Button } from "@/components/ui/button"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel } from "@/components/ui/form"
 
 const FormSchema = z.object({
   email: z.string({ required_error: "Please select an email to display." }),
@@ -691,10 +671,6 @@ export default function Form07() {
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from "react-hook-form"
 import { z } from "zod"
-import { Button } from "@/components/ui/button"
-import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover"
-import { Command, CommandEmpty, CommandGroup, CommandInput, CommandItem, CommandList } from "@/components/ui/command"
-import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel } from "@/components/ui/form"
 import { ChevronsUpDown, Check } from "lucide-react"
 import { cn } from "@/lib/utils"
 
@@ -772,10 +748,6 @@ import { useForm } from "react-hook-form"
 import { z } from "zod"
 import { format } from "date-fns"
 import { CalendarIcon } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { Calendar } from "@/components/ui/calendar"
-import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover"
-import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel } from "@/components/ui/form"
 import { cn } from "@/lib/utils"
 
 const FormSchema = z.object({
@@ -827,12 +799,6 @@ export default function Form09() {
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from "react-hook-form"
 import { z } from "zod"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Form, FormControl, FormField, FormItem, FormLabel } from "@/components/ui/form"
 
 const FormSchema = z.object({
   email: z.string().email({ message: "Invalid email address." }),

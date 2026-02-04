@@ -1,11 +1,11 @@
 "use client";
 
+import { Button, Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@ipareddes/ui-components";
+
 import { ComponentLayout } from "@/components/layout/component-layout";
 import { useState } from "react";
 import { X, Sparkles, Code2, Copy, Check, Star, ArrowRight, ArrowLeft, Undo2, Redo2, Trash, Trash2, Download, LoaderCircle, Share, Zap, Heart, Mail, Plus, Settings, LogIn, LogOut, ExternalLink, ChevronRight, ShoppingCart, Bell, Send, Eye, Bookmark, Github, AlertTriangle, MessageSquare, ThumbsUp, ThumbsDown, UserCircle } from "lucide-react";
 import ReactDOM from "react-dom";
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
-import { Button } from "@/components/ui/button";
 
 // --- Code Modal ---
 function CodeModal({ code, onClose, variantId }: { code: string; onClose: () => void; variantId: string }) {
@@ -719,18 +719,15 @@ function Button55() {
 
 // --- Code strings ---
 const codes: Record<string, string> = {
-  "button-01": `import { Button } from "@/components/ui/button"
-
+  "button-01": `
 export default function Button01() {
   return <Button>Button</Button>
 }`,
-  "button-02": `import { Button } from "@/components/ui/button"
-
+  "button-02": `
 export default function Button02() {
   return <Button disabled>Verify Email</Button>
 }`,
-  "button-03": `import { Button } from "@/components/ui/button"
-import { Star } from "lucide-react"
+  "button-03": `import { Star } from "lucide-react"
 
 export default function Button03() {
   return (
@@ -740,8 +737,7 @@ export default function Button03() {
     </Button>
   )
 }`,
-  "button-04": `import { Button } from "@/components/ui/button"
-import { ArrowRight } from "lucide-react"
+  "button-04": `import { ArrowRight } from "lucide-react"
 
 export default function Button04() {
   return (
@@ -751,8 +747,7 @@ export default function Button04() {
     </Button>
   )
 }`,
-  "button-10": `import { Button } from "@/components/ui/button"
-import { Trash } from "lucide-react"
+  "button-10": `import { Trash } from "lucide-react"
 
 export default function Button10() {
   return (
@@ -762,8 +757,7 @@ export default function Button10() {
     </Button>
   )
 }`,
-  "button-17": `import { Button } from "@/components/ui/button"
-import { LoaderCircle } from "lucide-react"
+  "button-17": `import { LoaderCircle } from "lucide-react"
 
 export default function Button17() {
   return (
@@ -773,8 +767,7 @@ export default function Button17() {
     </Button>
   )
 }`,
-  "button-23": `import { Button } from "@/components/ui/button"
-import { Plus } from "lucide-react"
+  "button-23": `import { Plus } from "lucide-react"
 
 export default function Button23() {
   return (
@@ -783,8 +776,7 @@ export default function Button23() {
     </Button>
   )
 }`,
-  "button-27": `import { Button } from "@/components/ui/button"
-import { ShoppingCart } from "lucide-react"
+  "button-27": `import { ShoppingCart } from "lucide-react"
 
 export default function Button27() {
   return (
@@ -794,8 +786,7 @@ export default function Button27() {
     </Button>
   )
 }`,
-  "button-33": `import { Button } from "@/components/ui/button"
-import { Github } from "lucide-react"
+  "button-33": `import { Github } from "lucide-react"
 
 export default function Button33() {
   return (
@@ -805,8 +796,7 @@ export default function Button33() {
     </Button>
   )
 }`,
-  "button-35": `import { Button } from "@/components/ui/button"
-import { Sparkles } from "lucide-react"
+  "button-35": `import { Sparkles } from "lucide-react"
 
 export default function Button35() {
   return (
@@ -816,8 +806,7 @@ export default function Button35() {
     </Button>
   )
 }`,
-  "button-36": `import { Button } from "@/components/ui/button"
-
+  "button-36": `
 export default function Button36() {
   return (
     <Button variant="outline" className="w-full">
@@ -831,8 +820,7 @@ export default function Button36() {
     </Button>
   )
 }`,
-  "button-37": `import { Button } from "@/components/ui/button"
-
+  "button-37": `
 export default function Button37() {
   return (
     <Button variant="outline" className="w-full bg-black text-white border-black hover:bg-black/90 hover:text-white dark:bg-white dark:text-black dark:border-white dark:hover:bg-white/90 dark:hover:text-black">
@@ -843,8 +831,7 @@ export default function Button37() {
     </Button>
   )
 }`,
-  "button-38": `import { Button } from "@/components/ui/button"
-
+  "button-38": `
 export default function Button38() {
   return (
     <Button variant="outline" className="w-full bg-[#1877F2] text-white border-[#1877F2] hover:bg-[#1877F2]/90 hover:text-white">
@@ -855,8 +842,7 @@ export default function Button38() {
     </Button>
   )
 }`,
-  "button-39": `import { Button } from "@/components/ui/button"
-import { MessageSquare } from "lucide-react"
+  "button-39": `import { MessageSquare } from "lucide-react"
 
 export default function Button39() {
   return (
@@ -869,8 +855,7 @@ export default function Button39() {
     </Button>
   )
 }`,
-  "button-40": `import { Button } from "@/components/ui/button"
-import { AlertTriangle } from "lucide-react"
+  "button-40": `import { AlertTriangle } from "lucide-react"
 
 export default function Button40() {
   return (
@@ -883,8 +868,7 @@ export default function Button40() {
     </Button>
   )
 }`,
-  "button-41": `import { Button } from "@/components/ui/button"
-import { Bell } from "lucide-react"
+  "button-41": `import { Bell } from "lucide-react"
 
 export default function Button41() {
   return (
@@ -897,8 +881,7 @@ export default function Button41() {
     </Button>
   )
 }`,
-  "button-42": `import { Button } from "@/components/ui/button"
-import { ThumbsDown, ThumbsUp } from "lucide-react"
+  "button-42": `import { ThumbsDown, ThumbsUp } from "lucide-react"
 
 export default function Button42() {
   return (
@@ -914,8 +897,7 @@ export default function Button42() {
     </div>
   )
 }`,
-  "button-43": `import { Button } from "@/components/ui/button"
-
+  "button-43": `
 export default function Button43() {
   return (
     <Button variant="outline" className="pl-2">
@@ -926,8 +908,7 @@ export default function Button43() {
     </Button>
   )
 }`,
-  "button-44": `import { Button } from "@/components/ui/button"
-import { Copy, Check } from "lucide-react"
+  "button-44": `import { Copy, Check } from "lucide-react"
 import { useState } from "react"
 
 export default function Button44() {
@@ -955,8 +936,7 @@ export default function Button44() {
     </Button>
   )
 }`,
-  "button-45": `import { Button } from "@/components/ui/button"
-import { useState } from "react"
+  "button-45": `import { useState } from "react"
 
 export default function Button45() {
   const [ripples, setRipples] = useState<Array<{ x: number; y: number; id: number }>>([])
@@ -990,8 +970,7 @@ export default function Button45() {
     </Button>
   )
 }`,
-  "button-46": `import { Button } from "@/components/ui/button"
-
+  "button-46": `
 export default function Button46() {
   return (
     <Button className="relative overflow-hidden transition-all duration-300 hover:ring-2 hover:ring-primary hover:ring-offset-2 hover:ring-offset-background">
@@ -999,8 +978,7 @@ export default function Button46() {
     </Button>
   )
 }`,
-  "button-47": `import { Button } from "@/components/ui/button"
-
+  "button-47": `
 export default function Button47() {
   return (
     <Button className="relative overflow-hidden group">
@@ -1009,8 +987,7 @@ export default function Button47() {
     </Button>
   )
 }`,
-  "button-48": `import { Button } from "@/components/ui/button"
-
+  "button-48": `
 export default function Button48() {
   return (
     <Button className="transition-transform duration-150 active:scale-95">
@@ -1018,8 +995,7 @@ export default function Button48() {
     </Button>
   )
 }`,
-  "button-49": `import { Button } from "@/components/ui/button"
-
+  "button-49": `
 export default function Button49() {
   return (
     <Button className="relative overflow-hidden bg-gradient-to-r from-primary via-primary/80 to-primary bg-[length:200%_100%] animate-[shimmer_2s_linear_infinite]">
@@ -1027,8 +1003,7 @@ export default function Button49() {
     </Button>
   )
 }`,
-  "button-50": `import { Button } from "@/components/ui/button"
-
+  "button-50": `
 export default function Button50() {
   return (
     <Button className="transition-transform duration-300 hover:animate-bounce">
@@ -1036,8 +1011,7 @@ export default function Button50() {
     </Button>
   )
 }`,
-  "button-51": `import { Button } from "@/components/ui/button"
-import { Heart } from "lucide-react"
+  "button-51": `import { Heart } from "lucide-react"
 
 export default function Button51() {
   return (
@@ -1047,8 +1021,7 @@ export default function Button51() {
     </Button>
   )
 }`,
-  "button-52": `import { Button } from "@/components/ui/button"
-
+  "button-52": `
 export default function Button52() {
   return (
     <Button className="bg-white/10 backdrop-blur-md border border-white/20 text-foreground hover:bg-white/20 shadow-lg">
@@ -1056,8 +1029,7 @@ export default function Button52() {
     </Button>
   )
 }`,
-  "button-53": `import { Button } from "@/components/ui/button"
-
+  "button-53": `
 export default function Button53() {
   return (
     <Button className="transition-transform duration-300 hover:scale-110">
@@ -1065,8 +1037,7 @@ export default function Button53() {
     </Button>
   )
 }`,
-  "button-54": `import { Button } from "@/components/ui/button"
-
+  "button-54": `
 export default function Button54() {
   return (
     <Button className="shadow-[0_0_15px_rgba(var(--primary),0.5)] hover:shadow-[0_0_25px_rgba(var(--primary),0.7)] transition-shadow duration-300">
@@ -1074,8 +1045,7 @@ export default function Button54() {
     </Button>
   )
 }`,
-  "button-55": `import { Button } from "@/components/ui/button"
-
+  "button-55": `
 export default function Button55() {
   return (
     <Button variant="outline" className="relative overflow-hidden group">

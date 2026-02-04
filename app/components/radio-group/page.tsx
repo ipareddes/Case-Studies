@@ -1,12 +1,11 @@
 "use client";
 
+import { Label, RadioGroup, RadioGroupItem, Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@ipareddes/ui-components";
+
 import { ComponentLayout } from "@/components/layout/component-layout";
 import { useState } from "react";
 import { X, Sparkles, Code2, Copy, Check, User, Users } from "lucide-react";
 import ReactDOM from "react-dom";
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
-import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
-import { Label } from "@/components/ui/label";
 
 // --- Code Modal ---
 function CodeModal({ code, onClose, variantId }: { code: string; onClose: () => void; variantId: string }) {
@@ -528,9 +527,7 @@ function RadioGroup15() {
 
 // --- Code strings ---
 const codes: Record<string, string> = {
-  "radio-group-01": `import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
-import { Label } from "@/components/ui/label"
-
+  "radio-group-01": `
 export default function RadioGroup01() {
   return (
     <RadioGroup defaultValue="higher-secondary" className="grid gap-3">
@@ -549,9 +546,7 @@ export default function RadioGroup01() {
     </RadioGroup>
   )
 }`,
-  "radio-group-02": `import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
-import { Label } from "@/components/ui/label"
-
+  "radio-group-02": `
 export default function RadioGroup02() {
   return (
     <RadioGroup defaultValue="beginner" className="flex items-center gap-4">
@@ -570,9 +565,7 @@ export default function RadioGroup02() {
     </RadioGroup>
   )
 }`,
-  "radio-group-03": `import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
-import { Label } from "@/components/ui/label"
-
+  "radio-group-03": `
 export default function RadioGroup03() {
   return (
     <RadioGroup defaultValue="destructive" className="flex items-center gap-4">
@@ -603,9 +596,7 @@ export default function RadioGroup03() {
     </RadioGroup>
   )
 }`,
-  "radio-group-07": `import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
-import { Label } from "@/components/ui/label"
-
+  "radio-group-07": `
 export default function RadioGroup07() {
   return (
     <RadioGroup defaultValue="basic" className="grid gap-3">
@@ -633,9 +624,7 @@ export default function RadioGroup07() {
     </RadioGroup>
   )
 }`,
-  "radio-group-09": `import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
-import { Label } from "@/components/ui/label"
-
+  "radio-group-09": `
 export default function RadioGroup09() {
   return (
     <RadioGroup defaultValue="2" className="grid w-full max-w-96 gap-0 -space-y-px rounded-md shadow-xs">
@@ -660,9 +649,7 @@ export default function RadioGroup09() {
     </RadioGroup>
   )
 }`,
-  "radio-group-11": `import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
-import { Label } from "@/components/ui/label"
-
+  "radio-group-11": `
 export default function RadioGroup11() {
   return (
     <RadioGroup defaultValue="1" className="grid w-full max-w-96 gap-2">

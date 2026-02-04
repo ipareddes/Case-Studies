@@ -1,17 +1,11 @@
 "use client";
 
+import { Avatar, AvatarImage, Badge, Button, Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle, Input, Label, Separator, Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@ipareddes/ui-components";
+
 import { ComponentLayout } from "@/components/layout/component-layout";
 import { useState } from "react";
 import { X, Sparkles, Code2, Copy, Check, CircleFadingPlus, BadgeCheck, UserPlus, Heart, Star, TrendingUp, TrendingDown, Quote, ArrowRight, ChevronUp, ChevronDown, MoreHorizontal, ShoppingCart, DollarSign, CreditCard, Mail, MailOpen, MousePointerClick, BellRing, TriangleAlert, CircleOff, CircleDollarSign, TicketCheck } from "lucide-react";
 import ReactDOM from "react-dom";
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
-import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Avatar, AvatarImage } from "@/components/ui/avatar";
-import { Badge } from "@/components/ui/badge";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Separator } from "@/components/ui/separator";
 import { cn } from "@/lib";
 
 // --- Code Modal ---
@@ -1140,11 +1134,7 @@ function Card32() {
 
 // --- Code strings ---
 const codes: Record<string, string> = {
-  "card-01": `import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-
+  "card-01": `
 export default function Card01() {
   return (
     <Card className="w-full max-w-md">
@@ -1176,8 +1166,7 @@ export default function Card01() {
     </Card>
   )
 }`,
-  "card-04": `import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card"
-
+  "card-04": `
 export default function Card04() {
   return (
     <Card className="max-w-md pb-0">
@@ -1191,8 +1180,7 @@ export default function Card04() {
     </Card>
   )
 }`,
-  "card-08": `import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card"
-
+  "card-08": `
 export default function Card08() {
   return (
     <Card className="bg-primary/20 max-w-md gap-0">
@@ -1205,9 +1193,7 @@ export default function Card08() {
     </Card>
   )
 }`,
-  "card-13": `import { Card, CardContent, CardFooter, CardTitle, CardDescription } from "@/components/ui/card"
-import { Avatar, AvatarImage } from "@/components/ui/avatar"
-import { Star } from "lucide-react"
+  "card-13": `import { Star } from "lucide-react"
 
 export default function Card13() {
   return (
@@ -1234,9 +1220,7 @@ export default function Card13() {
     </Card>
   )
 }`,
-  "card-14": `import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
-import { X } from "lucide-react"
+  "card-14": `import { X } from "lucide-react"
 
 export default function Card14() {
   return (
@@ -1255,8 +1239,7 @@ export default function Card14() {
     </Card>
   )
 }`,
-  "card-17": `import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card"
-
+  "card-17": `
 export default function Card17() {
   return (
     <Card className="max-w-md">
@@ -1270,9 +1253,7 @@ export default function Card17() {
     </Card>
   )
 }`,
-  "card-26": `import { Card, CardContent } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { TicketCheck, ChevronUp } from "lucide-react"
+  "card-26": `import { TicketCheck, ChevronUp } from "lucide-react"
 
 export default function Card26() {
   return (
@@ -1298,9 +1279,7 @@ export default function Card26() {
     </Card>
   )
 }`,
-  "card-27": `import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
-import { MoreHorizontal } from "lucide-react"
+  "card-27": `import { MoreHorizontal } from "lucide-react"
 
 export default function Card27() {
   return (
@@ -1345,9 +1324,7 @@ export default function Card27() {
     </Card>
   )
 }`,
-  "card-28": `import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
-import { MoreHorizontal, CreditCard, CircleDollarSign } from "lucide-react"
+  "card-28": `import { MoreHorizontal, CreditCard, CircleDollarSign } from "lucide-react"
 import { cn } from "@/lib"
 
 export default function Card28() {
@@ -1389,9 +1366,7 @@ export default function Card28() {
     </Card>
   )
 }`,
-  "card-29": `import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
-import { MoreHorizontal, Mail, MailOpen, MousePointerClick, BellRing, TriangleAlert, CircleOff } from "lucide-react"
+  "card-29": `import { MoreHorizontal, Mail, MailOpen, MousePointerClick, BellRing, TriangleAlert, CircleOff } from "lucide-react"
 import { cn } from "@/lib"
 
 export default function Card29() {
@@ -1436,10 +1411,7 @@ export default function Card29() {
     </Card>
   )
 }`,
-  "card-30": `import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
-import { Separator } from "@/components/ui/separator"
-import { MoreHorizontal, TrendingUp, CircleDollarSign, ShoppingCart } from "lucide-react"
+  "card-30": `import { MoreHorizontal, TrendingUp, CircleDollarSign, ShoppingCart } from "lucide-react"
 
 export default function Card30() {
   return (
@@ -1491,10 +1463,7 @@ export default function Card30() {
     </Card>
   )
 }`,
-  "card-31": `import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
-import { Badge } from "@/components/ui/badge"
-import { MoreHorizontal, Check } from "lucide-react"
+  "card-31": `import { MoreHorizontal, Check } from "lucide-react"
 import { cn } from "@/lib"
 
 export default function Card31() {
@@ -1557,9 +1526,7 @@ export default function Card31() {
     </Card>
   )
 }`,
-  "card-32": `import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
-import { MoreHorizontal } from "lucide-react"
+  "card-32": `import { MoreHorizontal } from "lucide-react"
 import { cn } from "@/lib"
 
 export default function Card32() {

@@ -1,12 +1,11 @@
 "use client";
 
+import { Checkbox, Table, TableBody, TableCell, TableHead, TableHeader, TableRow, Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@ipareddes/ui-components";
+
 import { ComponentLayout } from "@/components/layout/component-layout";
 import { useState } from "react";
 import { X, Sparkles, Code2, Copy, Check, ChevronDown, ChevronUp, Search, Columns3, GripVertical, Ellipsis, Download } from "lucide-react";
 import ReactDOM from "react-dom";
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
-import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
-import { Checkbox } from "@/components/ui/checkbox";
 
 // --- Code Modal ---
 function CodeModal({ code, onClose, variantId }: { code: string; onClose: () => void; variantId: string }) {
@@ -738,9 +737,7 @@ function DataTable13() {
 
 // --- Code strings ---
 const codes: Record<string, string> = {
-  "data-table-01": `import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table"
-import { Checkbox } from "@/components/ui/checkbox"
-
+  "data-table-01": `
 const data = [
   { name: "Olivia Martin", status: "Active", email: "olivia@example.com", amount: "$1,999.00" },
   { name: "Jackson Lee", status: "Active", email: "jackson@example.com", amount: "$39.00" },
@@ -777,9 +774,7 @@ export default function DataTable01() {
     </div>
   )
 }`,
-  "data-table-05": `import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table"
-import { Checkbox } from "@/components/ui/checkbox"
-
+  "data-table-05": `
 const data = [
   { name: "Olivia Martin", status: "Active", email: "olivia@example.com", amount: "$1,999.00" },
   { name: "Jackson Lee", status: "Active", email: "jackson@example.com", amount: "$39.00" },
@@ -832,9 +827,7 @@ export default function DataTable05() {
     </div>
   )
 }`,
-  "data-table-09": `import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table"
-import { Checkbox } from "@/components/ui/checkbox"
-import { ChevronDown } from "lucide-react"
+  "data-table-09": `import { ChevronDown } from "lucide-react"
 
 const data = [
   { team: "Alpha Squad", department: "Engineering", location: "San Francisco", milestone: "Q2 Launch", budget: "$120,000" },
@@ -879,9 +872,7 @@ export default function DataTable09() {
     </div>
   )
 }`,
-  "data-table-13": `import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table"
-import { Checkbox } from "@/components/ui/checkbox"
-
+  "data-table-13": `
 const data = [
   { first: "Alice", last: "Johnson", email: "alice@example.com", status: "Active", progress: 75 },
   { first: "Bob", last: "Smith", email: "bob@example.com", status: "Inactive", progress: 40 },

@@ -1,13 +1,11 @@
 "use client";
 
+import { Badge, Checkbox, Label, Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@ipareddes/ui-components";
+
 import { ComponentLayout } from "@/components/layout/component-layout";
 import { useState } from "react";
 import { X, Sparkles, Code2, Copy, Check, Minus, Heart, Star, ThumbsUp, Code, ChartPie, Paintbrush, Apple, Cherry, Citrus } from "lucide-react";
 import ReactDOM from "react-dom";
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
-import { Checkbox } from "@/components/ui/checkbox";
-import { Label } from "@/components/ui/label";
-import { Badge } from "@/components/ui/badge";
 
 // --- Code Modal ---
 function CodeModal({ code, onClose, variantId }: { code: string; onClose: () => void; variantId: string }) {
@@ -179,7 +177,7 @@ function Checkbox04() {
   const [checked, setChecked] = useState(true);
   return (
     <div className="flex items-center gap-2">
-      <Checkbox id="checkbox-04" checked={checked} onCheckedChange={(v) => setChecked(v === true)} />
+      <Checkbox id="checkbox-04" checked={checked} onCheckedChange={(v: boolean | "indeterminate") => setChecked(v === true)} />
       <Label htmlFor="checkbox-04" className={checked ? "line-through" : ""}>Simple todo list item</Label>
     </div>
   );
@@ -305,14 +303,14 @@ function Checkbox13() {
   return (
     <div className="space-y-2">
       <label className={`flex items-start gap-2 rounded-lg border p-3 cursor-pointer hover:bg-accent/50 ${autoStart ? "border-blue-600 bg-blue-50 dark:border-blue-900 dark:bg-blue-950" : ""}`}>
-        <Checkbox checked={autoStart} onCheckedChange={(v) => setAutoStart(v === true)} className="data-[state=checked]:border-blue-600 data-[state=checked]:bg-blue-600 data-[state=checked]:text-white" />
+        <Checkbox checked={autoStart} onCheckedChange={(v: boolean | "indeterminate") => setAutoStart(v === true)} className="data-[state=checked]:border-blue-600 data-[state=checked]:bg-blue-600 data-[state=checked]:text-white" />
         <div className="grid gap-1.5">
           <p className="text-sm leading-none font-medium">Auto Start</p>
           <p className="text-muted-foreground text-sm">Starting with your OS.</p>
         </div>
       </label>
       <label className={`flex items-start gap-2 rounded-lg border p-3 cursor-pointer hover:bg-accent/50 ${autoUpdate ? "border-blue-600 bg-blue-50 dark:border-blue-900 dark:bg-blue-950" : ""}`}>
-        <Checkbox checked={autoUpdate} onCheckedChange={(v) => setAutoUpdate(v === true)} className="data-[state=checked]:border-blue-600 data-[state=checked]:bg-blue-600 data-[state=checked]:text-white" />
+        <Checkbox checked={autoUpdate} onCheckedChange={(v: boolean | "indeterminate") => setAutoUpdate(v === true)} className="data-[state=checked]:border-blue-600 data-[state=checked]:bg-blue-600 data-[state=checked]:text-white" />
         <div className="grid gap-1.5">
           <p className="text-sm leading-none font-medium">Auto Update</p>
           <p className="text-muted-foreground text-sm">Download and install updates automatically.</p>
@@ -365,7 +363,7 @@ function Checkbox15() {
             <Checkbox
               id={`cb15-${child}`}
               checked={children[i]}
-              onCheckedChange={(v) => {
+              onCheckedChange={(v: boolean | "indeterminate") => {
                 const next = [...children];
                 next[i] = v === true;
                 setChildren(next);
@@ -399,7 +397,7 @@ function Checkbox17() {
   const [checked, setChecked] = useState(true);
   return (
     <div className="flex items-center gap-2">
-      <Checkbox id="checkbox-17" checked={checked} onCheckedChange={(v) => setChecked(v === true)} className="transition-colors duration-500" />
+      <Checkbox id="checkbox-17" checked={checked} onCheckedChange={(v: boolean | "indeterminate") => setChecked(v === true)} className="transition-colors duration-500" />
       <Label htmlFor="checkbox-17">Animated checkbox</Label>
     </div>
   );
@@ -412,7 +410,7 @@ function Checkbox18() {
       <Checkbox
         id="checkbox-18"
         checked={checked}
-        onCheckedChange={(v) => setChecked(v === true)}
+        onCheckedChange={(v: boolean | "indeterminate") => setChecked(v === true)}
         className="rounded-full data-[state=checked]:border-blue-500 data-[state=checked]:bg-blue-500 transition-colors duration-500"
       />
       <Label htmlFor="checkbox-18" className="relative">
@@ -426,7 +424,7 @@ function Checkbox19() {
   const [checked, setChecked] = useState(false);
   return (
     <div className="relative flex items-center gap-2">
-      <Checkbox id="checkbox-19" checked={checked} onCheckedChange={(v) => setChecked(v === true)} />
+      <Checkbox id="checkbox-19" checked={checked} onCheckedChange={(v: boolean | "indeterminate") => setChecked(v === true)} />
       <Label htmlFor="checkbox-19">Check to see magic</Label>
       {checked && <span className="ml-2 text-sm text-muted-foreground animate-in fade-in">tada!</span>}
     </div>
@@ -435,9 +433,7 @@ function Checkbox19() {
 
 // --- Code strings ---
 const codes: Record<string, string> = {
-  "checkbox-01": `import { Checkbox } from "@/components/ui/checkbox"
-import { Label } from "@/components/ui/label"
-
+  "checkbox-01": `
 export default function Checkbox01() {
   return (
     <div className="flex items-center gap-2">
@@ -446,24 +442,20 @@ export default function Checkbox01() {
     </div>
   )
 }`,
-  "checkbox-04": `import { Checkbox } from "@/components/ui/checkbox"
-import { Label } from "@/components/ui/label"
-import { useState } from "react"
+  "checkbox-04": `import { useState } from "react"
 
 export default function Checkbox04() {
   const [checked, setChecked] = useState(true)
   return (
     <div className="flex items-center gap-2">
-      <Checkbox id="checkbox-04" checked={checked} onCheckedChange={(v) => setChecked(v === true)} />
+      <Checkbox id="checkbox-04" checked={checked} onCheckedChange={(v: boolean | "indeterminate") => setChecked(v === true)} />
       <Label htmlFor="checkbox-04" className={checked ? "line-through" : ""}>
         Simple todo list item
       </Label>
     </div>
   )
 }`,
-  "checkbox-07": `import { Checkbox } from "@/components/ui/checkbox"
-import { Label } from "@/components/ui/label"
-
+  "checkbox-07": `
 export default function Checkbox07() {
   return (
     <div className="flex items-start gap-2">
@@ -477,8 +469,7 @@ export default function Checkbox07() {
     </div>
   )
 }`,
-  "checkbox-10": `import { Checkbox } from "@/components/ui/checkbox"
-
+  "checkbox-10": `
 export default function Checkbox10() {
   return (
     <div className="flex items-center gap-2">
@@ -489,15 +480,14 @@ export default function Checkbox10() {
     </div>
   )
 }`,
-  "checkbox-13": `import { Checkbox } from "@/components/ui/checkbox"
-import { useState } from "react"
+  "checkbox-13": `import { useState } from "react"
 
 export default function Checkbox13() {
   const [autoStart, setAutoStart] = useState(true)
   return (
     <div className="space-y-2">
       <label className={\`flex items-start gap-2 rounded-lg border p-3 cursor-pointer hover:bg-accent/50 \${autoStart ? "border-blue-600 bg-blue-50 dark:border-blue-900 dark:bg-blue-950" : ""}\`}>
-        <Checkbox checked={autoStart} onCheckedChange={(v) => setAutoStart(v === true)}
+        <Checkbox checked={autoStart} onCheckedChange={(v: boolean | "indeterminate") => setAutoStart(v === true)}
           className="data-[state=checked]:border-blue-600 data-[state=checked]:bg-blue-600 data-[state=checked]:text-white" />
         <div className="grid gap-1.5">
           <p className="text-sm leading-none font-medium">Auto Start</p>
@@ -507,9 +497,7 @@ export default function Checkbox13() {
     </div>
   )
 }`,
-  "checkbox-15": `import { Checkbox } from "@/components/ui/checkbox"
-import { Label } from "@/components/ui/label"
-import { useState } from "react"
+  "checkbox-15": `import { useState } from "react"
 
 export default function Checkbox15() {
   const [children, setChildren] = useState([true, false])
@@ -527,7 +515,7 @@ export default function Checkbox15() {
         {["Child 1", "Child 2"].map((child, i) => (
           <div key={child} className="flex items-center gap-2">
             <Checkbox checked={children[i]}
-              onCheckedChange={(v) => { const next = [...children]; next[i] = v === true; setChildren(next); }} />
+              onCheckedChange={(v: boolean | "indeterminate") => { const next = [...children]; next[i] = v === true; setChildren(next); }} />
             <Label>{child}</Label>
           </div>
         ))}

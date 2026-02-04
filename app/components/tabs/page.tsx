@@ -1,13 +1,11 @@
 "use client";
 
+import { Badge, ScrollArea, ScrollBar, Tabs, TabsContent, TabsList, TabsTrigger, Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@ipareddes/ui-components";
+
 import { ComponentLayout } from "@/components/layout/component-layout";
 import { useState } from "react";
 import { X, Sparkles, Code2, Copy, Check, Book, Heart, Gift } from "lucide-react";
 import ReactDOM from "react-dom";
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Badge } from "@/components/ui/badge";
-import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
 
 // --- Code Modal ---
 function CodeModal({ code, onClose, variantId }: { code: string; onClose: () => void; variantId: string }) {
@@ -927,8 +925,7 @@ function Tabs29() {
 
 // --- Code strings ---
 const codes: Record<string, string> = {
-  "tabs-01": `import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-
+  "tabs-01": `
 export default function Tabs01() {
   return (
     <Tabs defaultValue="explore" className="flex flex-col gap-2">
@@ -949,8 +946,7 @@ export default function Tabs01() {
     </Tabs>
   )
 }`,
-  "tabs-02": `import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-
+  "tabs-02": `
 export default function Tabs02() {
   return (
     <Tabs defaultValue="explore" className="flex flex-col gap-4">
@@ -965,8 +961,7 @@ export default function Tabs02() {
     </Tabs>
   )
 }`,
-  "tabs-11": `import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-
+  "tabs-11": `
 export default function Tabs11() {
   return (
     <Tabs defaultValue="explore" className="flex flex-col gap-4">
@@ -981,8 +976,7 @@ export default function Tabs11() {
     </Tabs>
   )
 }`,
-  "tabs-15": `import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-
+  "tabs-15": `
 export default function Tabs15() {
   return (
     <Tabs defaultValue="explore" className="flex gap-2 flex-row">
@@ -997,8 +991,7 @@ export default function Tabs15() {
     </Tabs>
   )
 }`,
-  "tabs-22": `import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { Book, Heart, Gift } from "lucide-react"
+  "tabs-22": `import { Book, Heart, Gift } from "lucide-react"
 
 export default function Tabs22() {
   return (
@@ -1020,8 +1013,7 @@ export default function Tabs22() {
     </Tabs>
   )
 }`,
-  "tabs-28": `import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { Book, Heart, Gift } from "lucide-react"
+  "tabs-28": `import { Book, Heart, Gift } from "lucide-react"
 
 export default function Tabs28() {
   return (

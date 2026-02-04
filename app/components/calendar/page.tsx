@@ -1,10 +1,11 @@
 "use client";
 
+import { Calendar, Card, CardContent, CardDescription, CardHeader, CardTitle, Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@ipareddes/ui-components";
+
 import { ComponentLayout } from "@/components/layout/component-layout";
 import { useState } from "react";
 import { X, Sparkles, Code2, Copy, Check, ChevronLeft, ChevronRight } from "lucide-react";
 import ReactDOM from "react-dom";
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 
 // --- Code Modal ---
 function CodeModal({ code, onClose, variantId }: { code: string; onClose: () => void; variantId: string }) {
@@ -725,8 +726,7 @@ function Calendar25Preview() {
 
 // --- Code strings ---
 const codes: Record<string, string> = {
-  "calendar-01": `import { Calendar } from "@/components/ui/calendar"
-import { useState } from "react"
+  "calendar-01": `import { useState } from "react"
 
 export default function Calendar01() {
   const [date, setDate] = useState<Date | undefined>(new Date())
@@ -740,8 +740,7 @@ export default function Calendar01() {
     />
   )
 }`,
-  "calendar-02": `import { Calendar } from "@/components/ui/calendar"
-
+  "calendar-02": `
 export default function Calendar02() {
   return (
     <Calendar
@@ -750,8 +749,7 @@ export default function Calendar02() {
     />
   )
 }`,
-  "calendar-03": `import { Calendar } from "@/components/ui/calendar"
-import { useState } from "react"
+  "calendar-03": `import { useState } from "react"
 import { DateRange } from "react-day-picker"
 
 export default function Calendar03() {
@@ -769,9 +767,7 @@ export default function Calendar03() {
     />
   )
 }`,
-  "calendar-08": `import { Calendar } from "@/components/ui/calendar"
-import { Card, CardContent } from "@/components/ui/card"
-import { useState } from "react"
+  "calendar-08": `import { useState } from "react"
 
 export default function Calendar08() {
   const [date, setDate] = useState<Date | undefined>(new Date())
@@ -788,8 +784,7 @@ export default function Calendar08() {
     </Card>
   )
 }`,
-  "calendar-13": `import { Calendar } from "@/components/ui/calendar"
-import { useState } from "react"
+  "calendar-13": `import { useState } from "react"
 import { DateRange } from "react-day-picker"
 import { addDays } from "date-fns"
 
@@ -826,9 +821,7 @@ export default function Calendar13() {
     </div>
   )
 }`,
-  "calendar-18": `import { Calendar } from "@/components/ui/calendar"
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card"
-import { useState } from "react"
+  "calendar-18": `import { useState } from "react"
 
 export default function Calendar18() {
   const [date, setDate] = useState<Date | undefined>(new Date())
@@ -852,8 +845,7 @@ export default function Calendar18() {
     </Card>
   )
 }`,
-  "calendar-24": `import { Calendar } from "@/components/ui/calendar"
-import { useState } from "react"
+  "calendar-24": `import { useState } from "react"
 import { format } from "date-fns"
 
 export default function Calendar24() {

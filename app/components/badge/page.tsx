@@ -1,11 +1,11 @@
 "use client";
 
+import { Badge, Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@ipareddes/ui-components";
+
 import { ComponentLayout } from "@/components/layout/component-layout";
 import { useState } from "react";
 import { X, Sparkles, Code2, Copy, Check, Star, ArrowRight, Ban, CircleAlert, CircleCheckBig, ShoppingCart } from "lucide-react";
 import ReactDOM from "react-dom";
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
-import { Badge } from "@/components/ui/badge";
 
 // --- Code Modal ---
 function CodeModal({ code, onClose, variantId }: { code: string; onClose: () => void; variantId: string }) {
@@ -402,23 +402,19 @@ function Badge24() {
 
 // --- Code strings ---
 const codes: Record<string, string> = {
-  "badge-01": `import { Badge } from "@/components/ui/badge"
-
+  "badge-01": `
 export default function Badge01() {
   return <Badge>Default</Badge>
 }`,
-  "badge-02": `import { Badge } from "@/components/ui/badge"
-
+  "badge-02": `
 export default function Badge02() {
   return <Badge variant="secondary">Secondary</Badge>
 }`,
-  "badge-03": `import { Badge } from "@/components/ui/badge"
-
+  "badge-03": `
 export default function Badge03() {
   return <Badge variant="destructive">Destructive</Badge>
 }`,
-  "badge-04": `import { Badge } from "@/components/ui/badge"
-
+  "badge-04": `
 export default function Badge04() {
   return <Badge variant="outline">Outline</Badge>
 }`,
@@ -430,28 +426,23 @@ export default function Badge04() {
     </span>
   )
 }`,
-  "badge-06": `import { Badge } from "@/components/ui/badge"
-
+  "badge-06": `
 export default function Badge06() {
   return <Badge className="rounded-sm">Rounded</Badge>
 }`,
-  "badge-07": `import { Badge } from "@/components/ui/badge"
-
+  "badge-07": `
 export default function Badge07() {
   return <Badge className="h-5 min-w-5 px-1 tabular-nums">8</Badge>
 }`,
-  "badge-08": `import { Badge } from "@/components/ui/badge"
-
+  "badge-08": `
 export default function Badge08() {
   return <Badge className="px-3 py-1">Large</Badge>
 }`,
-  "badge-09": `import { Badge } from "@/components/ui/badge"
-
+  "badge-09": `
 export default function Badge09() {
   return <Badge className="px-1.5 py-px">Small</Badge>
 }`,
-  "badge-10": `import { Badge } from "@/components/ui/badge"
-import { Star } from "lucide-react"
+  "badge-10": `import { Star } from "lucide-react"
 
 export default function Badge10() {
   return (
@@ -470,8 +461,7 @@ export default function Badge11() {
     </a>
   )
 }`,
-  "badge-12": `import { Badge } from "@/components/ui/badge"
-import { X } from "lucide-react"
+  "badge-12": `import { X } from "lucide-react"
 
 export default function Badge12() {
   return (
@@ -503,8 +493,7 @@ export default function Badge13() {
     </span>
   )
 }`,
-  "badge-14": `import { Badge } from "@/components/ui/badge"
-
+  "badge-14": `
 export default function Badge14() {
   return (
     <Badge className="rounded-sm border-transparent bg-gradient-to-r from-indigo-500 to-pink-500 [background-size:105%] bg-center text-white">
@@ -512,8 +501,7 @@ export default function Badge14() {
     </Badge>
   )
 }`,
-  "badge-15": `import { Badge } from "@/components/ui/badge"
-
+  "badge-15": `
 export default function Badge15() {
   return (
     <div className="flex items-center justify-center rounded-full bg-gradient-to-r from-indigo-500 to-pink-500 p-0.5">
@@ -523,8 +511,7 @@ export default function Badge15() {
     </div>
   )
 }`,
-  "badge-16": `import { Badge } from "@/components/ui/badge"
-
+  "badge-16": `
 export default function Badge16() {
   return (
     <Badge className="border-none bg-amber-600/10 text-amber-600 dark:bg-amber-400/10 dark:text-amber-400">
@@ -533,8 +520,7 @@ export default function Badge16() {
     </Badge>
   )
 }`,
-  "badge-17": `import { Badge } from "@/components/ui/badge"
-
+  "badge-17": `
 export default function Badge17() {
   return (
     <Badge variant="destructive" className="border-none bg-destructive/10 text-destructive dark:bg-destructive/10">
@@ -543,8 +529,7 @@ export default function Badge17() {
     </Badge>
   )
 }`,
-  "badge-18": `import { Badge } from "@/components/ui/badge"
-
+  "badge-18": `
 export default function Badge18() {
   return (
     <Badge className="border-none bg-green-600/10 text-green-600 dark:bg-green-400/10 dark:text-green-400">
@@ -553,8 +538,7 @@ export default function Badge18() {
     </Badge>
   )
 }`,
-  "badge-19": `import { Badge } from "@/components/ui/badge"
-import { CircleAlert } from "lucide-react"
+  "badge-19": `import { CircleAlert } from "lucide-react"
 
 export default function Badge19() {
   return (
@@ -564,8 +548,7 @@ export default function Badge19() {
     </Badge>
   )
 }`,
-  "badge-20": `import { Badge } from "@/components/ui/badge"
-import { Ban } from "lucide-react"
+  "badge-20": `import { Ban } from "lucide-react"
 
 export default function Badge20() {
   return (
@@ -575,8 +558,7 @@ export default function Badge20() {
     </Badge>
   )
 }`,
-  "badge-21": `import { Badge } from "@/components/ui/badge"
-import { CircleCheckBig } from "lucide-react"
+  "badge-21": `import { CircleCheckBig } from "lucide-react"
 
 export default function Badge21() {
   return (
@@ -586,8 +568,7 @@ export default function Badge21() {
     </Badge>
   )
 }`,
-  "badge-22": `import { Badge } from "@/components/ui/badge"
-
+  "badge-22": `
 export default function Badge22() {
   return (
     <Badge variant="outline" className="p-1 pr-2">
@@ -596,8 +577,7 @@ export default function Badge22() {
     </Badge>
   )
 }`,
-  "badge-23": `import { Badge } from "@/components/ui/badge"
-import { ShoppingCart } from "lucide-react"
+  "badge-23": `import { ShoppingCart } from "lucide-react"
 
 export default function Badge23() {
   return (

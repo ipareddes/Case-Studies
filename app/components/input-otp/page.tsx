@@ -1,12 +1,11 @@
 "use client";
 
+import { InputOTP, InputOTPGroup, InputOTPSeparator, InputOTPSlot, Label, Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@ipareddes/ui-components";
+
 import { ComponentLayout } from "@/components/layout/component-layout";
 import { useState } from "react";
 import { X, Sparkles, Code2, Copy, Check, Minus } from "lucide-react";
 import ReactDOM from "react-dom";
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
-import { InputOTP, InputOTPGroup, InputOTPSlot, InputOTPSeparator } from "@/components/ui/input-otp";
-import { Label } from "@/components/ui/label";
 import { REGEXP_ONLY_DIGITS, REGEXP_ONLY_DIGITS_AND_CHARS } from "input-otp";
 
 // --- Code Modal ---
@@ -348,9 +347,7 @@ function InputOtp10() {
 
 // --- Code strings ---
 const codes: Record<string, string> = {
-  "input-otp-01": `import { InputOTP, InputOTPGroup, InputOTPSlot } from "@/components/ui/input-otp"
-import { Label } from "@/components/ui/label"
-import { REGEXP_ONLY_DIGITS } from "input-otp"
+  "input-otp-01": `import { REGEXP_ONLY_DIGITS } from "input-otp"
 
 export default function InputOtp01() {
   return (
@@ -369,9 +366,7 @@ export default function InputOtp01() {
     </div>
   )
 }`,
-  "input-otp-03": `import { InputOTP, InputOTPGroup, InputOTPSlot } from "@/components/ui/input-otp"
-import { Label } from "@/components/ui/label"
-
+  "input-otp-03": `
 export default function InputOtp03() {
   return (
     <div className="space-y-3">
@@ -393,9 +388,7 @@ export default function InputOtp03() {
     </div>
   )
 }`,
-  "input-otp-06": `import { InputOTP, InputOTPGroup, InputOTPSlot } from "@/components/ui/input-otp"
-import { Label } from "@/components/ui/label"
-
+  "input-otp-06": `
 export default function InputOtp06() {
   return (
     <div className="space-y-3">
@@ -413,9 +406,7 @@ export default function InputOtp06() {
     </div>
   )
 }`,
-  "input-otp-08": `import { InputOTP, InputOTPGroup, InputOTPSlot, InputOTPSeparator } from "@/components/ui/input-otp"
-import { Label } from "@/components/ui/label"
-
+  "input-otp-08": `
 export default function InputOtp08() {
   return (
     <div className="space-y-3">
@@ -436,9 +427,7 @@ export default function InputOtp08() {
     </div>
   )
 }`,
-  "input-otp-10": `import { InputOTP, InputOTPGroup, InputOTPSlot } from "@/components/ui/input-otp"
-import { Label } from "@/components/ui/label"
-import { Minus } from "lucide-react"
+  "input-otp-10": `import { Minus } from "lucide-react"
 
 export default function InputOtp10() {
   return (

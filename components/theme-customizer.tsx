@@ -1,21 +1,8 @@
 "use client";
 
+import { Button, Collapsible, CollapsibleContent, CollapsibleTrigger, Input, Label, Popover, PopoverContent, PopoverTrigger, Slider, Tabs, TabsContent, TabsList, TabsTrigger } from "@ipareddes/ui-components";
+
 import { useState, useEffect, createContext, useContext, useCallback } from "react";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Slider } from "@/components/ui/slider";
-import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from "@/components/ui/popover";
-import {
-  Collapsible,
-  CollapsibleContent,
-  CollapsibleTrigger,
-} from "@/components/ui/collapsible";
 import { themes, themeNames } from "@/lib/themes";
 import {
   Palette,

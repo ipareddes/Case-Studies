@@ -1,13 +1,11 @@
 "use client";
 
+import { Button, Input, Label, Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@ipareddes/ui-components";
+
 import { ComponentLayout } from "@/components/layout/component-layout";
 import { useState } from "react";
 import { X, Sparkles, Code2, Copy, Check, User, Mail, Eye, EyeOff, Search, SendHorizontal, Download } from "lucide-react";
 import ReactDOM from "react-dom";
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Button } from "@/components/ui/button";
 
 // --- Code Modal ---
 function CodeModal({ code, onClose, variantId }: { code: string; onClose: () => void; variantId: string }) {
@@ -655,16 +653,13 @@ function Input40() {
 
 // --- Code strings ---
 const codes: Record<string, string> = {
-  "input-01": `import { Input } from "@/components/ui/input"
-
+  "input-01": `
 export default function Input01() {
   return (
     <Input type="email" placeholder="Email address" className="max-w-xs" />
   )
 }`,
-  "input-02": `import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-
+  "input-02": `
 export default function Input02() {
   return (
     <div className="w-full max-w-xs space-y-2">
@@ -673,9 +668,7 @@ export default function Input02() {
     </div>
   )
 }`,
-  "input-03": `import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-
+  "input-03": `
 export default function Input03() {
   return (
     <div className="w-full max-w-xs space-y-2">
@@ -686,9 +679,7 @@ export default function Input03() {
     </div>
   )
 }`,
-  "input-12": `import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-
+  "input-12": `
 export default function Input12() {
   return (
     <div className="w-full max-w-xs space-y-2">
@@ -698,9 +689,7 @@ export default function Input12() {
     </div>
   )
 }`,
-  "input-14": `import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import { User } from "lucide-react"
+  "input-14": `import { User } from "lucide-react"
 
 export default function Input14() {
   return (
@@ -715,9 +704,7 @@ export default function Input14() {
     </div>
   )
 }`,
-  "input-19": `import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-
+  "input-19": `
 export default function Input19() {
   return (
     <div className="w-full max-w-xs space-y-2">
@@ -731,8 +718,6 @@ export default function Input19() {
 }`,
   "input-26": `"use client"
 
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
 import { Eye, EyeOff } from "lucide-react"
 import { useState } from "react"
 
@@ -754,10 +739,7 @@ export default function Input26() {
     </div>
   )
 }`,
-  "input-30": `import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import { Button } from "@/components/ui/button"
-
+  "input-30": `
 export default function Input30() {
   return (
     <div className="w-full max-w-xs space-y-2">
@@ -769,10 +751,7 @@ export default function Input30() {
     </div>
   )
 }`,
-  "input-33": `import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import { Button } from "@/components/ui/button"
-
+  "input-33": `
 export default function Input33() {
   return (
     <div className="w-full max-w-xs space-y-2">
@@ -786,8 +765,6 @@ export default function Input33() {
 }`,
   "input-34": `"use client"
 
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
 import { useState } from "react"
 
 export default function Input34() {

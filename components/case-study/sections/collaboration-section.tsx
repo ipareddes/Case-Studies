@@ -1,7 +1,8 @@
 'use client'
 
+import { Accordion } from "@ipareddes/ui-components";
+
 import type { CollaborationSection as CollaborationSectionType } from '@/lib/types'
-import { Accordion } from '@/components/ui/accordion'
 
 export function CollaborationSection({ section }: { section: CollaborationSectionType }) {
   // Create accordion items for teams/functions

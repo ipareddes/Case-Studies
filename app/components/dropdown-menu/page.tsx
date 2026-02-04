@@ -1,28 +1,11 @@
 "use client";
 
+import { Avatar, AvatarFallback, AvatarImage, Button, DropdownMenu, DropdownMenuCheckboxItem, DropdownMenuContent, DropdownMenuGroup, DropdownMenuItem, DropdownMenuLabel, DropdownMenuRadioGroup, DropdownMenuRadioItem, DropdownMenuSeparator, DropdownMenuShortcut, DropdownMenuSub, DropdownMenuSubContent, DropdownMenuSubTrigger, DropdownMenuTrigger, Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@ipareddes/ui-components";
+
 import { ComponentLayout } from "@/components/layout/component-layout";
 import { useState } from "react";
 import { X, Sparkles, Code2, Copy, Check, Pencil, User, Settings, LogOut, CreditCard, Keyboard, Mail, MessageSquare, Plus, UserPlus, Cloud, LifeBuoy, Github, ChevronDown, Calendar, Smile, Bold, Italic, Underline } from "lucide-react";
 import ReactDOM from "react-dom";
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
-import {
-  DropdownMenu,
-  DropdownMenuTrigger,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuCheckboxItem,
-  DropdownMenuRadioItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
-  DropdownMenuShortcut,
-  DropdownMenuGroup,
-  DropdownMenuSub,
-  DropdownMenuSubContent,
-  DropdownMenuSubTrigger,
-  DropdownMenuRadioGroup,
-} from "@/components/ui/dropdown-menu";
-import { Button } from "@/components/ui/button";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 // --- Code Modal ---
 function CodeModal({ code, onClose, variantId }: { code: string; onClose: () => void; variantId: string }) {
@@ -459,13 +442,7 @@ function DropdownMenu16() {
 
 // --- Code strings ---
 const codes: Record<string, string> = {
-  "dropdown-menu-01": `import { Button } from "@/components/ui/button"
-import {
-  DropdownMenu, DropdownMenuTrigger, DropdownMenuContent,
-  DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator,
-  DropdownMenuShortcut, DropdownMenuGroup,
-} from "@/components/ui/dropdown-menu"
-import { User, CreditCard, Settings, Keyboard, LogOut } from "lucide-react"
+  "dropdown-menu-01": `import { User, CreditCard, Settings, Keyboard, LogOut } from "lucide-react"
 
 export default function DropdownMenu01() {
   return (
@@ -508,14 +485,7 @@ export default function DropdownMenu01() {
     </DropdownMenu>
   )
 }`,
-  "dropdown-menu-02": `import { Button } from "@/components/ui/button"
-import {
-  DropdownMenu, DropdownMenuTrigger, DropdownMenuContent,
-  DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator,
-  DropdownMenuGroup,
-} from "@/components/ui/dropdown-menu"
-import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar"
-import { User, Settings, CreditCard, LogOut } from "lucide-react"
+  "dropdown-menu-02": `import { User, Settings, CreditCard, LogOut } from "lucide-react"
 
 export default function DropdownMenu02() {
   return (
@@ -549,11 +519,6 @@ export default function DropdownMenu02() {
   "dropdown-menu-13": `"use client"
 
 import { useState } from "react"
-import { Button } from "@/components/ui/button"
-import {
-  DropdownMenu, DropdownMenuTrigger, DropdownMenuContent,
-  DropdownMenuCheckboxItem, DropdownMenuLabel, DropdownMenuSeparator,
-} from "@/components/ui/dropdown-menu"
 
 export default function DropdownMenu13() {
   const [showStatusBar, setShowStatusBar] = useState(true)
@@ -584,12 +549,6 @@ export default function DropdownMenu13() {
   "dropdown-menu-14": `"use client"
 
 import { useState } from "react"
-import { Button } from "@/components/ui/button"
-import {
-  DropdownMenu, DropdownMenuTrigger, DropdownMenuContent,
-  DropdownMenuRadioItem, DropdownMenuLabel, DropdownMenuSeparator,
-  DropdownMenuRadioGroup,
-} from "@/components/ui/dropdown-menu"
 
 export default function DropdownMenu14() {
   const [position, setPosition] = useState("bottom")

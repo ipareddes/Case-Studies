@@ -1,19 +1,11 @@
 "use client";
 
+import { Badge, Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator, Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@ipareddes/ui-components";
+
 import { ComponentLayout } from "@/components/layout/component-layout";
 import { useState } from "react";
 import { X, Sparkles, Code2, Copy, Check, ChevronRight, ChevronsRight, House, Folder, File, Dot, ChevronDown } from "lucide-react";
 import ReactDOM from "react-dom";
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
-import {
-  Breadcrumb,
-  BreadcrumbList,
-  BreadcrumbItem,
-  BreadcrumbLink,
-  BreadcrumbPage,
-  BreadcrumbSeparator,
-} from "@/components/ui/breadcrumb";
-import { Badge } from "@/components/ui/badge";
 
 // --- Code Modal ---
 function CodeModal({ code, onClose, variantId }: { code: string; onClose: () => void; variantId: string }) {
@@ -366,15 +358,7 @@ function Breadcrumb08() {
 
 // --- Code strings ---
 const codes: Record<string, string> = {
-  "breadcrumb-01": `import {
-  Breadcrumb,
-  BreadcrumbList,
-  BreadcrumbItem,
-  BreadcrumbLink,
-  BreadcrumbPage,
-  BreadcrumbSeparator,
-} from "@/components/ui/breadcrumb"
-
+  "breadcrumb-01": `
 export default function Breadcrumb01() {
   return (
     <Breadcrumb>
@@ -394,15 +378,7 @@ export default function Breadcrumb01() {
     </Breadcrumb>
   )
 }`,
-  "breadcrumb-02": `import {
-  Breadcrumb,
-  BreadcrumbList,
-  BreadcrumbItem,
-  BreadcrumbLink,
-  BreadcrumbPage,
-  BreadcrumbSeparator,
-} from "@/components/ui/breadcrumb"
-import { House } from "lucide-react"
+  "breadcrumb-02": `import { House } from "lucide-react"
 
 export default function Breadcrumb02() {
   return (
@@ -426,15 +402,7 @@ export default function Breadcrumb02() {
     </Breadcrumb>
   )
 }`,
-  "breadcrumb-03": `import {
-  Breadcrumb,
-  BreadcrumbList,
-  BreadcrumbItem,
-  BreadcrumbLink,
-  BreadcrumbPage,
-  BreadcrumbSeparator,
-} from "@/components/ui/breadcrumb"
-import { ChevronsRight, House, Folder, File } from "lucide-react"
+  "breadcrumb-03": `import { ChevronsRight, House, Folder, File } from "lucide-react"
 
 export default function Breadcrumb03() {
   return (
@@ -468,16 +436,7 @@ export default function Breadcrumb03() {
     </Breadcrumb>
   )
 }`,
-  "breadcrumb-05": `import {
-  Breadcrumb,
-  BreadcrumbList,
-  BreadcrumbItem,
-  BreadcrumbLink,
-  BreadcrumbPage,
-  BreadcrumbSeparator,
-} from "@/components/ui/breadcrumb"
-import { Badge } from "@/components/ui/badge"
-
+  "breadcrumb-05": `
 export default function Breadcrumb05() {
   return (
     <Breadcrumb>
@@ -503,15 +462,7 @@ export default function Breadcrumb05() {
     </Breadcrumb>
   )
 }`,
-  "breadcrumb-08": `import {
-  Breadcrumb,
-  BreadcrumbList,
-  BreadcrumbItem,
-  BreadcrumbLink,
-  BreadcrumbPage,
-  BreadcrumbSeparator,
-} from "@/components/ui/breadcrumb"
-import { House } from "lucide-react"
+  "breadcrumb-08": `import { House } from "lucide-react"
 
 export default function Breadcrumb08() {
   return (

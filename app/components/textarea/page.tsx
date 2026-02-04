@@ -1,13 +1,11 @@
 "use client";
 
+import { Button, Label, Textarea, Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@ipareddes/ui-components";
+
 import { ComponentLayout } from "@/components/layout/component-layout";
 import { useState } from "react";
 import { X, Sparkles, Code2, Copy, Check, House } from "lucide-react";
 import ReactDOM from "react-dom";
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
-import { Textarea } from "@/components/ui/textarea";
-import { Label } from "@/components/ui/label";
-import { Button } from "@/components/ui/button";
 
 // --- Code Modal ---
 function CodeModal({ code, onClose, variantId }: { code: string; onClose: () => void; variantId: string }) {
@@ -406,16 +404,13 @@ function Textarea21() {
 
 // --- Code strings ---
 const codes: Record<string, string> = {
-  "textarea-01": `import { Textarea } from "@/components/ui/textarea"
-
+  "textarea-01": `
 export default function Textarea01() {
   return (
     <Textarea className="w-full max-w-xs" placeholder="Type your message here." />
   )
 }`,
-  "textarea-02": `import { Textarea } from "@/components/ui/textarea"
-import { Label } from "@/components/ui/label"
-
+  "textarea-02": `
 export default function Textarea02() {
   return (
     <div className="w-full max-w-xs space-y-2">
@@ -424,9 +419,7 @@ export default function Textarea02() {
     </div>
   )
 }`,
-  "textarea-03": `import { Textarea } from "@/components/ui/textarea"
-import { Label } from "@/components/ui/label"
-
+  "textarea-03": `
 export default function Textarea03() {
   return (
     <div className="w-full max-w-xs space-y-2">
@@ -436,9 +429,7 @@ export default function Textarea03() {
     </div>
   )
 }`,
-  "textarea-05": `import { Textarea } from "@/components/ui/textarea"
-import { Label } from "@/components/ui/label"
-
+  "textarea-05": `
 export default function Textarea05() {
   return (
     <div className="w-full max-w-xs space-y-2">
@@ -448,9 +439,7 @@ export default function Textarea05() {
     </div>
   )
 }`,
-  "textarea-09": `import { Textarea } from "@/components/ui/textarea"
-import { Label } from "@/components/ui/label"
-
+  "textarea-09": `
 export default function Textarea09() {
   return (
     <div className="w-full max-w-xs space-y-2">
@@ -463,10 +452,7 @@ export default function Textarea09() {
     </div>
   )
 }`,
-  "textarea-16": `import { Textarea } from "@/components/ui/textarea"
-import { Label } from "@/components/ui/label"
-import { Button } from "@/components/ui/button"
-
+  "textarea-16": `
 export default function Textarea16() {
   return (
     <div className="w-full max-w-xs space-y-2">
@@ -479,8 +465,6 @@ export default function Textarea16() {
   "textarea-19": `"use client"
 
 import { useState } from "react"
-import { Textarea } from "@/components/ui/textarea"
-import { Label } from "@/components/ui/label"
 
 export default function Textarea19() {
   const [value, setValue] = useState("")
@@ -502,9 +486,7 @@ export default function Textarea19() {
     </div>
   )
 }`,
-  "textarea-21": `import { Textarea } from "@/components/ui/textarea"
-import { Label } from "@/components/ui/label"
-
+  "textarea-21": `
 export default function Textarea21() {
   return (
     <div className="w-full max-w-xs space-y-2">
