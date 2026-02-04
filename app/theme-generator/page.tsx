@@ -37,6 +37,7 @@ import {
   TrendingDown,
   ArrowUpRight,
   Mail,
+  MailOpen,
   Users,
   CreditCard,
   Activity,
@@ -47,6 +48,24 @@ import {
   Hand,
   Circle,
   Contrast,
+  TicketCheck,
+  ShoppingCart,
+  DollarSign,
+  BookMarked,
+  PanelLeft,
+  Languages,
+  Bell,
+  Wallet,
+  MousePointerClick,
+  BellRing,
+  TriangleAlert,
+  CircleOff,
+  CircleDollarSign,
+  EllipsisVertical,
+  Facebook,
+  Instagram,
+  Linkedin,
+  Twitter,
 } from "lucide-react";
 import { cn } from "@/lib";
 
@@ -922,6 +941,42 @@ export default function ThemeGeneratorPage() {
     );
   };
 
+  // Typewriter effect component
+  const TypewriterText = ({ words }: { words: string[] }) => {
+    const [currentWordIndex, setCurrentWordIndex] = useState(0);
+    const [currentText, setCurrentText] = useState("");
+    const [isDeleting, setIsDeleting] = useState(false);
+
+    useEffect(() => {
+      const word = words[currentWordIndex];
+      const timeout = setTimeout(() => {
+        if (!isDeleting) {
+          if (currentText.length < word.length) {
+            setCurrentText(word.slice(0, currentText.length + 1));
+          } else {
+            setTimeout(() => setIsDeleting(true), 1500);
+          }
+        } else {
+          if (currentText.length > 0) {
+            setCurrentText(word.slice(0, currentText.length - 1));
+          } else {
+            setIsDeleting(false);
+            setCurrentWordIndex((prev) => (prev + 1) % words.length);
+          }
+        }
+      }, isDeleting ? 50 : 100);
+
+      return () => clearTimeout(timeout);
+    }, [currentText, isDeleting, currentWordIndex, words]);
+
+    return (
+      <span className="text-primary font-semibold">
+        {currentText}
+        <span className="animate-pulse">|</span>
+      </span>
+    );
+  };
+
   return (
     <div className="min-h-screen bg-background">
       <SiteNavigation />
@@ -932,27 +987,74 @@ export default function ThemeGeneratorPage() {
           "flex-1 transition-all duration-300",
           drawerOpen ? "mr-[400px]" : ""
         )}>
-          {/* Hero Section */}
-          <section className="relative pt-16 pb-8 px-6">
-            <div className="max-w-4xl mx-auto text-center">
-              <Badge variant="secondary" className="mb-4">
-                <Sparkles className="w-3 h-3 mr-1" />
+          {/* Full page container with dashed border sides */}
+          <div className="mx-auto w-full max-w-[1400px] border-x border-dashed min-h-[calc(100vh-64px)]">
+            {/* Hero Section */}
+            <section className="relative pt-20 pb-12 px-6 overflow-hidden">
+              {/* Grid texture background */}
+              <div
+                className="absolute inset-0 opacity-[0.4]"
+                style={{
+                  backgroundImage: `
+                    linear-gradient(to right, hsl(var(--border)) 1px, transparent 1px),
+                    linear-gradient(to bottom, hsl(var(--border)) 1px, transparent 1px)
+                  `,
+                  backgroundSize: '80px 80px',
+                }}
+              />
+
+              <div className="max-w-4xl mx-auto text-center relative z-10">
+              <Badge variant="outline" className="mb-6 px-4 py-1.5 text-sm font-medium rounded-full">
+                <Sparkles className="w-3.5 h-3.5 mr-1.5" />
                 Visual Theme Generator
               </Badge>
-              <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-4">
-                Design Stunning UIs Faster with<br />
-                <span className="text-primary">Shadcn Theme Generator</span>
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6">
+                Design Stunning UIs Faster with
+                <br />
+                <span className="relative inline-block mt-2">
+                  <span>Shadcn Theme Generator</span>
+                  <svg
+                    className="absolute -bottom-2 left-0 w-full"
+                    viewBox="0 0 300 12"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M2 8.5C50 2.5 100 2.5 150 8.5C200 14.5 250 2.5 298 8.5"
+                      stroke="currentColor"
+                      strokeWidth="3"
+                      strokeLinecap="round"
+                      className="text-primary"
+                    />
+                  </svg>
+                </span>
               </h1>
-              <p className="text-muted-foreground text-lg max-w-2xl mx-auto mb-8">
+              <p className="text-muted-foreground text-lg md:text-xl max-w-2xl mx-auto mb-6">
                 Transform your shadcn/ui components, blocks & templates in real time - customize, save, share & ship stunning interfaces faster than ever.
               </p>
+              <p className="text-foreground text-lg mb-8">
+                Shadcn UI Theme Generator with{" "}
+                <TypewriterText
+                  words={["Contrast Checker", "AI Generation", "Theme Presets", "Real-time Preview", "CSS Export"]}
+                />
+              </p>
               <div className="flex items-center justify-center gap-4">
-                <Button onClick={() => setDrawerOpen(true)} size="lg" className="gap-2">
-                  <Palette className="w-4 h-4" />
-                  Start Customizing
-                </Button>
-                <Button variant="outline" size="lg">
+                <div className="relative">
+                  {/* Rainbow gradient glow */}
+                  <div
+                    className="absolute -bottom-3 left-1/2 -translate-x-1/2 w-32 h-6 blur-xl opacity-70"
+                    style={{
+                      background: 'linear-gradient(90deg, #a855f7, #ec4899, #f97316, #eab308, #22c55e, #06b6d4)',
+                    }}
+                  />
+                  <Button onClick={() => setDrawerOpen(true)} size="lg" className="relative gap-2 rounded-full px-6">
+                    Start Customizing
+                    <Sparkles className="w-4 h-4" />
+                  </Button>
+                </div>
+                <Button variant="outline" size="lg" className="gap-2 rounded-full px-6">
                   Explore more
+                  <ArrowUpRight className="w-4 h-4" />
                 </Button>
               </div>
             </div>
@@ -960,194 +1062,298 @@ export default function ThemeGeneratorPage() {
 
           {/* Dashboard Preview */}
           <section className="px-6 pb-16">
-            <div className="max-w-6xl mx-auto">
-              <Card className="shadow-xl border-2 overflow-hidden">
-                {/* Preview Header - Tabs */}
-                <div className="flex items-center border-b bg-card">
-                  <div className="flex-1">
-                    <div className="flex">
-                      {["Dashboard", "Blocks", "Mail", "Components", "Color Palette"].map((tab, i) => (
-                        <button
-                          key={tab}
-                          className={cn(
-                            "px-6 py-3 text-sm font-medium border-b-2 transition-colors",
-                            i === 0
-                              ? "border-primary text-foreground"
-                              : "border-transparent text-muted-foreground hover:text-foreground"
-                          )}
-                        >
-                          {tab}
-                        </button>
-                      ))}
-                    </div>
+            <div className="w-full">
+              <Card className="shadow-xl border overflow-hidden">
+                {/* Preview Header - Full Width Tabs */}
+                <div className="flex items-center bg-muted/50 border-b">
+                  <div className="flex w-full">
+                    {["Dashboard", "Blocks", "Mail", "Components", "Color Palette"].map((tab, i) => (
+                      <button
+                        key={tab}
+                        className={cn(
+                          "flex-1 px-6 py-3 text-sm font-medium transition-all",
+                          i === 0
+                            ? "bg-background text-foreground rounded-t-lg shadow-sm"
+                            : "text-muted-foreground hover:text-foreground"
+                        )}
+                      >
+                        {tab}
+                      </button>
+                    ))}
                   </div>
                 </div>
 
                 {/* Toolbar */}
-                <div className="flex items-center justify-between px-4 py-2 border-b bg-card">
+                <div className="flex items-center justify-between px-6 py-3 border-b bg-card">
                   <div className="flex items-center gap-3">
-                    <Button variant="ghost" size="icon" className="h-8 w-8">
-                      <Menu className="h-4 w-4" />
+                    <Button variant="ghost" size="icon" className="h-9 w-9">
+                      <PanelLeft className="h-5 w-5" />
                     </Button>
-                    <div className="flex items-center gap-2 px-3 py-1.5 rounded-md bg-muted text-muted-foreground text-sm">
+                    <Separator orientation="vertical" className="h-6" />
+                    <div className="flex items-center gap-2 text-muted-foreground text-sm">
                       <Search className="w-4 h-4" />
                       <span>Type to search...</span>
                     </div>
                   </div>
-                  <div className="flex items-center gap-1">
-                    <Button variant="ghost" size="icon" className="h-8 w-8">
-                      <Sparkles className="h-4 w-4" />
+                  <div className="flex items-center gap-2">
+                    <Button variant="ghost" size="icon" className="h-9 w-9">
+                      <Languages className="h-5 w-5" />
                     </Button>
-                    <Button variant="ghost" size="icon" className="h-8 w-8">
-                      <Activity className="h-4 w-4" />
+                    <Button variant="ghost" size="icon" className="h-9 w-9">
+                      <Activity className="h-5 w-5" />
                     </Button>
-                    <Button variant="ghost" size="icon" className="h-8 w-8">
-                      <Mail className="h-4 w-4" />
+                    <Button variant="ghost" size="icon" className="h-9 w-9 relative">
+                      <Bell className="h-5 w-5" />
+                      <span className="absolute top-1.5 right-1.5 w-2 h-2 rounded-full" style={{ backgroundColor: 'hsl(var(--chart-4))' }} />
                     </Button>
-                    <div className="w-8 h-8 rounded-full bg-muted flex items-center justify-center">
-                      <Users className="w-4 h-4" />
+                    <div className="w-9 h-9 rounded-full bg-primary/10 border-2 border-primary flex items-center justify-center overflow-hidden">
+                      <span className="text-xs font-semibold text-primary">JP</span>
                     </div>
                   </div>
                 </div>
 
                 {/* Dashboard Content */}
                 <div className="p-6 bg-background">
-                  {/* Row 1: 5 Stat Cards */}
-                  <div className="grid grid-cols-2 lg:grid-cols-5 gap-4 mb-6">
-                    {[
-                      { label: "Total Sales", value: "$13.4k", change: "+38%", up: true, period: "Last 6 months", icon: Mail, bgColor: "bg-orange-100 dark:bg-orange-900/30", iconColor: "text-orange-600" },
-                      { label: "Total Orders", value: "155K", change: "+22%", up: true, period: "Last 4 months", icon: CreditCard, bgColor: "bg-teal-100 dark:bg-teal-900/30", iconColor: "text-teal-600" },
-                      { label: "Total Profit", value: "$89.34k", change: "-16%", up: false, period: "Last One year", icon: CreditCard, bgColor: "bg-gray-100 dark:bg-gray-800", iconColor: "text-gray-600" },
-                      { label: "Bookmarks", value: "$1,200", change: "+38%", up: true, period: "Last 6 months", icon: Activity, bgColor: "bg-purple-100 dark:bg-purple-900/30", iconColor: "text-purple-600" },
-                    ].map((stat) => (
-                      <Card key={stat.label}>
-                        <CardContent className="p-4">
-                          <div className="flex items-start justify-between mb-3">
-                            <div className={cn("w-10 h-10 rounded-lg flex items-center justify-center", stat.bgColor)}>
-                              <stat.icon className={cn("w-5 h-5", stat.iconColor)} />
-                            </div>
-                            <div className={cn("flex items-center gap-1 text-xs font-medium", stat.up ? "text-green-600" : "text-red-600")}>
-                              {stat.change}
-                              {stat.up ? <TrendingUp className="w-3 h-3" /> : <TrendingDown className="w-3 h-3" />}
-                            </div>
-                          </div>
-                          <div className="text-2xl font-bold mb-1">{stat.value}</div>
-                          <div className="text-sm text-muted-foreground">{stat.label}</div>
-                          <Badge variant="secondary" className="text-[10px] mt-2">{stat.period}</Badge>
-                        </CardContent>
-                      </Card>
-                    ))}
-                    {/* Customers Card */}
-                    <Card className="lg:col-span-1">
-                      <CardContent className="p-4">
-                        <div className="flex justify-between items-start">
-                          <div>
-                            <div className="text-sm font-medium mb-1">Customers</div>
-                            <Badge variant="secondary" className="text-[10px] mb-3">Daily customers</Badge>
-                            <div className="text-2xl font-bold">42.4k</div>
-                            <span className="text-xs text-green-600">+9.2%</span>
-                          </div>
-                          <div className="w-16 h-16">
-                            <svg viewBox="0 0 64 64" className="w-full h-full">
-                              <circle cx="32" cy="20" r="12" fill="hsl(var(--muted))" />
-                              <ellipse cx="32" cy="50" rx="20" ry="12" fill="hsl(var(--muted))" />
-                              <circle cx="32" cy="18" r="8" fill="hsl(var(--foreground))" />
-                              <path d="M20 45 Q32 35 44 45 Q44 55 32 55 Q20 55 20 45" fill="hsl(var(--foreground))" />
-                            </svg>
-                          </div>
-                        </div>
-                      </CardContent>
-                    </Card>
+                  {/* Row 1: 5 Stat Cards - matching reference grid */}
+                  <div className="col-span-full grid grid-cols-6 gap-6 mb-6">
+                    {/* Card 1: Total Sales */}
+                    <div className="bg-card text-card-foreground flex flex-col border border-primary/20 py-6 gap-4 col-span-full shadow-none sm:col-span-3 md:max-xl:col-span-2 xl:col-span-1" style={{ borderRadius: 'calc(var(--radius) * 3)' }}>
+                      <div className="flex items-center justify-between px-6">
+                        <span className="relative flex shrink-0 overflow-hidden size-[38px] rounded-md">
+                          <span className="flex items-center justify-center size-[38px] shrink-0 rounded-md bg-chart-1/10 text-chart-1">
+                            <TicketCheck className="size-[19px]" />
+                          </span>
+                        </span>
+                        <p className="flex items-center gap-1 text-sm font-medium">
+                          +38%
+                          <ChevronUp className="size-4" />
+                        </p>
+                      </div>
+                      <div className="px-6 flex flex-1 flex-col justify-between gap-4">
+                        <p className="flex flex-col gap-1">
+                          <span className="text-lg font-semibold">$13.4k</span>
+                          <span className="text-muted-foreground text-sm">Total Sales</span>
+                        </p>
+                        <Badge variant="outline" className="w-fit rounded-full px-2 py-0.5 text-xs font-medium">
+                          Last 6 months
+                        </Badge>
+                      </div>
+                    </div>
+
+                    {/* Card 2: Total Orders */}
+                    <div className="bg-card text-card-foreground flex flex-col border border-primary/20 py-6 gap-4 col-span-full shadow-none sm:col-span-3 md:max-xl:col-span-2 xl:col-span-1" style={{ borderRadius: 'calc(var(--radius) * 3)' }}>
+                      <div className="flex items-center justify-between px-6">
+                        <span className="relative flex shrink-0 overflow-hidden size-[38px] rounded-md">
+                          <span className="flex items-center justify-center size-[38px] shrink-0 rounded-md bg-chart-2/10 text-chart-2">
+                            <ShoppingCart className="size-[19px]" />
+                          </span>
+                        </span>
+                        <p className="flex items-center gap-1 text-sm font-medium">
+                          +22%
+                          <ChevronUp className="size-4" />
+                        </p>
+                      </div>
+                      <div className="px-6 flex flex-1 flex-col justify-between gap-4">
+                        <p className="flex flex-col gap-1">
+                          <span className="text-lg font-semibold">155K</span>
+                          <span className="text-muted-foreground text-sm">Total Orders</span>
+                        </p>
+                        <Badge variant="outline" className="w-fit rounded-full px-2 py-0.5 text-xs font-medium">
+                          Last 4 months
+                        </Badge>
+                      </div>
+                    </div>
+
+                    {/* Card 3: Total Profit */}
+                    <div className="bg-card text-card-foreground flex flex-col border border-primary/20 py-6 gap-4 col-span-full shadow-none sm:col-span-3 md:max-xl:col-span-2 xl:col-span-1" style={{ borderRadius: 'calc(var(--radius) * 3)' }}>
+                      <div className="flex items-center justify-between px-6">
+                        <span className="relative flex shrink-0 overflow-hidden size-[38px] rounded-md">
+                          <span className="flex items-center justify-center size-[38px] shrink-0 rounded-md bg-chart-3/10 text-chart-3">
+                            <DollarSign className="size-[19px]" />
+                          </span>
+                        </span>
+                        <p className="flex items-center gap-1 text-sm font-medium text-muted-foreground">
+                          -16%
+                          <ChevronDown className="size-4" />
+                        </p>
+                      </div>
+                      <div className="px-6 flex flex-1 flex-col justify-between gap-4">
+                        <p className="flex flex-col gap-1">
+                          <span className="text-lg font-semibold">$89.34k</span>
+                          <span className="text-muted-foreground text-sm">Total Profit</span>
+                        </p>
+                        <Badge variant="outline" className="w-fit rounded-full px-2 py-0.5 text-xs font-medium">
+                          Last One year
+                        </Badge>
+                      </div>
+                    </div>
+
+                    {/* Card 4: Bookmarks */}
+                    <div className="bg-card text-card-foreground flex flex-col border border-primary/20 py-6 gap-4 col-span-full shadow-none sm:col-span-3 md:max-xl:col-span-2 xl:col-span-1" style={{ borderRadius: 'calc(var(--radius) * 3)' }}>
+                      <div className="flex items-center justify-between px-6">
+                        <span className="relative flex shrink-0 overflow-hidden size-[38px] rounded-md">
+                          <span className="flex items-center justify-center size-[38px] shrink-0 rounded-md bg-chart-4/10 text-chart-4">
+                            <BookMarked className="size-[19px]" />
+                          </span>
+                        </span>
+                        <p className="flex items-center gap-1 text-sm font-medium">
+                          +38%
+                          <ChevronUp className="size-4" />
+                        </p>
+                      </div>
+                      <div className="px-6 flex flex-1 flex-col justify-between gap-4">
+                        <p className="flex flex-col gap-1">
+                          <span className="text-lg font-semibold">$1,200</span>
+                          <span className="text-muted-foreground text-sm">Bookmarks</span>
+                        </p>
+                        <Badge variant="outline" className="w-fit rounded-full px-2 py-0.5 text-xs font-medium">
+                          Last 6 months
+                        </Badge>
+                      </div>
+                    </div>
+
+                    {/* Card 5: Customers - spans 2 columns */}
+                    <div className="bg-card text-card-foreground flex flex-col border border-primary/20 py-6 relative justify-between gap-6 col-span-full shadow-none md:col-span-4 xl:col-span-2" style={{ borderRadius: 'calc(var(--radius) * 3)' }}>
+                      <div className="flex flex-col gap-3 px-6">
+                        <span className="font-medium">Customers</span>
+                        <Badge variant="outline" className="w-fit rounded-full px-2 py-0.5 text-xs font-medium">
+                          Daily customers
+                        </Badge>
+                      </div>
+                      <div className="px-6 flex items-center gap-2">
+                        <span className="text-2xl font-semibold">42.4k</span>
+                        <span className="text-sm" style={{ color: 'hsl(var(--chart-2))' }}>+9.2%</span>
+                      </div>
+                      {/* Person illustration positioned absolute */}
+                      <div className="absolute right-0.5 bottom-0">
+                        <svg width="126" height="136" viewBox="0 0 126 136" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <g clipPath="url(#clip0)">
+                            <path d="M29.7 119c.3.2.64.41.93.62.34.21.64.42.98.59.3.17.55.34.85.51l.13.09c.98.59 2 1.14 3.02 1.65l.94.47.94.47 1.02.51c.68.34 1.4.64 2.08.94.34.17.72.3 1.06.43.34.13.72.3 1.06.43.34.13.72.3 1.06.43h.04c.34.13.72.26 1.06.39.77.26 1.58.51 2.34.77.26.09.55.17.81.26.81.26 1.62.47 2.43.64.3.09.6.13.94.21.77.17 1.58.34 2.34.51.17.04.3.04.47.09l.81.13c.38.04.72.13 1.1.17.17.04.34.04.51.09l.72.09c.68.09 1.4.17 2.08.26.21.04.47.04.68.09h.04c.3.04.6.04.9.09.3.04.6.04.9.04.17 0 .38.04.55.04.34 0 .64.04.94.04.43 0 .81.04 1.23.04h2.12c17.93-.26 34.03-7.86 45.54-19.93v-.04c1.27-1.15.17-7.27-4.97-11.13-6.46-4.89-21.92-7.95-21.92-7.95s-5.99-.98-28.21 3.65c-13 2.72-22.9 6.67-28.42 17.37-1.15 2.21-2.3 5.61 1.74 7.39z" fill="var(--background)"/>
+                            <path d="M56.25 93.75c-8.16 1.66-16.87 3.44-23.58 8.84-2.25 1.83-3.74 4.5-4.97 7.05-.6 1.27-1.19 2.59-1.66 3.99-.26.94-.64 2 -.43 3.1.04.3.3.68.51.9.98.98 2.04 1.57 3.1 2.34 6.25 4.33 13.43 7.39 20.86 9 16.57 3.61 34.5.81 49.07-7.9 4.84-2.93 9.31-6.5 13.13-10.71.43-.51.43-1.36.43-1.91-.04-1.27-.38-2.51-.81-3.65-1.02-2.63-2.34-5.27-4.59-7.1-1.62-1.1-3.36-2.04-5.14-2.8-5.61-2.38-11.52-4.04-17.59-4.72-.51-.04-.6.68-.09.77 5.82 1.19 11.6 2.97 17 5.4 1.95.98 4.03 1.83 5.61 3.36 1.49 1.62 2.55 3.61 3.4 5.65.55 1.23.94 3.18.77 4.16-2.68 3.19-5.82 5.99-9.22 8.42-18.61 13-46.86 13.85-66.66 3.02-1.78-.98-3.53-2.1-5.19-3.27-.81-.55-1.66-1.02-2.3-1.66l.04.04v.09c-.04-.51.13-1.19.34-1.87.77-2.47 2-5.06 3.32-7.31 2.08-3.36 5.61-5.48 9.18-7.22 2.47-1.15 5.06-2.04 7.69-2.89 2.63-.85 5.31-1.57 8-.2.68-.17.47-1.15-.21-.98z" fill="var(--primary)"/>
+                          </g>
+                          <g clipPath="url(#clip1)">
+                            <path d="M15.59 145.32h107.44s-1.74-17.5-8.37-31.48c-2.42-5.1-3.23-12.58-8.03-15.85-4.93-3.36-15.42-6.03-19.07-6.46-2.04-.26-1.57-.43-3.02-.81-.47 1.27-5.19 13.77-16.49 18.36-9.73 3.95-15.5 1.32-16.4-3.06-.55-2.8 1.19-7.39 2.08-8.88.51-.43.85-1.06 1.02-1.7l.34-1.4c-.77-.17-1.49-.39-2.25-.6-.39.09-.81.04-1.15.26-3.57 1.95-14.32 4.71-19.93 10.62-2.21 2.29-5.65 10.45-6.2 15.76-1.57 14.57-9.98 25.24-9.98 25.24z" fill="var(--background)"/>
+                            <path d="M15 145.58c31.86.09 76.6.47 107.99.34.38 0 .68-.34.64-.72-.38-3.02-.89-5.95-1.49-8.92-1.57-8.11-3.95-16.1-7.52-23.54-1.45-3.48-2.17-7.14-3.91-10.54-1.02-2.04-2.55-3.99-4.59-5.14-3.27-1.95-6.88-3.19-10.49-4.29-2.17-.64-4.38-1.23-6.59-1.66-1.1-.26-2.21-.21-3.23-.64-.55-.21-1.62-.85-1.96-.04-3.1 8.03-9.09 15.63-17.46 18.49-4.33 1.57-11.85 2.89-14.06-2.42-.68-2--.04-4.16.6-6.16.34-1.02.77-2.08 1.27-2.93l-.13.13c.77-.64 1.19-1.66 1.32-2.59l.21-.85c.09-.34-.13-.68-.47-.77-.77-.13-1.53-.38-2.3-.6-.43 0-1.1.09-1.66.39-4.67 2.17-10 3.74-14.45 6.46-2.51 1.49-5.06 3.23-6.67 5.74-2.97 4.97-4.89 10.62-5.44 16.36-1.19 8.2-4.5 16.06-9.26 22.81l-.17.21-.09.09-.04.04s0-.04-.04.09c-.04.26-.04.55 0 .68zm1.15-.55c.09.13.09.43 0 .55l.09-.13.17-.21c2.68-4.08 4.89-8.46 6.5-12.99 1.27-3.36 2.21-6.84 2.72-10.41.17-1.27.38-2.97.68-4.2.98-4.08 2.55-8.16 4.8-11.68.72-1.15 1.79-2.04 2.85-2.89 3.36-2.55 7.31-4.12 11.22-5.65l3.99-1.51c1.32-.51 2.89-1.06 3.7-1.87h-.34c.77.26 1.53.47 2.3.64l-.47-.77-.21.85c-.17.77-.34 1.45-.94 1.96l-.13.13c-1.15 2.08-1.83 4.25-2.17 6.59-.72 4.03 1.83 7.22 5.74 7.98 5.4 1.06 11.85-1.27 16.32-4.29 5.61-3.95 9.64-9.81 12.1-16.15l-.77.38c.38.13.64.26 1.02.43.38.21.85.34 1.27.43l-.09.51c.81.09 1.45.13 2.21.3 2.17.34 4.33.85 6.46 1.45 2.85.77 5.65 1.7 8.29 2.93 1.32.64 2.59 1.32 3.57 2.21 1.02.89 1.83 2.08 2.51 3.36 2 3.87 2.97 8.5 5.01 12.41 4.25 9.47 6.63 19.8 7.78 30.1l.64-.68c-30.84-.13-75.45.04-106.79.17z" fill="var(--primary)"/>
+                            <path d="M50.09 117.54c1.49.43 6.67-4.97 7.73-5.91 .98 1.1 7.86 8.88 11.26 8.37 3.74-.55 13.3-6.97 18.14-17.03 2.68-5.52 2.76-8.88 2.47-10.71-.13-.85-.38-1.4-.51-1.7-.43-.98-3.48-4.76-4.25-4.71v.04c-.38 4.08-1.7 8.03-3.91 11.47-2.72 4.21-7.01 9.26-13 11.68-9.73 3.95-14.79.04-15.63-4.38-.55-2.8.43-6.12 1.32-7.6.51-.43.85-1.06 1.02-1.7l.34-1.4c-.77-.17-1.49-.39-2.25-.6-.21-.09-.47-.13-.68-.21-.13.17-.3.34-.43.51-1.78 2.04-3.65 4.84-4.67 9.6-1.7 7.6 1.4 13.72 3.06 14.24z" fill="var(--primary)"/>
+                          </g>
+                          <defs>
+                            <clipPath id="clip0"><rect width="130" height="130" fill="var(--background)" transform="matrix(-1 0 0 1 130 .71)"/></clipPath>
+                            <clipPath id="clip1"><rect width="130" height="145.29" fill="var(--background)" transform="matrix(-1 0 0 1 130 .71)"/></clipPath>
+                          </defs>
+                        </svg>
+                      </div>
+                    </div>
                   </div>
 
                   {/* Row 2: Charts */}
-                  <div className="grid lg:grid-cols-3 gap-6 mb-6">
-                    {/* Total Income Chart */}
-                    <Card>
-                      <CardHeader className="pb-2">
-                        <div className="flex items-center justify-between">
-                          <div>
-                            <CardTitle className="text-base">Total Income</CardTitle>
-                            <CardDescription>Weekly report overview</CardDescription>
-                          </div>
-                          <Button variant="ghost" size="icon" className="h-8 w-8">
-                            <MoreHorizontal className="h-4 w-4" />
-                          </Button>
+                  <div className="grid lg:grid-cols-4 gap-4 mb-6">
+                    {/* Combined Total Income + Report Card - spans 3 columns */}
+                    <Card className="border-primary/20 lg:col-span-3 overflow-hidden" style={{ borderRadius: 'calc(var(--radius) * 3)' }}>
+                      <div className="flex flex-col lg:flex-row h-full">
+                        {/* Total Income Section */}
+                        <div className="flex-1 lg:border-r border-primary/20 flex flex-col">
+                          <CardHeader className="pb-2">
+                            <div className="flex items-center justify-between">
+                              <div>
+                                <CardTitle className="text-base font-semibold">Total Income</CardTitle>
+                                <CardDescription>Weekly report overview</CardDescription>
+                              </div>
+                              <Button variant="ghost" size="icon" className="h-8 w-8">
+                                <MoreHorizontal className="h-4 w-4" />
+                              </Button>
+                            </div>
+                          </CardHeader>
+                          <CardContent className="flex-1 flex flex-col justify-end pb-6">
+                            {/* Y-axis labels and Area Chart */}
+                            <div className="flex flex-1">
+                              <div className="flex flex-col justify-between text-[10px] text-muted-foreground pr-2">
+                                <span>$6k</span>
+                                <span>$5k</span>
+                                <span>$4k</span>
+                                <span>$3k</span>
+                                <span>$2k</span>
+                                <span>$1k</span>
+                              </div>
+                              <div className="flex-1 relative">
+                                {/* Horizontal dashed grid lines */}
+                                <div className="absolute inset-0 flex flex-col justify-between pointer-events-none">
+                                  {[0, 1, 2, 3, 4, 5].map((i) => (
+                                    <div key={i} className="border-t border-dashed border-muted-foreground/30" />
+                                  ))}
+                                </div>
+                                <svg viewBox="0 0 200 100" className="w-full h-full relative z-10" preserveAspectRatio="none">
+                                  <defs>
+                                    <linearGradient id="areaGradientThemed" x1="0" y1="0" x2="0" y2="1">
+                                      <stop offset="0%" style={{ stopColor: 'hsl(var(--chart-1))', stopOpacity: 0.4 }} />
+                                      <stop offset="100%" style={{ stopColor: 'hsl(var(--chart-1))', stopOpacity: 0.05 }} />
+                                    </linearGradient>
+                                  </defs>
+                                  {/* Area chart path matching reference - $3k start, plateau at $5k, rise to $6k */}
+                                  <path d="M0 60 L15 60 L25 65 L40 20 L70 20 L100 20 L120 30 L150 40 L170 40 L185 15 L200 0 L200 100 L0 100 Z" fill="url(#areaGradientThemed)" />
+                                  <path d="M0 60 L15 60 L25 65 L40 20 L70 20 L100 20 L120 30 L150 40 L170 40 L185 15 L200 0" style={{ stroke: 'hsl(var(--chart-1))' }} strokeWidth="2" fill="none" />
+                                </svg>
+                              </div>
+                            </div>
+                            <div className="flex justify-between text-[10px] text-muted-foreground mt-2 pl-8">
+                              {["MO", "TU", "WE", "TH", "FR", "SA", "SU"].map((day) => (
+                                <span key={day}>{day}</span>
+                              ))}
+                            </div>
+                          </CardContent>
                         </div>
-                      </CardHeader>
-                      <CardContent>
-                        {/* Y-axis labels and Area Chart */}
-                        <div className="flex">
-                          <div className="flex flex-col justify-between text-[10px] text-muted-foreground pr-2 h-32">
-                            <span>$6k</span>
-                            <span>$5k</span>
-                            <span>$4k</span>
-                            <span>$3k</span>
-                            <span>$2k</span>
-                            <span>$1k</span>
-                          </div>
-                          <div className="flex-1 relative h-32">
-                            <svg viewBox="0 0 200 80" className="w-full h-full" preserveAspectRatio="none">
-                              <defs>
-                                <linearGradient id="areaGradient" x1="0" y1="0" x2="0" y2="1">
-                                  <stop offset="0%" stopColor="hsl(var(--chart-1))" stopOpacity="0.3" />
-                                  <stop offset="100%" stopColor="hsl(var(--chart-1))" stopOpacity="0" />
-                                </linearGradient>
-                              </defs>
-                              <path d="M0 60 Q30 40 50 50 T100 30 T150 45 T200 20 L200 80 L0 80 Z" fill="url(#areaGradient)" />
-                              <path d="M0 60 Q30 40 50 50 T100 30 T150 45 T200 20" stroke="hsl(var(--chart-1))" strokeWidth="2" fill="none" />
-                            </svg>
-                          </div>
-                        </div>
-                        <div className="flex justify-between text-[10px] text-muted-foreground mt-2 pl-8">
-                          {["MO", "TU", "WE", "TH", "FR", "SA", "SU"].map((day) => (
-                            <span key={day}>{day}</span>
-                          ))}
-                        </div>
-                      </CardContent>
-                    </Card>
 
-                    {/* Report Card */}
-                    <Card>
-                      <CardHeader className="pb-2">
-                        <div className="flex items-center justify-between">
-                          <div>
-                            <CardTitle className="text-base">Report</CardTitle>
-                            <CardDescription>Weekly activity</CardDescription>
-                          </div>
-                          <Button variant="ghost" size="icon" className="h-8 w-8">
-                            <MoreHorizontal className="h-4 w-4" />
-                          </Button>
+                        {/* Report Section */}
+                        <div className="lg:w-64 flex flex-col">
+                          <CardHeader className="pb-2">
+                            <div className="flex items-center justify-between">
+                              <div>
+                                <CardTitle className="text-base font-semibold">Report</CardTitle>
+                                <CardDescription>Weekly activity</CardDescription>
+                              </div>
+                              <Button variant="ghost" size="icon" className="h-8 w-8">
+                                <MoreHorizontal className="h-4 w-4" />
+                              </Button>
+                            </div>
+                          </CardHeader>
+                          <CardContent className="flex-1 flex flex-col justify-center space-y-3">
+                            {[
+                              { label: "Income", value: "$5,550", change: "+2.34K", icon: CreditCard, chartVar: "--chart-2" },
+                              { label: "Expense", value: "$3,520", change: "-1.4K", icon: CreditCard, chartVar: "--chart-1" },
+                              { label: "Profit", value: "$2,350", change: "+3.22K", icon: CircleDollarSign, chartVar: "--chart-4" },
+                            ].map((item) => (
+                              <div key={item.label} className="flex items-center gap-3 p-3 bg-primary/5" style={{ borderRadius: 'calc(var(--radius) * 2)' }}>
+                                <div
+                                  className="w-10 h-10 rounded-full flex items-center justify-center border"
+                                  style={{
+                                    backgroundColor: `hsl(var(${item.chartVar}) / 0.1)`,
+                                    borderColor: `hsl(var(${item.chartVar}) / 0.3)`
+                                  }}
+                                >
+                                  <item.icon className="w-5 h-5" style={{ color: `hsl(var(${item.chartVar}))` }} />
+                                </div>
+                                <div className="flex-1">
+                                  <div className="text-sm text-muted-foreground">{item.label}</div>
+                                  <div className="font-semibold">{item.value}</div>
+                                </div>
+                                <div
+                                  className="text-sm font-medium"
+                                  style={{ color: item.change.startsWith("+") ? `hsl(var(${item.chartVar}))` : 'hsl(var(--muted-foreground))' }}
+                                >
+                                  {item.change}
+                                </div>
+                              </div>
+                            ))}
+                          </CardContent>
                         </div>
-                      </CardHeader>
-                      <CardContent className="space-y-3">
-                        {[
-                          { label: "Income", value: "$5,550", change: "+2.34K", bgColor: "bg-blue-100 dark:bg-blue-900/30", iconColor: "text-blue-600" },
-                          { label: "Expense", value: "$3,520", change: "-1.4K", bgColor: "bg-orange-100 dark:bg-orange-900/30", iconColor: "text-orange-600" },
-                          { label: "Profit", value: "$2,350", change: "+3.22K", bgColor: "bg-green-100 dark:bg-green-900/30", iconColor: "text-green-600" },
-                        ].map((item) => (
-                          <div key={item.label} className="flex items-center gap-3 p-3 rounded-lg border bg-card">
-                            <div className={cn("w-10 h-10 rounded-lg flex items-center justify-center", item.bgColor)}>
-                              <CreditCard className={cn("w-5 h-5", item.iconColor)} />
-                            </div>
-                            <div className="flex-1">
-                              <div className="text-sm text-muted-foreground">{item.label}</div>
-                              <div className="font-semibold">{item.value}</div>
-                            </div>
-                            <div className={cn("text-sm font-medium", item.change.startsWith("+") ? "text-green-600" : "text-red-600")}>
-                              {item.change}
-                            </div>
-                          </div>
-                        ))}
-                      </CardContent>
+                      </div>
                     </Card>
 
                     {/* Monthly Campaign State */}
-                    <Card>
+                    <Card className="border-primary/20" style={{ borderRadius: 'calc(var(--radius) * 3)' }}>
                       <CardHeader className="pb-2">
                         <div className="flex items-center justify-between">
                           <div>
-                            <CardTitle className="text-base">Monthly campaign state</CardTitle>
+                            <CardTitle className="text-base font-semibold">Monthly campaign state</CardTitle>
                             <CardDescription>7.58k Social Visitors</CardDescription>
                           </div>
                           <Button variant="ghost" size="icon" className="h-8 w-8">
@@ -1155,23 +1361,28 @@ export default function ThemeGeneratorPage() {
                           </Button>
                         </div>
                       </CardHeader>
-                      <CardContent className="space-y-2">
+                      <CardContent className="space-y-1">
                         {[
-                          { label: "Emails", value: "14,250", change: "0.3%", icon: Mail },
-                          { label: "Opened", value: "4,523", change: "3.1%", icon: Mail },
-                          { label: "Clicked", value: "1,250", change: "1.3%", icon: Activity },
-                          { label: "Subscribed", value: "750", change: "9.8%", icon: Users },
-                          { label: "Errors", value: "20", change: "1.5%", icon: Activity },
-                          { label: "Unsubscribed", value: "86", change: "0.6%", icon: Users },
+                          { label: "Emails", value: "14,250", change: "0.3%", chartVar: "--chart-3", icon: Mail },
+                          { label: "Opened", value: "4,523", change: "3.1%", chartVar: "--chart-2", icon: MailOpen },
+                          { label: "Clicked", value: "1,250", change: "1.3%", chartVar: "--chart-3", icon: MousePointerClick },
+                          { label: "Subscribed", value: "750", change: "9.8%", chartVar: "--chart-1", icon: BellRing },
+                          { label: "Errors", value: "20", change: "1.5%", chartVar: "--chart-4", icon: TriangleAlert },
+                          { label: "Unsubscribed", value: "86", change: "0.6%", chartVar: "--muted-foreground", icon: CircleOff },
                         ].map((stat) => (
-                          <div key={stat.label} className="flex items-center justify-between py-1">
-                            <div className="flex items-center gap-2">
-                              <stat.icon className="w-4 h-4 text-muted-foreground" />
-                              <span className="text-sm">{stat.label}</span>
-                            </div>
+                          <div key={stat.label} className="flex items-center justify-between py-2">
                             <div className="flex items-center gap-3">
-                              <span className="font-medium">{stat.value}</span>
-                              <span className="text-xs text-muted-foreground w-10">{stat.change}</span>
+                              <div
+                                className="w-8 h-8 rounded-lg flex items-center justify-center"
+                                style={{ backgroundColor: `hsl(var(${stat.chartVar}) / 0.15)` }}
+                              >
+                                <stat.icon className="w-4 h-4" style={{ color: `hsl(var(${stat.chartVar}))` }} />
+                              </div>
+                              <span className="text-sm font-medium">{stat.label}</span>
+                            </div>
+                            <div className="flex items-center gap-4">
+                              <span className="font-semibold">{stat.value}</span>
+                              <span className="text-xs text-muted-foreground w-10 text-right">{stat.change}</span>
                             </div>
                           </div>
                         ))}
@@ -1180,64 +1391,67 @@ export default function ThemeGeneratorPage() {
                   </div>
 
                   {/* Row 3: More Cards */}
-                  <div className="grid lg:grid-cols-3 gap-6">
+                  <div className="grid lg:grid-cols-3 gap-4">
                     {/* Total Earning */}
-                    <Card>
-                      <CardHeader className="pb-2">
+                    <Card className="border-primary/20 !py-4" style={{ borderRadius: 'calc(var(--radius) * 3)' }}>
+                      <CardHeader className="pb-2 pt-0">
                         <div className="flex items-center justify-between">
-                          <CardTitle className="text-base">Total earning</CardTitle>
+                          <CardTitle className="text-base font-semibold">Total earning</CardTitle>
                           <Button variant="ghost" size="icon" className="h-8 w-8">
                             <MoreHorizontal className="h-4 w-4" />
                           </Button>
                         </div>
                       </CardHeader>
-                      <CardContent>
-                        <div className="flex items-baseline gap-2 mb-4">
-                          <span className="text-4xl font-bold">87%</span>
-                          <span className="text-sm text-green-600 flex items-center">
+                      <CardContent className="pb-0">
+                        <div className="flex items-baseline gap-2 mb-3">
+                          <span className="text-3xl font-bold">87%</span>
+                          <span className="text-sm flex items-center">
                             <TrendingUp className="w-3 h-3 mr-1" />+38%
                           </span>
                         </div>
-                        <div className="flex items-end gap-1 h-24">
-                          {[40, 65, 45, 80, 55, 70, 50, 85, 60].map((h, i) => (
-                            <div key={i} className="flex-1 flex flex-col items-center gap-1">
-                              <div
-                                className="w-full rounded-t"
-                                style={{
-                                  height: `${h}%`,
-                                  backgroundColor: i === 4 ? "hsl(var(--chart-1))" : "hsl(var(--chart-4))"
-                                }}
-                              />
-                            </div>
+                        <div className="flex items-end gap-2 h-24 mb-3">
+                          {[45, 70, 55, 85, 60, 75, 50, 90, 65].map((h, i) => (
+                            <div
+                              key={i}
+                              className="flex-1 rounded-full"
+                              style={{
+                                height: `${h}%`,
+                                backgroundColor: 'hsl(var(--chart-1))'
+                              }}
+                            />
                           ))}
                         </div>
-                        <Separator className="my-4" />
+                        <Separator className="my-3" />
                         <div className="space-y-2">
-                          <div className="flex items-center justify-between">
-                            <div className="flex items-center gap-2">
-                              <CreditCard className="w-4 h-4 text-muted-foreground" />
-                              <span className="text-sm">Total revenue</span>
+                          <div className="flex items-center gap-3">
+                            <div className="w-8 h-8 rounded-full bg-muted flex items-center justify-center">
+                              <CircleDollarSign className="w-4 h-4 text-muted-foreground" />
                             </div>
-                            <span className="text-sm text-green-600">+$250</span>
-                          </div>
-                          <div className="text-xs text-muted-foreground">Successful payments</div>
-                          <div className="flex items-center justify-between">
-                            <div className="flex items-center gap-2">
-                              <CreditCard className="w-4 h-4 text-muted-foreground" />
-                              <span className="text-sm">Total sales</span>
+                            <div className="flex-1">
+                              <div className="text-sm font-medium">Total revenue</div>
+                              <div className="text-xs text-muted-foreground">Successful payments</div>
                             </div>
-                            <span className="text-sm text-green-600">+$80</span>
+                            <span className="text-sm font-semibold">+$250</span>
                           </div>
-                          <div className="text-xs text-muted-foreground">Refund</div>
+                          <div className="flex items-center gap-3">
+                            <div className="w-8 h-8 rounded-full bg-muted flex items-center justify-center">
+                              <ShoppingCart className="w-4 h-4 text-muted-foreground" />
+                            </div>
+                            <div className="flex-1">
+                              <div className="text-sm font-medium">Total sales</div>
+                              <div className="text-xs text-muted-foreground">Refund</div>
+                            </div>
+                            <span className="text-sm font-semibold">+$80</span>
+                          </div>
                         </div>
                       </CardContent>
                     </Card>
 
                     {/* For Business Shark */}
-                    <Card>
+                    <Card className="border-primary/20" style={{ borderRadius: 'calc(var(--radius) * 3)' }}>
                       <CardHeader className="pb-2">
                         <div className="flex items-center justify-between">
-                          <CardTitle className="text-base">For Business Shark</CardTitle>
+                          <CardTitle className="text-base font-semibold">For Business Shark</CardTitle>
                           <Button variant="ghost" size="icon" className="h-8 w-8">
                             <MoreHorizontal className="h-4 w-4" />
                           </Button>
@@ -1247,7 +1461,7 @@ export default function ThemeGeneratorPage() {
                         <p className="text-sm text-muted-foreground mb-4">
                           Here, I focus on a range of items and features that we use in life without them
                         </p>
-                        <div className="text-sm font-medium mb-3">Choose a plan to get started</div>
+                        <div className="text-sm font-semibold mb-3">Choose a plan to get started</div>
                         <div className="space-y-2 mb-4">
                           {[
                             { name: "Branding", price: "$60" },
@@ -1258,18 +1472,22 @@ export default function ThemeGeneratorPage() {
                             <div
                               key={plan.name}
                               className={cn(
-                                "flex items-center justify-between p-3 rounded-lg border cursor-pointer transition-colors",
+                                "flex items-center justify-between p-3 rounded-xl border cursor-pointer transition-colors",
                                 plan.selected ? "border-primary bg-primary/5" : "hover:bg-muted"
                               )}
                             >
                               <div className="flex items-center gap-3">
                                 <div className={cn(
-                                  "w-4 h-4 rounded-full border-2",
+                                  "w-5 h-5 rounded border-2 flex items-center justify-center",
                                   plan.selected ? "border-primary bg-primary" : "border-muted-foreground"
-                                )} />
+                                )}>
+                                  {plan.selected && <Check className="w-3 h-3 text-primary-foreground" />}
+                                </div>
                                 <span className="text-sm">{plan.name}</span>
                               </div>
-                              <span className="text-sm font-medium">{plan.price}</span>
+                              <Badge variant={plan.selected ? "default" : "outline"} className={cn("text-xs", plan.selected ? "" : "text-primary border-primary/30")}>
+                                {plan.price}
+                              </Badge>
                             </div>
                           ))}
                         </div>
@@ -1277,44 +1495,45 @@ export default function ThemeGeneratorPage() {
                           <span className="text-muted-foreground">Taxes</span>
                           <span>$32</span>
                         </div>
-                        <div className="flex justify-between text-sm font-medium mb-4">
+                        <div className="flex justify-between text-sm font-semibold mb-4">
                           <span>Total amount</span>
                           <span>$152</span>
                         </div>
-                        <Button className="w-full">Pay now</Button>
+                        <Button className="w-full rounded-xl">Pay now</Button>
                       </CardContent>
                     </Card>
 
                     {/* Vehicles Condition */}
-                    <Card>
-                      <CardHeader className="pb-2">
+                    <Card className="border-primary/20 !py-4" style={{ borderRadius: 'calc(var(--radius) * 3)' }}>
+                      <CardHeader className="pb-2 pt-0">
                         <div className="flex items-center justify-between">
-                          <CardTitle className="text-base">Vehicles Condition</CardTitle>
+                          <CardTitle className="text-base font-semibold">Vehicles Condition</CardTitle>
                           <Button variant="ghost" size="icon" className="h-8 w-8">
                             <MoreHorizontal className="h-4 w-4" />
                           </Button>
                         </div>
                       </CardHeader>
-                      <CardContent className="space-y-3">
+                      <CardContent className="space-y-1 pb-0">
                         {[
-                          { label: "Excellent", value: "55%", sub: "12% increase", change: "+25%", color: "chart-1" },
-                          { label: "Good", value: "20%", sub: "24 vehicles", change: "+30%", color: "chart-2" },
-                          { label: "Average", value: "12%", sub: "182 Tasks", change: "-15%", color: "chart-3" },
-                          { label: "Bad", value: "7%", sub: "9 vehicles", change: "+35%", color: "chart-4" },
-                          { label: "Not Working", value: "4%", sub: "3 vehicles", change: "-2%", color: "chart-5" },
-                          { label: "Scraped", value: "2%", sub: "2 vehicles", change: "+1%", color: "muted-foreground" },
+                          { label: "Excellent", value: "55%", sub: "12% increase", change: "+25%" },
+                          { label: "Good", value: "20%", sub: "24 vehicles", change: "+30%" },
+                          { label: "Average", value: "12%", sub: "182 Tasks", change: "-15%" },
+                          { label: "Bad", value: "7%", sub: "9 vehicles", change: "+35%" },
+                          { label: "Not Working", value: "4%", sub: "3 vehicles", change: "-2%" },
+                          { label: "Scraped", value: "2%", sub: "2 vehicles", change: "+1%" },
                         ].map((item) => (
                           <div key={item.label} className="flex items-center gap-3">
-                            <div className="relative w-10 h-10">
-                              <svg viewBox="0 0 36 36" className="w-10 h-10 -rotate-90">
-                                <circle cx="18" cy="18" r="14" fill="none" stroke="hsl(var(--muted))" strokeWidth="3" />
+                            <div className="relative w-12 h-12">
+                              <svg viewBox="0 0 36 36" className="w-12 h-12 -rotate-90">
+                                <circle cx="18" cy="18" r="14" fill="none" className="stroke-muted" strokeWidth="3" />
                                 <circle
                                   cx="18"
                                   cy="18"
                                   r="14"
                                   fill="none"
-                                  stroke={`hsl(var(--${item.color}))`}
+                                  style={{ stroke: 'hsl(var(--chart-1))' }}
                                   strokeWidth="3"
+                                  strokeLinecap="round"
                                   strokeDasharray={`${parseFloat(item.value) * 0.88} 88`}
                                 />
                               </svg>
@@ -1326,9 +1545,12 @@ export default function ThemeGeneratorPage() {
                               <div className="text-sm font-medium">{item.label}</div>
                               <div className="text-xs text-muted-foreground">{item.sub}</div>
                             </div>
-                            <Badge variant={item.change.startsWith("+") ? "default" : "destructive"} className="text-[10px]">
+                            <span className={cn(
+                              "text-xs font-medium",
+                              item.change.startsWith("+") ? "text-primary" : "text-destructive"
+                            )}>
                               {item.change}
-                            </Badge>
+                            </span>
                           </div>
                         ))}
                       </CardContent>
@@ -1977,14 +2199,21 @@ export default function ThemeGeneratorPage() {
               </p>
               <div className="flex items-center gap-4">
                 <Button variant="ghost" size="icon" className="h-8 w-8">
-                  <svg viewBox="0 0 24 24" className="w-4 h-4 fill-current"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                  <Facebook className="w-4 h-4" />
                 </Button>
                 <Button variant="ghost" size="icon" className="h-8 w-8">
-                  <svg viewBox="0 0 24 24" className="w-4 h-4 fill-current"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                  <Instagram className="w-4 h-4" />
+                </Button>
+                <Button variant="ghost" size="icon" className="h-8 w-8">
+                  <Linkedin className="w-4 h-4" />
+                </Button>
+                <Button variant="ghost" size="icon" className="h-8 w-8">
+                  <Twitter className="w-4 h-4" />
                 </Button>
               </div>
             </div>
           </footer>
+          </div>
         </main>
 
         {/* Theme Generator Drawer */}
@@ -2162,8 +2391,8 @@ export default function ThemeGeneratorPage() {
                 </Button>
 
                 {/* Upgrade to Pro Banner */}
-                <div className="mt-2 p-2.5 rounded-xl bg-orange-100 dark:bg-orange-900/20 border border-orange-200 dark:border-orange-800">
-                  <div className="flex items-start gap-2 text-orange-700 dark:text-orange-400">
+                <div className="mt-2 p-2.5 rounded-xl bg-primary/10 border border-primary/20">
+                  <div className="flex items-start gap-2 text-primary">
                     <Lock className="w-3.5 h-3.5 flex-shrink-0 mt-0.5" />
                     <span className="text-xs leading-tight">Upgrade to Pro to sync your themes across devices</span>
                   </div>
