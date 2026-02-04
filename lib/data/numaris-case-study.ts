@@ -19,6 +19,7 @@ export const numarisCaseStudy: CaseStudy = {
   ],
 
   heroImage: '/images/dashboard-hero.png',
+  thumbnail: '/images/numaris-thumbnail.png',
 
   projectMetadata: {
     company: 'Numaris',

@@ -1,0 +1,52 @@
+<svg width="375" height="812" xmlns="http://www.w3.org/2000/svg">
+  <!-- Phone Frame -->
+  <rect width="375" height="812" fill="#1f2937" rx="50"/>
+  <rect x="10" y="10" width="355" height="792" fill="#000000" rx="45"/>
+
+  <!-- Status Bar -->
+  <rect x="30" y="30" width="315" height="44" fill="#000000"/>
+  <text x="50" y="58" font-family="Arial, sans-serif" font-size="14" fill="#ffffff" font-weight="bold">9:38</text>
+  <circle cx="280" cy="48" r="4" fill="#ef4444"/>
+  <rect x="295" y="45" width="40" height="22" fill="#10b981" rx="4" opacity="0.8"/>
+
+  <!-- Screen Content -->
+  <rect x="30" y="90" width="315" height="692" fill="#ffffff" rx="20"/>
+
+  <!-- Header -->
+  <text x="50" y="130" font-family="Arial, sans-serif" font-size="18" fill="#111827" font-weight="bold">Nueva venta</text>
+  <circle cx="310" cy="122" r="15" fill="#3b82f6"/>
+
+  <!-- Toggle Buttons -->
+  <rect x="50" y="150" width="120" height="40" fill="#f3f4f6" rx="8"/>
+  <text x="110" y="175" font-family="Arial, sans-serif" font-size="14" fill="#111827" text-anchor="middle">Monto</text>
+  <rect x="185" y="150" width="120" height="40" fill="#111827" rx="8"/>
+  <text x="245" y="175" font-family="Arial, sans-serif" font-size="14" fill="#ffffff" text-anchor="middle" font-weight="bold">Productos</text>
+
+  <!-- Search Bar -->
+  <rect x="50" y="210" width="255" height="44" fill="#f3f4f6" rx="10"/>
+  <text x="75" y="238" font-family="Arial, sans-serif" font-size="14" fill="#9ca3af">🔍 Buscar por producto</text>
+  <rect x="307" y="210" width="28" height="44" fill="#f3f4f6" rx="6"/>
+  <text x="321" y="238" font-family="Arial, sans-serif" font-size="18" fill="#6b7280" text-anchor="middle">☰</text>
+
+  <!-- Product List -->
+  <!-- Product 1 -->
+  <rect x="50" y="270" width="275" height="80" fill="#f9fafb" rx="10"/>
+  <circle cx="75" cy="310" r="18" fill="#fef3c7"/>
+  <text x="75" y="316" font-family="Arial, sans-serif" font-size="12" fill="#111827" text-anchor="middle" font-weight="bold">P</text>
+  <text x="105" y="305" font-family="Arial, sans-serif" font-size="15" fill="#111827" font-weight="bold">Players negra</text>
+  <text x="105" y="325" font-family="Arial, sans-serif" font-size="12" fill="#6b7280">0 en stock</text>
+  <text x="310" y="312" font-family="Arial, sans-serif" font-size="16" fill="#111827" text-anchor="end" font-weight="bold">$450.00</text>
+
+  <!-- Add Product Button -->
+  <rect x="50" y="365" width="275" height="60" fill="#f9fafb" rx="10"/>
+  <circle cx="75" cy="395" r="18" fill="#e5e7eb"/>
+  <text x="75" y="402" font-family="Arial, sans-serif" font-size="20" fill="#6b7280" text-anchor="middle" font-weight="bold">+</text>
+  <text x="105" y="400" font-family="Arial, sans-serif" font-size="15" fill="#111827" font-weight="bold">Registrar aquí</text>
+
+  <!-- Bottom placeholder -->
+  <rect x="50" y="450" width="275" height="200" fill="#fafafa" rx="10"/>
+  <text x="187.5" y="560" font-family="Arial, sans-serif" font-size="14" fill="#d1d5db" text-anchor="middle">Más productos...</text>
+
+  <!-- Home Indicator -->
+  <rect x="137.5" y="770" width="100" height="5" fill="#ffffff" rx="2.5" opacity="0.5"/>
+</svg>

@@ -1,6 +1,8 @@
+"use client";
+
 import { FeatureSection3 } from "@/components/blocks/features-section-3";
 import { BlockPreview } from "@/components/blocks/block-preview";
-import Link from "next/link";
+import { ComponentLayout } from "@/components/layout/component-layout";
 
 const usageCode = `import { FeatureSection3 } from "@/components/blocks/features-section-3";
 import { FileText, Link2, CheckCircle } from "lucide-react";
@@ -60,46 +62,8 @@ export default function Example() {
 
 export default function FeaturesSection3Page() {
   return (
-    <div className="min-h-screen bg-background">
-      <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
-        {/* Back link */}
-        <Link
-          href="/blocks/features-section"
-          className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground mb-8"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="16"
-            height="16"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          >
-            <path d="m15 18-6-6 6-6" />
-          </svg>
-          Back to features sections
-        </Link>
-
-        {/* Header */}
-        <div className="mb-8">
-          <div className="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold mb-4">
-            Marketing
-          </div>
-          <h1 className="text-4xl font-bold tracking-tight mb-4">
-            Features Section 3
-          </h1>
-          <p className="text-lg text-muted-foreground max-w-3xl">
-            A 2-column split layout featuring an interactive workflow showcase with auto-cycling
-            animations. Features on the left highlight different steps, while the right side
-            displays corresponding visual states (input, processing, success) with smooth transitions.
-          </p>
-        </div>
-
-        {/* Preview */}
-        <BlockPreview
+    <ComponentLayout>
+      <BlockPreview
           preview={
             <FeatureSection3
               badge="How it works"
@@ -176,9 +140,9 @@ export default function FeaturesSection3Page() {
             />
           }
           code={usageCode}
-          filename="example.tsx"
+          filename="features-section-3.tsx"
+          installCommand="npx shadcn add features-section-3"
         />
-      </div>
-    </div>
+    </ComponentLayout>
   );
 }

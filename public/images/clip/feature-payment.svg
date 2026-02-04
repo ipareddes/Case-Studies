@@ -1,0 +1,17 @@
+<svg width="800" height="600" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="600" fill="#ffffff"/>
+  <rect x="100" y="50" width="600" height="500" fill="#f9fafb" rx="20"/>
+  <rect x="150" y="100" width="500" height="400" fill="#ffffff" rx="15"/>
+  <text x="400" y="150" font-family="Arial, sans-serif" font-size="20" fill="#111827" text-anchor="middle" font-weight="bold">Deposits</text>
+  <rect x="200" y="180" width="400" height="60" fill="#f3f4f6" rx="8"/>
+  <text x="250" y="215" font-family="Arial, sans-serif" font-size="14" fill="#6b7280">Recent Deposits</text>
+  <rect x="550" y="195" width="30" height="30" fill="#ea580c" opacity="0.3" rx="5"/>
+  <rect x="200" y="260" width="180" height="100" fill="#fef3c7" rx="10"/>
+  <text x="290" y="295" font-family="Arial, sans-serif" font-size="16" fill="#92400e" text-anchor="middle">$0.00</text>
+  <text x="290" y="320" font-family="Arial, sans-serif" font-size="12" fill="#92400e" text-anchor="middle">Available</text>
+  <rect x="420" y="260" width="180" height="100" fill="#fef3c7" rx="10"/>
+  <text x="510" y="295" font-family="Arial, sans-serif" font-size="16" fill="#92400e" text-anchor="middle">$0.00</text>
+  <text x="510" y="320" font-family="Arial, sans-serif" font-size="12" fill="#92400e" text-anchor="middle">Pending</text>
+  <rect x="200" y="380" width="400" height="50" fill="#ea580c" rx="8"/>
+  <text x="400" y="410" font-family="Arial, sans-serif" font-size="16" fill="#ffffff" text-anchor="middle" font-weight="bold">Cash to Clip Account</text>
+</svg>

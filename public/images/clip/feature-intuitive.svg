@@ -1,0 +1,21 @@
+<svg width="800" height="600" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="600" fill="#ffffff"/>
+  <rect x="50" y="50" width="700" height="500" fill="#1f2937" rx="30"/>
+  <rect x="80" y="80" width="640" height="440" fill="#ffffff" rx="20"/>
+  <rect x="100" y="100" width="200" height="400" fill="#f9fafb" rx="10"/>
+  <rect x="120" y="120" width="160" height="40" fill="#ea580c" opacity="0.3" rx="8"/>
+  <rect x="120" y="180" width="160" height="30" fill="#f3f4f6" rx="5"/>
+  <rect x="120" y="220" width="160" height="30" fill="#f3f4f6" rx="5"/>
+  <rect x="120" y="260" width="160" height="30" fill="#f3f4f6" rx="5"/>
+  <text x="400" y="160" font-family="Arial, sans-serif" font-size="24" fill="#111827" text-anchor="middle" font-weight="bold">Intuitive POS</text>
+  <text x="400" y="190" font-family="Arial, sans-serif" font-size="14" fill="#6b7280" text-anchor="middle">Easy to learn, fast to use</text>
+  <circle cx="450" cy="280" r="50" fill="#fef3c7"/>
+  <circle cx="550" cy="280" r="50" fill="#fef3c7"/>
+  <rect x="350" y="360" width="300" height="120" fill="#f3f4f6" rx="10"/>
+  <text x="500" y="410" font-family="Arial, sans-serif" font-size="14" fill="#6b7280" text-anchor="middle">Product Grid</text>
+  <circle cx="420" cy="450" r="15" fill="#ea580c" opacity="0.3"/>
+  <circle cx="460" cy="450" r="15" fill="#ea580c" opacity="0.3"/>
+  <circle cx="500" cy="450" r="15" fill="#ea580c" opacity="0.3"/>
+  <circle cx="540" cy="450" r="15" fill="#ea580c" opacity="0.3"/>
+  <circle cx="580" cy="450" r="15" fill="#ea580c" opacity="0.3"/>
+</svg>

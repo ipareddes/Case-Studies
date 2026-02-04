@@ -160,6 +160,23 @@
     --ring: 221 83% 53%;
 
     --radius: 0.75rem; /* 12px */
+
+    /* Chart Colors */
+    --chart-1: 12 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+
+    /* Sidebar Colors */
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
   .dark {
@@ -190,6 +207,23 @@
     --border: 0 0% 14.9%;
     --input: 0 0% 14.9%;
     --ring: 221 83% 53%;
+
+    /* Chart Colors - Dark */
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+
+    /* Sidebar Colors - Dark */
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
   }
 }
 
@@ -201,6 +235,7 @@
     overflow-x: clip;
     max-width: 100vw;
     scroll-behavior: smooth;
+    overscroll-behavior: none;
   }
 
   body {
@@ -211,6 +246,7 @@
     line-height: var(--line-height-relaxed);
     max-width: 100vw;
     min-height: 100vh;
+    overscroll-behavior: none;
   }
 
   main {
@@ -258,11 +294,11 @@
 
   /* Card Components */
   .card {
-    @apply rounded-lg border bg-card text-card-foreground shadow-sm;
+    @apply flex flex-col gap-6 rounded-xl border bg-card py-6 text-card-foreground shadow-sm;
   }
 
   .card-header {
-    @apply flex flex-col space-y-1.5 p-6;
+    @apply flex flex-col gap-1.5 px-6;
   }
 
   .card-title {
@@ -278,11 +314,11 @@
   }
 
   .card-content {
-    @apply p-6 pt-0;
+    @apply px-6;
   }
 
   .card-footer {
-    @apply flex items-center p-6 pt-0;
+    @apply flex items-center px-6;
   }
 
   /* Stat Card - Custom component for case study */
@@ -634,4 +670,77 @@
       overflow-x: clip;
     }
   }
+}
+
+/* Scroll-triggered animations — outside @layer for proper specificity */
+.scroll-hidden {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.scroll-visible {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+/* Button Animation Keyframes */
+@keyframes ripple {
+  0% {
+    transform: scale(0);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+@keyframes heartbeat {
+  0%, 100% {
+    transform: scale(1);
+  }
+  14% {
+    transform: scale(1.1);
+  }
+  28% {
+    transform: scale(1);
+  }
+  42% {
+    transform: scale(1.1);
+  }
+  70% {
+    transform: scale(1);
+  }
+}
+
+/* ========== SPOTLIGHT CARD GLOW EFFECT ========== */
+.spotlight-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.spotlight-card .blob {
+  pointer-events: none;
+  position: absolute;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.spotlight-card .fake-blob {
+  pointer-events: none;
+  position: absolute;
+}
+
+.spotlight-card:hover .blob {
+  opacity: 1;
 }

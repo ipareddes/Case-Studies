@@ -4,7 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { TopBanner } from "./top-banner";
 import { SiteNavigation } from "./site-navigation";
-import { X, ChevronRight } from "lucide-react";
+import { X, ChevronRight, PanelLeftClose, PanelLeft } from "lucide-react";
 import { useState } from "react";
 import ReactDOM from "react-dom";
 
@@ -99,6 +99,25 @@ const animatedComponentItems = [
   { name: "Animated Card", href: "/components/animated-card" },
 ];
 
+const blockItems = [
+  { name: "Features Section", href: "/blocks/features-section" },
+  { name: "Hero", href: "/blocks/hero" },
+  { name: "Pricing", href: "/blocks/pricing" },
+  { name: "Testimonials", href: "/blocks/testimonials" },
+  { name: "Call to Action", href: "/blocks/cta" },
+  { name: "Footer", href: "/blocks/footer" },
+  { name: "Navbar", href: "/blocks/navbar" },
+  { name: "FAQ", href: "/blocks/faq" },
+  { name: "Stats", href: "/blocks/stats" },
+  { name: "Team", href: "/blocks/team" },
+  { name: "Login", href: "/blocks/login" },
+  { name: "Sign Up", href: "/blocks/signup" },
+  { name: "Contact", href: "/blocks/contact" },
+  { name: "Blog", href: "/blocks/blog" },
+  { name: "Sidebar", href: "/blocks/sidebar" },
+  { name: "Error Page", href: "/blocks/error" },
+];
+
 const components = [
   { id: "accordion", name: "Accordion", href: "/components/accordion" },
   { id: "alert", name: "Alert", href: "/components/alert" },
@@ -109,27 +128,35 @@ const components = [
   { id: "button-group", name: "Button Group", href: "/components/button-group" },
   { id: "calendar", name: "Calendar", href: "/components/calendar" },
   { id: "card", name: "Card", href: "/components/card" },
+  { id: "carousel", name: "Carousel", href: "/components/carousel" },
   { id: "checkbox", name: "Checkbox", href: "/components/checkbox" },
   { id: "collapsible", name: "Collapsible", href: "/components/collapsible" },
   { id: "combobox", name: "Combobox", href: "/components/combobox" },
+  { id: "command", name: "Command", href: "/components/command" },
   { id: "data-table", name: "Data Table", href: "/components/data-table" },
   { id: "date-picker", name: "Date and Time Picker", href: "/components/date-picker" },
   { id: "dialog", name: "Dialog", href: "/components/dialog" },
   { id: "dropdown-menu", name: "Dropdown Menu", href: "/components/dropdown-menu" },
   { id: "form", name: "Form", href: "/components/form" },
+  { id: "hover-card", name: "Hover Card", href: "/components/hover-card" },
   { id: "input", name: "Input", href: "/components/input" },
   { id: "input-mask", name: "Input Mask", href: "/components/input-mask" },
   { id: "input-otp", name: "Input OTP", href: "/components/input-otp" },
   { id: "pagination", name: "Pagination", href: "/components/pagination" },
   { id: "popover", name: "Popover", href: "/components/popover" },
   { id: "radio-group", name: "Radio Group", href: "/components/radio-group" },
+  { id: "scroll-area", name: "Scroll Area", href: "/components/scroll-area" },
   { id: "select", name: "Select", href: "/components/select" },
+  { id: "separator", name: "Separator", href: "/components/separator" },
   { id: "sheet", name: "Sheet", href: "/components/sheet" },
+  { id: "skeleton", name: "Skeleton", href: "/components/skeleton" },
+  { id: "slider", name: "Slider", href: "/components/slider" },
   { id: "sonner", name: "Sonner", href: "/components/sonner" },
   { id: "switch", name: "Switch", href: "/components/switch" },
   { id: "table", name: "Table", href: "/components/table" },
   { id: "tabs", name: "Tabs", href: "/components/tabs" },
   { id: "textarea", name: "Textarea", href: "/components/textarea" },
+  { id: "toggle", name: "Toggle", href: "/components/toggle" },
   { id: "tooltip", name: "Tooltip", href: "/components/tooltip" },
 ];
 
@@ -200,6 +227,7 @@ interface ComponentLayoutProps {
 export function ComponentLayout({ children }: ComponentLayoutProps) {
   const pathname = usePathname();
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const [isSidebarCollapsed, setIsSidebarCollapsed] = useState(false);
 
   const closeSidebar = () => setIsSidebarOpen(false);
 
@@ -212,8 +240,9 @@ export function ComponentLayout({ children }: ComponentLayoutProps) {
         {/* Sidebar */}
         <aside
           className={`
-            fixed inset-y-0 left-0 z-[80] w-72 shrink-0 transform border-r border-dashed bg-background transition-transform duration-300 lg:relative lg:z-auto lg:w-64 lg:sticky lg:top-[128px] lg:h-[calc(100vh-128px)] lg:translate-x-0
+            fixed inset-y-0 left-0 z-[80] w-72 shrink-0 transform border-r border-dashed bg-background transition-all duration-300 lg:relative lg:z-auto lg:sticky lg:top-[128px] lg:h-[calc(100vh-128px)] lg:translate-x-0
             ${isSidebarOpen ? "translate-x-0" : "-translate-x-full"}
+            ${isSidebarCollapsed ? "lg:w-0 lg:border-r-0 lg:overflow-hidden" : "lg:w-64"}
           `}
         >
           <div className="flex h-full flex-col">
@@ -285,6 +314,17 @@ export function ComponentLayout({ children }: ComponentLayoutProps) {
               {/* Divider */}
               <div className="my-2" />
 
+              {/* Blocks */}
+              <CollapsibleSection
+                title="Blocks"
+                items={blockItems}
+                pathname={pathname}
+                onNavigate={closeSidebar}
+              />
+
+              {/* Divider */}
+              <div className="my-2" />
+
               {/* Components */}
               <CollapsibleSection
                 title="Components"
@@ -294,11 +334,32 @@ export function ComponentLayout({ children }: ComponentLayoutProps) {
                 onNavigate={closeSidebar}
               />
             </nav>
+
+            {/* Collapse button (desktop only) */}
+            <div className="hidden lg:flex items-center justify-end border-t border-dashed px-3 py-2">
+              <button
+                onClick={() => setIsSidebarCollapsed(true)}
+                className="flex items-center gap-2 rounded-md px-2 py-1.5 text-sm text-muted-foreground transition-colors hover:text-foreground hover:bg-muted"
+              >
+                <PanelLeftClose className="h-4 w-4" />
+                <span>Collapse</span>
+              </button>
+            </div>
           </div>
         </aside>
 
         {/* Main Content */}
         <main className="min-w-0 flex-1">
+          {/* Expand sidebar button (desktop, when collapsed) */}
+          {isSidebarCollapsed && (
+            <button
+              onClick={() => setIsSidebarCollapsed(false)}
+              className="hidden lg:flex items-center gap-1.5 sticky top-[128px] z-10 m-2 rounded-md border bg-background px-2 py-1.5 text-sm text-muted-foreground shadow-sm transition-colors hover:text-foreground hover:bg-muted"
+            >
+              <PanelLeft className="h-4 w-4" />
+              <span>Sidebar</span>
+            </button>
+          )}
           <div className="p-4 sm:p-6 lg:p-8">
             {children}
           </div>

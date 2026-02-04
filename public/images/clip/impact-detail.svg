@@ -1,0 +1,76 @@
+<svg width="375" height="812" xmlns="http://www.w3.org/2000/svg">
+  <!-- Phone Frame -->
+  <rect width="375" height="812" fill="#1f2937" rx="50"/>
+  <rect x="10" y="10" width="355" height="792" fill="#000000" rx="45"/>
+
+  <!-- Status Bar -->
+  <rect x="30" y="30" width="315" height="44" fill="#000000"/>
+  <text x="50" y="58" font-family="Arial, sans-serif" font-size="14" fill="#ffffff" font-weight="bold">8:07</text>
+  <rect x="295" y="45" width="40" height="22" fill="#10b981" rx="4" opacity="0.8"/>
+
+  <!-- Screen Content -->
+  <rect x="30" y="90" width="315" height="692" fill="#f9fafb" rx="20"/>
+
+  <!-- Header with back button -->
+  <circle cx="50" cy="120" r="18" fill="#ffffff"/>
+  <text x="50" y="127" font-family="Arial, sans-serif" font-size="18" fill="#111827" text-anchor="middle" font-weight="bold">‹</text>
+
+  <!-- Action icons -->
+  <rect x="240" y="105" width="100" height="30" fill="transparent"/>
+  <text x="255" y="125" font-family="Arial, sans-serif" font-size="18" fill="#6b7280">📋</text>
+  <text x="280" y="125" font-family="Arial, sans-serif" font-size="18" fill="#6b7280">🗑️</text>
+  <text x="305" y="125" font-family="Arial, sans-serif" font-size="18" fill="#6b7280">📤</text>
+  <text x="325" y="125" font-family="Arial, sans-serif" font-size="18" fill="#6b7280">⋯</text>
+
+  <!-- Transaction Receipt Card -->
+  <rect x="50" y="160" width="275" height="580" fill="#ffffff" rx="20"/>
+
+  <!-- Clip Logo -->
+  <rect x="140" y="190" width="95" height="45" fill="#ea580c" rx="10"/>
+  <text x="187.5" y="220" font-family="Arial, sans-serif" font-size="22" fill="#ffffff" text-anchor="middle" font-weight="bold">clip</text>
+
+  <!-- Blue line -->
+  <rect x="70" y="250" width="235" height="4" fill="#3b82f6"/>
+
+  <!-- Thank you message -->
+  <text x="187.5" y="290" font-family="Arial, sans-serif" font-size="20" fill="#111827" text-anchor="middle" font-weight="bold">¡Gracias por tu compra!</text>
+
+  <!-- eVoucher text -->
+  <text x="187.5" y="330" font-family="Arial, sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">eVoucher de</text>
+  <text x="187.5" y="350" font-family="Arial, sans-serif" font-size="13" fill="#111827" text-anchor="middle" font-weight="bold">Consultorio</text>
+  <text x="225" y="350" font-family="Arial, sans-serif" font-size="13" fill="#6b7280" text-anchor="start">con</text>
+  <rect x="245" y="340" width="40" height="16" fill="#ea580c" rx="4"/>
+  <text x="265" y="351" font-family="Arial, sans-serif" font-size="11" fill="#ffffff" text-anchor="middle" font-weight="bold">Clip</text>
+
+  <!-- Transaction details -->
+  <rect x="70" y="380" width="235" height="1" fill="#e5e7eb"/>
+
+  <text x="80" y="410" font-family="Arial, sans-serif" font-size="13" fill="#6b7280">Fecha</text>
+  <text x="295" y="410" font-family="Arial, sans-serif" font-size="13" fill="#111827" text-anchor="end">22/09/2024</text>
+
+  <text x="80" y="440" font-family="Arial, sans-serif" font-size="13" fill="#6b7280">Hora</text>
+  <text x="295" y="440" font-family="Arial, sans-serif" font-size="13" fill="#111827" text-anchor="end">8:07 AM</text>
+
+  <text x="80" y="470" font-family="Arial, sans-serif" font-size="13" fill="#6b7280">Tipo de pago</text>
+  <text x="295" y="470" font-family="Arial, sans-serif" font-size="13" fill="#111827" text-anchor="end">Tarjeta débito</text>
+
+  <text x="80" y="500" font-family="Arial, sans-serif" font-size="13" fill="#6b7280">Tarjeta</text>
+  <text x="295" y="500" font-family="Arial, sans-serif" font-size="13" fill="#111827" text-anchor="end">**** 4567</text>
+
+  <rect x="70" y="520" width="235" height="1" fill="#e5e7eb"/>
+
+  <!-- Amount -->
+  <text x="80" y="555" font-family="Arial, sans-serif" font-size="16" fill="#111827" font-weight="bold">Total</text>
+  <text x="295" y="560" font-family="Arial, sans-serif" font-size="24" fill="#111827" text-anchor="end" font-weight="bold">$450.00</text>
+
+  <!-- Footer info -->
+  <text x="187.5" y="610" font-family="Arial, sans-serif" font-size="11" fill="#9ca3af" text-anchor="middle">Autorización: 123456</text>
+  <text x="187.5" y="630" font-family="Arial, sans-serif" font-size="11" fill="#9ca3af" text-anchor="middle">ID transacción: ABC123XYZ</text>
+
+  <!-- Share button -->
+  <rect x="80" y="660" width="215" height="50" fill="#f3f4f6" rx="10"/>
+  <text x="187.5" y="690" font-family="Arial, sans-serif" font-size="15" fill="#111827" text-anchor="middle" font-weight="bold">Compartir recibo</text>
+
+  <!-- Home Indicator -->
+  <rect x="137.5" y="770" width="100" height="5" fill="#ffffff" rx="2.5" opacity="0.5"/>
+</svg>

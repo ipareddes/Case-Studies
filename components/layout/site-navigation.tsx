@@ -1,20 +1,26 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
-import { Menu, Search, Moon, Sun, Github, LogIn } from "lucide-react";
+import { Menu, Search, Moon, Sun, LogIn, Palette } from "lucide-react";
+import { GlobalSearch, useGlobalSearch } from "./global-search";
+import { useTheme } from "@/components/theme-provider";
+import { useThemeCustomizer } from "@/components/theme-customizer";
 
 interface SiteNavigationProps {
   onMenuClick?: () => void;
 }
 
 export function SiteNavigation({ onMenuClick }: SiteNavigationProps) {
-  const [isDark, setIsDark] = useState(false);
+  const { open: searchOpen, setOpen: setSearchOpen } = useGlobalSearch();
+  const { mode, resolvedMode, setMode } = useTheme();
+  const themeCustomizer = useThemeCustomizer();
+  const toggleThemeCustomizer = themeCustomizer?.toggle ?? (() => {});
 
   const navLinks = [
     { href: "/components", label: "Components" },
     { href: "/blocks", label: "Blocks" },
     { href: "/templates", label: "Templates" },
+    { href: "/theme-generator", label: "Theme Generator" },
   ];
 
   return (
@@ -87,19 +93,31 @@ export function SiteNavigation({ onMenuClick }: SiteNavigationProps) {
 
             {/* Search */}
             <button
+              onClick={() => setSearchOpen(true)}
               className="flex h-9 w-9 items-center justify-center rounded-md border transition-colors hover:bg-muted"
               aria-label="Search"
             >
               <Search className="h-4 w-4" />
             </button>
+            <GlobalSearch open={searchOpen} onOpenChange={setSearchOpen} />
+
+            {/* Theme Generator */}
+            <button
+              onClick={toggleThemeCustomizer}
+              className="flex h-9 w-9 items-center justify-center rounded-md border transition-colors hover:bg-muted"
+              aria-label="Theme Generator"
+              title="Theme Generator"
+            >
+              <Palette className="h-4 w-4" />
+            </button>
 
             {/* Theme toggle */}
             <button
-              onClick={() => setIsDark(!isDark)}
+              onClick={() => setMode(resolvedMode === "dark" ? "light" : "dark")}
               className="flex h-9 w-9 items-center justify-center rounded-md border transition-colors hover:bg-muted"
               aria-label="Toggle theme"
             >
-              {isDark ? (
+              {resolvedMode === "dark" ? (
                 <Sun className="h-4 w-4" />
               ) : (
                 <Moon className="h-4 w-4" />

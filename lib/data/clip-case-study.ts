@@ -18,7 +18,8 @@ export const clipCaseStudy: CaseStudy = {
     { value: '$2B+', label: 'Annual Processing' }
   ],
 
-  heroImage: '/images/clip_hardware.png',
+  heroImage: '/images/clip-pos.png',
+  thumbnail: '/images/clip-thumbnail.png',
 
   projectMetadata: {
     company: 'Clip',

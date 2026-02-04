@@ -2,7 +2,7 @@
 
 import { ComponentLayout } from "@/components/layout/component-layout";
 import { useState } from "react";
-import { X, Sparkles, Code2, Copy, Check } from "lucide-react";
+import { X, Sparkles, Code2, Copy, Check, Plus, Minus, ArrowRight, Circle, HelpCircle, Settings, CreditCard, Users } from "lucide-react";
 import ReactDOM from "react-dom";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 
@@ -317,6 +317,183 @@ function Accordion8() {
   );
 }
 
+function Accordion9() {
+  return (
+    <div className="space-y-3">
+      {items.map((item, i) => (
+        <details key={i} className="group border-l-4 border-l-primary bg-card rounded-r-lg" open={i === 0}>
+          <summary className="flex cursor-pointer items-center justify-between p-4 font-medium">
+            <span>{item.q}</span>
+            <Plus className="h-4 w-4 group-open:hidden" />
+            <Minus className="h-4 w-4 hidden group-open:block" />
+          </summary>
+          <div className="px-4 pb-4 text-sm text-muted-foreground">{item.a}</div>
+        </details>
+      ))}
+    </div>
+  );
+}
+
+function Accordion10() {
+  return (
+    <div className="space-y-2">
+      {items.map((item, i) => (
+        <details key={i} className="group" open={i === 0}>
+          <summary className="flex cursor-pointer items-center gap-4 py-3 font-medium">
+            <span className="flex h-8 w-8 items-center justify-center rounded-full bg-primary text-primary-foreground text-sm font-bold">
+              {i + 1}
+            </span>
+            <span className="flex-1">{item.q}</span>
+            <Chevron />
+          </summary>
+          <div className="pl-12 pb-3 text-sm text-muted-foreground">{item.a}</div>
+        </details>
+      ))}
+    </div>
+  );
+}
+
+function Accordion11() {
+  const icons = [HelpCircle, Settings, CreditCard];
+  return (
+    <div className="divide-y rounded-lg border">
+      {items.map((item, i) => {
+        const Icon = icons[i];
+        return (
+          <details key={i} className="group" open={i === 0}>
+            <summary className="flex cursor-pointer items-center gap-3 p-4 font-medium hover:bg-muted transition-colors">
+              <Icon className="h-5 w-5 text-primary" />
+              <span className="flex-1">{item.q}</span>
+              <Chevron />
+            </summary>
+            <div className="px-4 pb-4 pl-12 text-sm text-muted-foreground">{item.a}</div>
+          </details>
+        );
+      })}
+    </div>
+  );
+}
+
+function Accordion12() {
+  return (
+    <div className="space-y-2">
+      <details className="group rounded-lg border" open>
+        <summary className="flex cursor-pointer items-center justify-between p-4 font-medium">
+          <span>Shipping & Delivery</span>
+          <Chevron />
+        </summary>
+        <div className="border-t">
+          <details className="group/nested border-b last:border-b-0">
+            <summary className="flex cursor-pointer items-center justify-between p-4 pl-8 text-sm font-medium hover:bg-muted">
+              <span>Domestic Shipping</span>
+              <ArrowRight className="h-4 w-4 transition-transform group-open/nested:rotate-90" />
+            </summary>
+            <div className="px-4 pb-4 pl-8 text-sm text-muted-foreground">Free shipping on orders over $50. Standard delivery takes 3-5 business days.</div>
+          </details>
+          <details className="group/nested border-b last:border-b-0">
+            <summary className="flex cursor-pointer items-center justify-between p-4 pl-8 text-sm font-medium hover:bg-muted">
+              <span>International Shipping</span>
+              <ArrowRight className="h-4 w-4 transition-transform group-open/nested:rotate-90" />
+            </summary>
+            <div className="px-4 pb-4 pl-8 text-sm text-muted-foreground">International orders may take 7-14 business days. Additional customs fees may apply.</div>
+          </details>
+        </div>
+      </details>
+      <details className="group rounded-lg border">
+        <summary className="flex cursor-pointer items-center justify-between p-4 font-medium">
+          <span>Returns & Refunds</span>
+          <Chevron />
+        </summary>
+        <div className="p-4 pt-0 text-sm text-muted-foreground">We offer a 30-day return policy for most items.</div>
+      </details>
+    </div>
+  );
+}
+
+function Accordion13() {
+  const tags = [["Popular", "Updated"], ["New"], ["Important"]];
+  return (
+    <div className="divide-y">
+      {items.map((item, i) => (
+        <details key={i} className="group" open={i === 0}>
+          <summary className="flex cursor-pointer items-center justify-between py-4 font-medium">
+            <div className="flex items-center gap-2">
+              <span>{item.q}</span>
+              <div className="flex gap-1">
+                {tags[i].map((tag, j) => (
+                  <span key={j} className="rounded-full bg-primary/10 px-2 py-0.5 text-xs font-medium text-primary">
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            </div>
+            <Chevron />
+          </summary>
+          <div className="pb-4 text-sm text-muted-foreground">{item.a}</div>
+        </details>
+      ))}
+    </div>
+  );
+}
+
+function Accordion14() {
+  return (
+    <div className="rounded-xl border bg-gradient-to-b from-muted/50 to-background p-6">
+      <div className="mb-4 text-center">
+        <h3 className="text-lg font-semibold">Frequently Asked Questions</h3>
+        <p className="text-sm text-muted-foreground">Find answers to common questions</p>
+      </div>
+      <div className="space-y-2">
+        {items.map((item, i) => (
+          <details key={i} className="group rounded-lg bg-background shadow-sm" open={i === 0}>
+            <summary className="flex cursor-pointer items-center justify-between p-4 font-medium">
+              <div className="flex items-center gap-3">
+                <Circle className="h-2 w-2 fill-primary text-primary" />
+                <span>{item.q}</span>
+              </div>
+              <Chevron />
+            </summary>
+            <div className="px-4 pb-4 pl-9 text-sm text-muted-foreground">{item.a}</div>
+          </details>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+function Accordion15() {
+  return (
+    <div className="space-y-1">
+      {items.map((item, i) => (
+        <details key={i} className="group" open={i === 0}>
+          <summary className="flex cursor-pointer items-center gap-2 rounded-md px-3 py-2 font-medium hover:bg-muted transition-colors">
+            <ArrowRight className="h-4 w-4 transition-transform group-open:rotate-90" />
+            <span>{item.q}</span>
+          </summary>
+          <div className="ml-6 border-l-2 border-muted pl-4 py-2 text-sm text-muted-foreground">{item.a}</div>
+        </details>
+      ))}
+    </div>
+  );
+}
+
+function Accordion16() {
+  return (
+    <div>
+      {items.map((item, i) => (
+        <details key={i} className="group" open={i === 0}>
+          <summary className="flex cursor-pointer items-center justify-between py-4 text-base font-medium border-b group-open:border-primary group-open:text-primary transition-colors">
+            <span>{item.q}</span>
+            <span className="text-xl leading-none font-light group-open:hidden">+</span>
+            <span className="text-xl leading-none font-light hidden group-open:inline">−</span>
+          </summary>
+          <div className="py-4 text-sm text-muted-foreground">{item.a}</div>
+        </details>
+      ))}
+    </div>
+  );
+}
+
 // --- Code strings ---
 const codes: Record<string, string> = {
   "accordion-01": `import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@components/ui/accordion'
@@ -376,6 +553,14 @@ const variants = [
   { id: "accordion-06", title: "Accordion 6", preview: <Accordion6 /> },
   { id: "accordion-07", title: "Accordion 7", preview: <Accordion7 /> },
   { id: "accordion-08", title: "Accordion 8", preview: <Accordion8 /> },
+  { id: "accordion-09", title: "Accordion 9 - Left Border", preview: <Accordion9 /> },
+  { id: "accordion-10", title: "Accordion 10 - Numbered", preview: <Accordion10 /> },
+  { id: "accordion-11", title: "Accordion 11 - With Icons", preview: <Accordion11 /> },
+  { id: "accordion-12", title: "Accordion 12 - Nested", preview: <Accordion12 /> },
+  { id: "accordion-13", title: "Accordion 13 - With Tags", preview: <Accordion13 /> },
+  { id: "accordion-14", title: "Accordion 14 - FAQ Card", preview: <Accordion14 /> },
+  { id: "accordion-15", title: "Accordion 15 - Tree View", preview: <Accordion15 /> },
+  { id: "accordion-16", title: "Accordion 16 - Minimal", preview: <Accordion16 /> },
 ];
 
 export default function AccordionPage() {

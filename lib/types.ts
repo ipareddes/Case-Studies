@@ -7,6 +7,7 @@ export interface CaseStudy {
   author: Author
   heroStats: HeroStat[]
   heroImage: string
+  thumbnail?: string
   projectMetadata: ProjectMetadata
 
   // Updated 12-section structure

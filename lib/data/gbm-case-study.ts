@@ -19,6 +19,7 @@ export const gbmCaseStudy: CaseStudy = {
   ],
 
   heroImage: '/images/gbm-hero.png',
+  thumbnail: '/images/gbm-thumbnail.png',
 
   projectMetadata: {
     company: 'GBM (Grupo Bursátil Mexicano)',

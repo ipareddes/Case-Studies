@@ -19,6 +19,7 @@ export const mercadoPagoCaseStudy: CaseStudy = {
   ],
 
   heroImage: '/images/mercadopago-hero.png',
+  thumbnail: '/images/mercadopago-thumbnail.png',
 
   projectMetadata: {
     company: 'Mercado Pago',
